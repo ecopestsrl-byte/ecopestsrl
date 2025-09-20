@@ -21,139 +21,38 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
+/* --- Tus estilos actuales --- */
 body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f9f9f9; }
-
-/* Header fijo con logo */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background-color: #ffffff;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #ddd;
-}
-header img {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 120px;
-}
-header h1 {
-    margin:0;
-    font-family:'Montserrat', sans-serif;
-    color:#2E7D32;
-    font-size:2rem;
-}
-
-/* Menú debajo del header */
-nav {
-    position: fixed;
-    top: 150px;
-    left: 0;
-    width: 100%;
-    background-color:#66BB6A;
-    text-align:center;
-    z-index:999;
-    padding:10px 0;
-}
-nav a { 
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: inline-block;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
+header { position: fixed; top: 0; left: 0; width: 100%; height: 150px; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #ddd; }
+header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); height: 120px; }
+header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
+nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#66BB6A; text-align:center; z-index:999; padding:10px 0; }
+nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
 nav a:hover { background-color:#2E7D32; }
-
-/* Ajuste del contenido principal */
 .main-content { margin-top:210px; }
-
-/* Banner con partículas */
-.banner { 
-    position:relative; 
-    height:180px;
-    display:flex; 
-    align-items:center; 
-    justify-content:center; 
-    color:#2E7D32; 
-    text-align:center; 
-    background-color:#ffffff;
-    border-bottom: 1px solid #ddd;
-}
+.banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; }
 #particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:1; }
 .banner-content { position:relative; z-index:2; }
 .banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; text-shadow:none; }
-
-/* Productos */
 .section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
 .product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; }
 .product-card:hover { transform:scale(1.05); }
 .product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
-
-/* Carrito */
 #cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:10px; border-radius:8px; width:300px; max-height:400px; overflow-y:auto; display:none; z-index:1000; }
 #cart h5 { margin-top:0; }
 #cart button { margin-top:10px; }
 .filter-btn { margin:5px; }
-
-/* Botón WhatsApp redondo con borde verde */
-.whatsapp-btn {
-    position: fixed;   /* siempre visible */
-    bottom: 20px;      /* separación del borde inferior */
-    right: 20px;       /* separación del borde derecho */
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
-    text-decoration: none;
-    border-radius: 50%; /* redondo */
-    background-color: transparent;
-    border: 3px solid #25D366; /* verde WhatsApp */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-}
-.whatsapp-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Footer */
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; z-index: 1001; text-decoration: none; border-radius: 50%; background-color: transparent; border: 3px solid #25D366; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
+.whatsapp-btn img { width: 100%; height: 100%; object-fit: contain; }
 footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
 footer a { color:white; margin:0 10px; text-decoration:none; }
 footer a:hover { text-decoration:underline; }
+@media (max-width: 768px) { header { height: 100px; padding: 5px; } header img { height: 70px; left: 10px; } header h1 { font-size: 1.2rem; text-align: center; margin-left: 90px; } nav { top: 100px; padding: 5px 0; } nav a { font-size: 1rem; padding: 8px; display: inline-block; } .main-content { margin-top: 160px; } .banner { height: 120px; } .banner-content h2 { font-size: 1rem; padding: 0 10px; } #product-list .col-md-4 { flex: 0 0 100%; max-width: 100%; } #cart { width: 90%; right: 5%; top: 110px; } }
+@media (max-width: 400px) { nav a { font-size: 0.9rem; padding: 6px; } header h1 { font-size: 1rem; } .banner-content h2 { font-size: 0.9rem; } }
 
-/* --- AJUSTES RESPONSIVOS --- */
-@media (max-width: 768px) {
-    header { height: 100px; padding: 5px; }
-    header img { height: 70px; left: 10px; }
-    header h1 { font-size: 1.2rem; text-align: center; margin-left: 90px; }
-    nav { top: 100px; padding: 5px 0; }
-    nav a { font-size: 1rem; padding: 8px; display: inline-block; }
-    .main-content { margin-top: 160px; }
-    .banner { height: 120px; }
-    .banner-content h2 { font-size: 1rem; padding: 0 10px; }
-    #product-list .col-md-4 { flex: 0 0 100%; max-width: 100%; }
-    #cart { width: 90%; right: 5%; top: 110px; }
-}
-@media (max-width: 400px) {
-    nav a { font-size: 0.9rem; padding: 6px; }
-    header h1 { font-size: 1rem; }
-    .banner-content h2 { font-size: 0.9rem; }
-}
+/* --- Modal de productos --- */
+#modal-product-list .product-card img { width:100%; height:200px; object-fit:contain; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -165,7 +64,7 @@ footer a:hover { text-decoration:underline; }
 
 <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#productosModal">Productos</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
@@ -195,69 +94,27 @@ footer a:hover { text-decoration:underline; }
     <div class="row" id="product-list"></div>
 </section>
 
-<!-- Nosotros -->
-<section id="nosotros" class="container">
-    <h2 class="section-title">Nosotros</h2>
-    <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad, con un compromiso con la seguridad y el medio ambiente.</p>
-    
-    <h3>Misión</h3>
-    <p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación, garantizando seguridad, calidad y satisfacción a nuestros clientes.</p>
-    
-    <h3>Visión</h3>
-    <p>Ser la empresa líder en la República Dominicana en la venta de equipos y productos de fumigación, reconocida por su innovación, compromiso ambiental y excelencia en el servicio.</p>
-    
-    <h3>Valores</h3>
-    <ul>
-        <li>Compromiso con la seguridad y el medio ambiente.</li>
-        <li>Calidad en productos y servicios.</li>
-        <li>Responsabilidad y ética profesional.</li>
-        <li>Innovación y mejora continua.</li>
-        <li>Atención y satisfacción al cliente.</li>
-    </ul>
-</section>
-
-<!-- Servicios -->
-<section id="servicios" class="container">
-    <h2 class="section-title">Servicios</h2>
-    <ul>
-        <li>Asesoría y venta de equipos de fumigación.</li>
-        <li>Venta al por mayor y al detalle.</li>
-    </ul>
-</section>
-
-<!-- Contacto -->
-<section id="contacto" class="container mb-5">
-    <h2 class="section-title">Contacto</h2>
-    <form id="contact-form">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono">
-        </div>
-        <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Enviar Mensaje</button>
-    </form>
-</section>
-
-<!-- Carrito -->
-<div id="cart">
-    <h5>Carrito de Compras</h5>
-    <ul id="cart-items"></ul>
-    <p>Total: $<span id="cart-total">0</span></p>
-    <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+<!-- Modal de Productos -->
+<div class="modal fade" id="productosModal" tabindex="-1" aria-labelledby="productosModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="productosModalLabel">Todos los Productos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="modal-product-list"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Footer -->
+<!-- ... resto de secciones como Nosotros, Servicios, Contacto, Carrito, Footer ... -->
+
+<!-- Footer y WhatsApp -->
 <footer>
     <p>© 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
     <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
@@ -279,47 +136,13 @@ footer a:hover { text-decoration:underline; }
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 50 },
-    "color": { "value": ["#007BFF", "#2E7D32"] },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.6 },
-    "size": { "value": 3 },
-    "line_linked": { 
-      "enable": true, 
-      "distance": 150, 
-      "color": "#007BFF", 
-      "opacity": 0.5, 
-      "width": 1 
-    },
-    "move": { 
-      "enable": true, 
-      "speed": 2, 
-      "direction": "none", 
-      "random": false, 
-      "straight": false, 
-      "out_mode": "out" 
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": { "enable": true, "mode": "grab" },
-      "onclick": { "enable": true, "mode": "push" },
-      "resize": true
-    },
-    "modes": {
-      "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } },
-      "push": { "particles_nb": 4 }
-    }
-  },
-  "retina_detect": true
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+// --- Particles.js ---
+particlesJS("particles-js", { /* ... tu configuración actual ... */ });
+
+// --- Productos ---
 const products = [
    {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg"},
    {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg"},
@@ -352,77 +175,57 @@ function displayProducts(list=products){
     });
 }
 
+// --- Modal Productos ---
+function displayModalProducts(list=products){
+    const modalList = document.getElementById('modal-product-list');
+    modalList.innerHTML='';
+    list.forEach(product=>{
+        const col = document.createElement('div');
+        col.className='col-md-4 mb-3';
+        col.innerHTML=`
+        <div class="product-card">
+            <img src="${product.img}" class="img-fluid" alt="${product.name}">
+            <h4>${product.name}</h4>
+            <p><strong>$${product.price}</strong></p>
+            <button class="btn btn-success" onclick="addToCart(${product.id})">Agregar al Carrito</button>
+        </div>`;
+        modalList.appendChild(col);
+    });
+}
+
+// Filtrado
 function filterProducts(category){
     if(category==='todos') displayProducts();
     else displayProducts(products.filter(p=>p.category===category));
 }
 
-function addToCart(id){
-    const product = products.find(p=>p.id===id);
-    cart.push(product);
-    saveCart();
-    updateCart();
-}
+// Carrito
+function addToCart(id){ const product = products.find(p=>p.id===id); cart.push(product); saveCart(); updateCart(); }
+function updateCart(){ const cartItems=document.getElementById('cart-items'); cartItems.innerHTML=''; let total=0; cart.forEach((item,index)=>{ total+=item.price; const li=document.createElement('li'); li.textContent=`${item.name} - $${item.price}`; const removeBtn=document.createElement('button'); removeBtn.textContent='X'; removeBtn.className='btn btn-sm btn-danger ms-2'; removeBtn.onclick=()=>{ cart.splice(index,1); saveCart(); updateCart(); }; li.appendChild(removeBtn); cartItems.appendChild(li); }); document.getElementById('cart-total').textContent=total; document.getElementById('cart-count').textContent=cart.length; }
+function toggleCart(){ const cartDiv=document.getElementById('cart'); cartDiv.style.display=cartDiv.style.display==='none'?'block':'none'; }
+function checkout(){ if(cart.length===0){ alert("El carrito está vacío"); return; } alert(`Gracias por tu compra. Total: $${cart.reduce((a,b)=>a+b.price,0)}`); cart=[]; saveCart(); updateCart(); }
+function saveCart(){ localStorage.setItem('cart',JSON.stringify(cart)); }
 
-function updateCart(){
-    const cartItems=document.getElementById('cart-items');
-    cartItems.innerHTML='';
-    let total=0;
-    cart.forEach((item,index)=>{
-        total+=item.price;
-        const li=document.createElement('li');
-        li.textContent=`${item.name} - $${item.price}`;
-        const removeBtn=document.createElement('button');
-        removeBtn.textContent='X';
-        removeBtn.className='btn btn-sm btn-danger ms-2';
-        removeBtn.onclick=()=>{ cart.splice(index,1); saveCart(); updateCart(); };
-        li.appendChild(removeBtn);
-        cartItems.appendChild(li);
-    });
-    document.getElementById('cart-total').textContent=total;
-    document.getElementById('cart-count').textContent=cart.length;
-}
+// Mostrar productos al cargar
+window.onload=function(){ displayProducts(); updateCart(); };
 
-function toggleCart(){
-    const cartDiv=document.getElementById('cart');
-    cartDiv.style.display=cartDiv.style.display==='none'?'block':'none';
-}
+// Mostrar productos en modal al abrir
+document.getElementById('productosModal').addEventListener('show.bs.modal', function(){ displayModalProducts(); });
 
-function checkout(){
-    if(cart.length===0){ alert("El carrito está vacío"); return; }
-    alert(`Gracias por tu compra. Total: $${cart.reduce((a,b)=>a+b.price,0)}`);
-    cart=[];
-    saveCart();
-    updateCart();
-}
-
-function saveCart(){
-    localStorage.setItem('cart',JSON.stringify(cart));
-}
-
-window.onload=function(){
-    displayProducts();
-    updateCart();
-}
-
-// FORMULARIO DE CONTACTO ENVIANDO A WHATSAPP
+// Formulario WhatsApp
 document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault(); // Evita recargar la página
-    
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-    const mensaje = document.getElementById('mensaje').value;
-    
-    const text = `Hola, quiero contactarme con ustedes:%0A%0ANombre: ${nombre}%0ACorreo: ${email}%0ATeléfono: ${telefono}%0AMensaje: ${mensaje}`;
-    
-    const phone = "18097383196"; // Número de WhatsApp con código de país
-    const url = `https://wa.me/${phone}?text=${text}`;
-    
-    window.open(url, '_blank');
+    e.preventDefault();
+    const nombre=document.getElementById('nombre').value;
+    const email=document.getElementById('email').value;
+    const telefono=document.getElementById('telefono').value;
+    const mensaje=document.getElementById('mensaje').value;
+    const text=`Hola, quiero contactarme con ustedes:%0A%0ANombre: ${nombre}%0ACorreo: ${email}%0ATeléfono: ${telefono}%0AMensaje: ${mensaje}`;
+    const phone="18097383196";
+    const url=`https://wa.me/${phone}?text=${text}`;
+    window.open(url,'_blank');
     this.reset();
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
