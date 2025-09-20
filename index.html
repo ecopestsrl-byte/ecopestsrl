@@ -93,7 +93,7 @@ footer a:hover { text-decoration:underline; }
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Control de Roedores</button>
     </div>
     <div class="text-center mb-3">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#productosModal">Ver todos los productos</button>
+        <button class="btn btn-success" onclick="openSectionModal('productos')">Ver todos los productos</button>
     </div>
     <div class="row" id="product-list"></div>
 </section>
@@ -101,18 +101,6 @@ footer a:hover { text-decoration:underline; }
 <section id="nosotros" class="container">
     <h2 class="section-title">Nosotros</h2>
     <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad, con un compromiso con la seguridad y el medio ambiente.</p>
-    <h3>Misión</h3>
-    <p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación, garantizando seguridad, calidad y satisfacción a nuestros clientes.</p>
-    <h3>Visión</h3>
-    <p>Ser la empresa líder en la República Dominicana en la venta de equipos y productos de fumigación, reconocida por su innovación, compromiso ambiental y excelencia en el servicio.</p>
-    <h3>Valores</h3>
-    <ul>
-        <li>Compromiso con la seguridad y el medio ambiente.</li>
-        <li>Calidad en productos y servicios.</li>
-        <li>Responsabilidad y ética profesional.</li>
-        <li>Innovación y mejora continua.</li>
-        <li>Atención y satisfacción al cliente.</li>
-    </ul>
 </section>
 
 <section id="servicios" class="container">
@@ -182,6 +170,78 @@ footer a:hover { text-decoration:underline; }
       </div>
       <div class="modal-body">
         <div class="row" id="modal-product-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Nosotros -->
+<div class="modal fade" id="nosotrosModal" tabindex="-1" aria-labelledby="nosotrosModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nosotrosModalLabel">Nosotros</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modal-nosotros">
+        <h3>Misión</h3>
+        <p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación.</p>
+        <h3>Visión</h3>
+        <p>Ser la empresa líder en la República Dominicana.</p>
+        <h3>Valores</h3>
+        <ul>
+          <li>Seguridad y compromiso ambiental</li>
+          <li>Calidad y ética profesional</li>
+          <li>Innovación y mejora continua</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Servicios -->
+<div class="modal fade" id="serviciosModal" tabindex="-1" aria-labelledby="serviciosModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviciosModalLabel">Servicios</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modal-servicios">
+        <ul>
+          <li>Asesoría y venta de equipos de fumigación.</li>
+          <li>Venta al por mayor y al detalle.</li>
+          <li>Instalación y mantenimiento de equipos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Contacto -->
+<div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modal-contacto">
+        <form id="contact-form-modal">
+          <div class="mb-3">
+            <label>Nombre</label>
+            <input type="text" class="form-control" id="nombreModal" required>
+          </div>
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" id="emailModal" required>
+          </div>
+          <div class="mb-3">
+            <label>Mensaje</label>
+            <textarea class="form-control" id="mensajeModal" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Enviar Mensaje</button>
+        </form>
       </div>
     </div>
   </div>
@@ -277,11 +337,46 @@ function checkout(){
 displayProducts();
 updateCart();
 
-// Formulario
+// Formulario normal
 document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
     alert('Mensaje enviado. Gracias por contactarnos.');
     this.reset();
+});
+
+// Función para abrir modal según sección
+function openSectionModal(section){
+  switch(section){
+    case 'productos':
+      new bootstrap.Modal(document.getElementById('productosModal')).show();
+      break;
+    case 'nosotros':
+      new bootstrap.Modal(document.getElementById('nosotrosModal')).show();
+      break;
+    case 'servicios':
+      new bootstrap.Modal(document.getElementById('serviciosModal')).show();
+      break;
+    case 'contacto':
+      new bootstrap.Modal(document.getElementById('contactoModal')).show();
+      break;
+  }
+}
+
+// Modificar los enlaces del nav
+document.querySelectorAll('nav a').forEach(link=>{
+  link.addEventListener('click', function(e){
+    const href = this.getAttribute('href').replace('#','');
+    if(href==='inicio') return; // Inicio se muestra normalmente
+    e.preventDefault();
+    openSectionModal(href);
+  });
+});
+
+// Formulario modal contacto
+document.getElementById('contact-form-modal').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Mensaje enviado desde modal. Gracias.');
+  this.reset();
 });
 </script>
 
