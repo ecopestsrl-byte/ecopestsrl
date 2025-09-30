@@ -18,7 +18,7 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 150px; backgroun
 header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); height: 120px; }
 header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
 nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#66BB6A; text-align:center; z-index:999; padding:10px 0; }
-nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
+nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; cursor:pointer; }
 nav a:hover { background-color:#2E7D32; }
 .main-content { margin-top:210px; }
 .banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; }
@@ -65,14 +65,13 @@ footer a:hover { text-decoration:underline; }
     <h1>PRODUCTOS ECO PEST</h1>
 </header>
 
-<!-- NAV -->
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#productos" data-bs-toggle="modal" data-bs-target="#productosModal">Productos</a>
-    <a href="#nosotros" data-bs-toggle="modal" data-bs-target="#nosotrosModal">Nosotros</a>
-    <a href="#servicios" data-bs-toggle="modal" data-bs-target="#serviciosModal">Servicios</a>
-    <a href="#contacto" data-bs-toggle="modal" data-bs-target="#contactoModal">Contacto</a>
-    <a href="#" onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
+    <a onclick="openSectionModal('inicio')">Inicio</a>
+    <a onclick="openSectionModal('productos')">Productos</a>
+    <a onclick="openSectionModal('nosotros')">Nosotros</a>
+    <a onclick="openSectionModal('servicios')">Servicios</a>
+    <a onclick="openSectionModal('contacto')">Contacto</a>
+    <a onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
 </nav>
 
 <div class="main-content">
@@ -94,7 +93,7 @@ footer a:hover { text-decoration:underline; }
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Control de Roedores</button>
     </div>
     <div class="text-center mb-3">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#productosModal">Ver todos los productos</button>
+        <button class="btn btn-success" onclick="openSectionModal('productos')">Ver todos los productos</button>
     </div>
     <div class="row" id="product-list"></div>
 </section>
@@ -139,98 +138,43 @@ footer a:hover { text-decoration:underline; }
     </form>
 </section>
 
-<!-- Carrito -->
+<!-- Carrito de Compras -->
 <div id="cart">
     <h5>Carrito de Compras</h5>
     <ul id="cart-items"></ul>
     <p>Total: $<span id="cart-total">0</span></p>
     <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+    <p style="margin-top:10px; font-size:0.9rem; color:#333;">
+        Aceptamos pagos con Visa y Mastercard para pagos seguros.
+    </p>
 </div>
 
 <!-- Footer -->
 <footer>
     <p>© 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
     <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
+    <p>Tienda principal: Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
+    <p>Sucursal: Verón, Punta Cana</p>
+
+    <div style="text-align:center; margin:15px 0;">
+        <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
+            <img src="img/facebook.jpg" alt="Facebook" style="width:35px; height:35px; margin:0 5px;">
+        </a>
+        <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
+            <img src="img/instagram.jpg" alt="Instagram" style="width:35px; height:35px; margin:0 5px;">
+        </a>
+    </div>
+
+    <p style="margin-top:10px;">Aceptamos pagos con:</p>
+    <div style="text-align:center; margin-top:5px;">
+        <img src="img/visa.png" alt="Visa" style="width:60px; margin:0 10px;">
+        <img src="img/mastercard.png" alt="Mastercard" style="width:60px; margin:0 10px;">
+    </div>
 </footer>
 
 <a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
     <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
-
-<!-- Modales -->
-<!-- Productos Modal -->
-<div class="modal fade" id="productosModal" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Todos los Productos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body"><div class="row" id="modal-product-list"></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Nosotros Modal -->
-<div class="modal fade" id="nosotrosModal" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Nosotros</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <h3>Misión</h3><p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación.</p>
-        <h3>Visión</h3><p>Ser la empresa líder en la República Dominicana.</p>
-        <h3>Valores</h3>
-        <ul>
-          <li>Seguridad y compromiso ambiental</li>
-          <li>Calidad y ética profesional</li>
-          <li>Innovación y mejora continua</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Servicios Modal -->
-<div class="modal fade" id="serviciosModal" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Servicios</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <ul>
-          <li>Asesoría y venta de equipos de fumigación.</li>
-          <li>Venta al por mayor y al detalle.</li>
-          <li>Instalación y mantenimiento de equipos.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Contacto Modal -->
-<div class="modal fade" id="contactoModal" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Contacto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form id="contact-form-modal">
-          <div class="mb-3"><label>Nombre</label><input type="text" class="form-control" id="nombreModal" required></div>
-          <div class="mb-3"><label>Email</label><input type="email" class="form-control" id="emailModal" required></div>
-          <div class="mb-3"><label>Mensaje</label><textarea class="form-control" id="mensajeModal" rows="4" required></textarea></div>
-          <button type="submit" class="btn btn-success">Enviar Mensaje</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -266,9 +210,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function displayProducts(list=products){
     const productList = document.getElementById('product-list');
-    const modalList = document.getElementById('modal-product-list');
     productList.innerHTML = '';
-    modalList.innerHTML = '';
     list.forEach(product=>{
         const col = document.createElement('div');
         col.className='col-md-4';
@@ -280,8 +222,6 @@ function displayProducts(list=products){
                 <button class="btn btn-success" onclick="addToCart(${product.id})">Añadir al carrito</button>
             </div>`;
         productList.appendChild(col);
-        const modalCol = col.cloneNode(true);
-        modalList.appendChild(modalCol);
     });
 }
 
@@ -303,7 +243,7 @@ function updateCart(){
     const cartTotal = document.getElementById('cart-total');
     cartItems.innerHTML = '';
     let total=0;
-    cart.forEach(item=>{
+    cart.forEach((item,index)=>{
         const li = document.createElement('li');
         li.textContent = item.name;
         cartItems.appendChild(li);
@@ -328,38 +268,27 @@ function checkout(){
 displayProducts();
 updateCart();
 
-// WhatsApp contacto
-function sendWhatsAppMessage(nombre,email,telefono,mensaje){
-    const numero="18097383196";
-    const text=`Nuevo mensaje de contacto:%0ANombre: ${nombre}%0AEmail: ${email}%0ATeléfono: ${telefono}%0AMensaje: ${mensaje}`;
-    window.open(`https://wa.me/${numero}?text=${text}`,'_blank');
+// WhatsApp Form
+document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+    const mensaje = document.getElementById('mensaje').value;
+    const numeroWhatsApp = "18097383196";
+    const texto = `Nuevo mensaje desde web:\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`;
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank");
+    alert("Gracias por contactarnos. Su mensaje ha sido enviado.");
+    this.reset();
+});
+
+// Abrir secciones (modal)
+function openSectionModal(section){
+  document.getElementById(section).scrollIntoView({behavior:"smooth"});
 }
-
-// Formulario principal
-document.getElementById('contact-form').addEventListener('submit',function(e){
-    e.preventDefault();
-    const nombre=document.getElementById('nombre').value;
-    const email=document.getElementById('email').value;
-    const telefono=document.getElementById('telefono').value;
-    const mensaje=document.getElementById('mensaje').value;
-    sendWhatsAppMessage(nombre,email,telefono,mensaje);
-    alert('Gracias por contactarnos. Su mensaje ha sido enviado.');
-    this.reset();
-});
-
-// Formulario modal
-document.getElementById('contact-form-modal').addEventListener('submit',function(e){
-    e.preventDefault();
-    const nombre=document.getElementById('nombreModal').value;
-    const email=document.getElementById('emailModal').value;
-    const telefono="";
-    const mensaje=document.getElementById('mensajeModal').value;
-    sendWhatsAppMessage(nombre,email,telefono,mensaje);
-    alert('Gracias por contactarnos. Su mensaje ha sido enviado.');
-    this.reset();
-    bootstrap.Modal.getInstance(document.getElementById('contactoModal')).hide();
-});
 </script>
 
 </body>
 </html>
+
