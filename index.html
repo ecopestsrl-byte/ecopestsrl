@@ -299,22 +299,134 @@ particlesJS("particles-js", {
 
 // Productos
 const products = [
-   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg"},
-   {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg"},
-   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg"},
-   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg"},
-   {id:5, name:"Lámpara para Insectos", category:"Equipos", price:0, img:"img/lampara.jpg"},
-   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg"},
-   {id:7, name:"Advion Insecticida", category:"Químicos", price:0, img:"img/advion.jpg"},
-   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg"},
-   {id:9, name:"Cebadero Ratones", category:"Control de Roedores", price:0, img:"img/cebadero.jpg"},
-   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg"},
-   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg"},
-   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg"},
-   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg"},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg"},
-   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg"},
-   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg"} // ← NUEVO
+   { 
+     id:1, 
+     name:"Pulverizador Manual", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/pulverizador.jpg",
+     description:"Pulverizador manual de alta eficiencia, ideal para aplicaciones en jardines y pequeños cultivos. Ligero y fácil de usar."
+   },
+   { 
+     id:2, 
+     name:"Nebulizador Eléctrico", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/nebulizador.jpg",
+     description:"Nebulizador eléctrico potente para fumigaciones rápidas y uniformes. Perfecto para áreas grandes y control de plagas profesionales."
+   },
+   { 
+     id:3, 
+     name:"Bomba de Fumigación", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/bomba.jpg",
+     description:"Bomba de fumigación portátil, resistente y duradera. Ideal para jardines, cultivos y espacios comerciales."
+   },
+   { 
+     id:4, 
+     name:"Thermo Fogger", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/thermo.jpg",
+     description:"Fogger térmico profesional para control de plagas en interiores y exteriores. Genera niebla densa para máxima cobertura."
+   },
+   { 
+     id:5, 
+     name:"Lámpara para Insectos", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/lampara.jpg",
+     description:"Lámpara ultravioleta que atrae y elimina insectos voladores. Eficaz, segura y de bajo consumo energético."
+   },
+   { 
+     id:6, 
+     name:"Insecticida Profesional", 
+     category:"Químicos", 
+     price:0, 
+     img:"img/insecticida.jpg",
+     description:"Insecticida concentrado de amplio espectro. Ideal para eliminar moscas, cucarachas y otros insectos domésticos."
+   },
+   { 
+     id:7, 
+     name:"Advion Insecticida", 
+     category:"Químicos", 
+     price:0, 
+     img:"img/advion.jpg",
+     description:"Gel insecticida profesional de alta efectividad contra cucarachas. Seguro para interiores con aplicación controlada."
+   },
+   { 
+     id:8, 
+     name:"Invict-Cockroach-Gel", 
+     category:"Químicos", 
+     price:0, 
+     img:"img/invict.jpg",
+     description:"Gel atrayente para cucarachas de rápida acción. Efectivo en hogares y negocios, fácil de aplicar."
+   },
+   { 
+     id:9, 
+     name:"Cebadero Ratones", 
+     category:"Control de Roedores", 
+     price:0, 
+     img:"img/cebadero.jpg",
+     description:"Cebadero seguro para atrapar ratones. Permite colocar cebo de manera higiénica y efectiva."
+   },
+   { 
+     id:10, 
+     name:"Trampa Metálica", 
+     category:"Control de Roedores", 
+     price:0, 
+     img:"img/cebadero2.jpg",
+     description:"La trampa para ratones Catchmaster Multi-Catch Mouse es una trampa mecánica de una sola vía. La trampa puede retener hasta 12 ratones por configuración. La trampa se puede usar sin la junta de pegamento para capturar en vivo. Diseñado para ser confiable, efectivo y fácil de usar."
+   },
+   { 
+     id:11, 
+     name:"Trampa Mecánica", 
+     category:"Control de Roedores", 
+     price:0, 
+     img:"img/cebadero3.jpg",
+     description:"Trampa mecánica simple y efectiva para el control de ratones y ratas en hogares y negocios."
+   },
+   { 
+     id:12, 
+     name:"Cebo para Ratas", 
+     category:"Control de Roedores", 
+     price:0, 
+     img:"img/cebo.jpg",
+     description:"Cebo en bloque listo para usar, altamente efectivo para eliminar ratas de manera segura y controlada."
+   },
+   { 
+     id:13, 
+     name:"Guantes de Protección", 
+     category:"Equipos EPP", 
+     price:0, 
+     img:"img/guante.jpg",
+     description:"Guantes resistentes a químicos y abrasión, ideales para fumigación y manejo de productos peligrosos."
+   },
+   { 
+     id:14, 
+     name:"Mascarilla de Protección Carbon Activado", 
+     category:"Equipos EPP", 
+     price:0, 
+     img:"img/mascarilla.jpg",
+     description:"Mascarilla respiratoria con filtro de carbón activado para protección contra vapores y partículas."
+   },
+   { 
+     id:15, 
+     name:"Mascarilla Cara Completa", 
+     category:"Equipos EPP", 
+     price:0, 
+     img:"img/mascara.jpg",
+     description:"Mascarilla de protección facial completa con visor y filtros reemplazables. Ideal para fumigaciones intensivas."
+   },
+   { 
+     id:16, 
+     name:"Fumigadora Estacionaria", 
+     category:"Equipos", 
+     price:0, 
+     img:"img/estacionaria.jpg",
+     description:"Fumigadora estacionaria de gran capacidad, diseñada para cubrir grandes áreas de manera continua y efectiva."
+   }
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
