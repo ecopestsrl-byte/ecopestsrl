@@ -137,6 +137,7 @@ footer a:hover { text-decoration:underline; }
     </form>
 </section>
 
+<!-- Carrito de Compras -->
 <div id="cart">
     <h5>Carrito de Compras</h5>
     <ul id="cart-items"></ul>
@@ -150,38 +151,21 @@ footer a:hover { text-decoration:underline; }
     <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
     <p>Tienda principal: Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
     <p>Sucursal: Verón, Punta Cana</p>
-
-    <div style="text-align:center; margin:15px 0;">
-        <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
-            <img src="img/facebook.jpg" alt="Facebook" style="width:35px; height:35px; margin:0 5px;">
-        </a>
-        <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
-            <img src="img/instagram.jpg" alt="Instagram" style="width:35px; height:35px; margin:0 5px;">
-        </a>
-    </div>
-
-    <p style="margin-top:10px;">Aceptamos pagos con:</p>
-    <div style="text-align:center; margin-top:5px;">
-        <img src="img/visa.png" alt="Visa" style="width:60px; margin:0 10px;">
-        <img src="img/mastercard.png" alt="Mastercard" style="width:60px; margin:0 10px;">
-    </div>
 </footer>
 
 <a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
     <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
 
-<!-- Modal Detalle Producto -->
-<div class="modal fade" id="productoDetalleModal" tabindex="-1" aria-labelledby="productoDetalleModalLabel" aria-hidden="true">
+<!-- Modal Producto -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="productoDetalleModalLabel">Detalle del Producto</h5>
+        <h5 class="modal-title" id="productModalLabel"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body" id="producto-detalle-body">
-        <!-- Contenido dinámico aquí -->
-      </div>
+      <div class="modal-body" id="productModalBody"></div>
     </div>
   </div>
 </div>
@@ -190,30 +174,26 @@ footer a:hover { text-decoration:underline; }
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // ParticlesJS
-particlesJS("particles-js", {
-  "particles": { "number": { "value": 50 }, "color": { "value": ["#007BFF", "#2E7D32"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.6 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#007BFF", "opacity": 0.5, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" } },
-  "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } }, "push": { "particles_nb": 4 } } },
-  "retina_detect": true
-});
+particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": ["#007BFF", "#2E7D32"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.6 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#007BFF", "opacity": 0.5, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } }, "push": { "particles_nb": 4 } } }, "retina_detect": true });
 
-// Productos con descripción
+// Productos
 const products = [
-   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional."},
-   {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador eléctrico potente y eficiente para control de plagas."},
-   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
-   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Generador de niebla térmica para control de plagas de manera rápida y segura."},
-   {id:5, name:"Lámpara para Insectos", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara UV que atrae y elimina insectos de forma ecológica."},
-   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
-   {id:7, name:"Advion Insecticida", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel insecticida de alta eficacia contra cucarachas."},
-   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Gel de control de cucarachas, seguro y de larga duración."},
-   {id:9, name:"Cebadero Ratones", category:"Control de Roedores", price:0, img:"img/cebadero.jpg", description:"Cebo para ratones de fácil aplicación y alta atracción."},
-   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"La trampa para ratones Catchmaster Multi-Catch Mouse es una trampa mecánica de una sola vía. Puede retener hasta 12 ratones y se puede usar sin la junta de pegamento para capturar en vivo. Diseñada para ser confiable, efectiva y fácil de usar."},
-   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampa mecánica eficiente para atrapar ratones de manera rápida."},
-   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
-   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
-   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
-   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora fija para uso industrial y comercial."}
+   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual de alta eficiencia para uso doméstico y profesional."},
+   {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador eléctrico ideal para fumigación de grandes áreas."},
+   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba de fumigación portátil para uso profesional."},
+   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Thermo Fogger para fumigaciones de espacios abiertos con alta eficiencia."},
+   {id:5, name:"Lámpara para Insectos", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara UV para atraer y eliminar insectos voladores."},
+   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida profesional para control de plagas."},
+   {id:7, name:"Advion Insecticida", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel insecticida Advion de alta eficacia contra cucarachas."},
+   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Gel Invict-Cockroach para control de cucarachas."},
+   {id:9, name:"Cebadero Ratones", category:"Control de Roedores", price:0, img:"img/cebadero.jpg", description:"Cebadero para ratones con cebo incluido."},
+   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"La trampa para ratones Catchmaster Multi-Catch Mouse es una trampa mecánica de una sola vía. La trampa puede retener hasta 12 ratones por configuración. La trampa se puede usar sin la junta de pegamento para capturar en vivo. Diseñado para ser confiable, efectivo y fácil de usar."},
+   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampa mecánica para control seguro de roedores."},
+   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo profesional para control de ratas."},
+   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes de protección para fumigación."},
+   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado."},
+   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla de cara completa para protección total."},
+   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria de gran capacidad."}
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -225,10 +205,11 @@ function displayProducts(list=products){
         const col = document.createElement('div');
         col.className='col-md-4';
         col.innerHTML = `
-            <div class="product-card" onclick="verDetalle(${product.id})">
+            <div class="product-card" onclick="openProductModal(${product.id})">
                 <img src="${product.img}" alt="${product.name}">
                 <h5>${product.name}</h5>
                 <p>${product.category}</p>
+                <button class="btn btn-success" onclick="event.stopPropagation(); addToCart(${product.id})">Añadir al carrito</button>
             </div>`;
         productList.appendChild(col);
     });
@@ -237,21 +218,6 @@ function displayProducts(list=products){
 function filterProducts(category){
     if(category==='todos') displayProducts();
     else displayProducts(products.filter(p=>p.category===category));
-}
-
-function verDetalle(id){
-    const product = products.find(p => p.id === id);
-    const modalBody = document.getElementById('producto-detalle-body');
-    modalBody.innerHTML = `
-        <div class="text-center">
-            <img src="${product.img}" alt="${product.name}" style="max-width:200px; margin-bottom:15px;">
-            <h4>${product.name}</h4>
-            <p><strong>Categoría:</strong> ${product.category}</p>
-            <p>${product.description}</p>
-            <button class="btn btn-success mt-3" onclick="addToCart(${product.id}); alert('Producto agregado al carrito');">Añadir al carrito</button>
-        </div>
-    `;
-    new bootstrap.Modal(document.getElementById('productoDetalleModal')).show();
 }
 
 function addToCart(id){
@@ -278,27 +244,4 @@ function updateCart(){
 }
 
 function toggleCart(){
-    const cartDiv = document.getElementById('cart');
-    cartDiv.style.display = cartDiv.style.display==='none'?'block':'none';
-}
-
-function checkout(){
-    alert('Proceso de compra iniciado');
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart();
-}
-
-displayProducts();
-updateCart();
-
-// Formulario normal
-document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Mensaje enviado. Gracias por contactarnos.');
-    this.reset();
-});
-</script>
-
-</body>
-</html>
+    const cartDiv = document.getElementById('cart
