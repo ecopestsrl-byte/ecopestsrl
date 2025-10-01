@@ -92,9 +92,6 @@ footer a:hover { text-decoration:underline; }
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos EPP')">Equipos EPP</button>
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Control de Roedores</button>
     </div>
-    <div class="text-center mb-3">
-        <button class="btn btn-success" onclick="openSectionModal('productos')">Ver todos los productos</button>
-    </div>
     <div class="row" id="product-list"></div>
 </section>
 
@@ -196,7 +193,7 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
-// Productos con descripción
+// Productos
 const products = [
    {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional."},
    {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador eléctrico potente y eficiente para control de plagas."},
@@ -282,8 +279,22 @@ function toggleCart(){
     cartDiv.style.display = cartDiv.style.display==='none'?'block':'none';
 }
 
+// FUNCION FINALIZAR COMPRA POR WHATSAPP
 function checkout(){
-    alert('Proceso de compra iniciado');
+    if(cart.length === 0){
+        alert('El carrito está vacío');
+        return;
+    }
+
+    let mensaje = "Hola, quiero comprar los siguientes productos:\n\n";
+    cart.forEach(item => {
+        mensaje += `- ${item.name}\n  Imagen: ${window.location.origin}/${item.img}\n`;
+    });
+
+    const encodedMensaje = encodeURIComponent(mensaje);
+    const whatsappUrl = `https://wa.me/18097383196?text=${encodedMensaje}`;
+    window.open(whatsappUrl, "_blank");
+
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
