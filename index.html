@@ -26,7 +26,7 @@ nav a:hover { background-color:#2E7D32; }
 .banner-content { position:relative; z-index:2; }
 .banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; text-shadow:none; }
 .section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
-.product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; }
+.product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; cursor:pointer; }
 .product-card:hover { transform:scale(1.05); }
 .product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
 #cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:10px; border-radius:8px; width:300px; max-height:400px; overflow-y:auto; display:none; z-index:1000; }
@@ -104,31 +104,6 @@ footer a:hover { text-decoration:underline; }
         ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación 
         de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente.
     </p>
-
-    <div class="mvv">
-        <!-- Misión -->
-        <div class="mvv-item">
-            <h3>Misión</h3>
-            <p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación.</p>
-        </div>
-
-        <!-- Visión -->
-        <div class="mvv-item">
-            <h3>Visión</h3>
-            <p>Ser la empresa líder en la República Dominicana.</p>
-        </div>
-
-        <!-- Valores -->
-        <div class="mvv-item">
-            <h3>Valores</h3>
-            <ul>
-                <li>✔ Seguridad y compromiso ambiental</li>
-                <li>✔ Calidad y ética profesional</li>
-                <li>✔ Innovación y mejora continua</li>
-            </ul>
-        </div>
-    </div>
-    
 </section>
 
 <section id="servicios" class="container">
@@ -162,126 +137,32 @@ footer a:hover { text-decoration:underline; }
     </form>
 </section>
 
-<!-- Carrito de Compras -->
 <div id="cart">
     <h5>Carrito de Compras</h5>
     <ul id="cart-items"></ul>
     <p>Total: $<span id="cart-total">0</span></p>
     <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
-    <p style="margin-top:10px; font-size:0.9rem; color:#333;">
-        Aceptamos pagos con Visa y Mastercard para pagos seguros.
-    </p>
 </div>
 
-<!-- Footer -->
 <footer>
     <p>© 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
     <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
-    <p>Tienda principal: Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
-    <p>Sucursal: Verón, Punta Cana</p>
-
-    <div style="text-align:center; margin:15px 0;">
-        <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
-            <img src="img/facebook.jpg" alt="Facebook" style="width:35px; height:35px; margin:0 5px;">
-        </a>
-        <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
-            <img src="img/instagram.jpg" alt="Instagram" style="width:35px; height:35px; margin:0 5px;">
-        </a>
-    </div>
-
-    <p style="margin-top:10px;">Aceptamos pagos con:</p>
-    <div style="text-align:center; margin-top:5px;">
-        <img src="img/visa.png" alt="Visa" style="width:60px; margin:0 10px;">
-        <img src="img/mastercard.png" alt="Mastercard" style="width:60px; margin:0 10px;">
-    </div>
 </footer>
 
 <a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
     <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
 
-<!-- Modal Productos -->
-<div class="modal fade" id="productosModal" tabindex="-1" aria-labelledby="productosModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productosModalLabel">Todos los Productos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row" id="modal-product-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Nosotros -->
-<div class="modal fade" id="nosotrosModal" tabindex="-1" aria-labelledby="nosotrosModalLabel" aria-hidden="true">
+<!-- Modal Detalle Producto -->
+<div class="modal fade" id="productoDetalleModal" tabindex="-1" aria-labelledby="productoDetalleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="nosotrosModalLabel">Nosotros</h5>
+        <h5 class="modal-title" id="productoDetalleModalLabel">Detalle del Producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body" id="modal-nosotros">
-        <h3>Misión</h3>
-        <p>Ofrecer soluciones efectivas en control de plagas y productos de fumigación.</p>
-        <h3>Visión</h3>
-        <p>Ser la empresa líder en la República Dominicana.</p>
-        <h3>Valores</h3>
-        <ul>
-          <li>Seguridad y compromiso ambiental</li>
-          <li>Calidad y ética profesional</li>
-          <li>Innovación y mejora continua</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Servicios -->
-<div class="modal fade" id="serviciosModal" tabindex="-1" aria-labelledby="serviciosModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="serviciosModalLabel">Servicios</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body" id="modal-servicios">
-        <ul>
-          <li>Asesoría y venta de equipos de fumigación.</li>
-          <li>Venta al por mayor y al detalle.</li>
-          <li>Instalación y mantenimiento de equipos.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Contacto -->
-<div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body" id="modal-contacto">
-        <form id="contact-form-modal">
-          <div class="mb-3">
-            <label>Nombre</label>
-            <input type="text" class="form-control" id="nombreModal" required>
-          </div>
-          <div class="mb-3">
-            <label>Email</label>
-            <input type="email" class="form-control" id="emailModal" required>
-          </div>
-          <div class="mb-3">
-            <label>Mensaje</label>
-            <textarea class="form-control" id="mensajeModal" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-success">Enviar Mensaje</button>
-        </form>
+      <div class="modal-body" id="producto-detalle-body">
+        <!-- Contenido dinámico aquí -->
       </div>
     </div>
   </div>
@@ -297,164 +178,62 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
-// Productos
+// Productos con descripción
 const products = [
-   { 
-     id:1, 
-     name:"Pulverizador Manual", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/pulverizador.jpg",
-     description:"Pulverizador manual de alta eficiencia, ideal para aplicaciones en jardines y pequeños cultivos. Ligero y fácil de usar."
-   },
-   { 
-     id:2, 
-     name:"Nebulizador Eléctrico", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/nebulizador.jpg",
-     description:"Nebulizador eléctrico potente para fumigaciones rápidas y uniformes. Perfecto para áreas grandes y control de plagas profesionales."
-   },
-   { 
-     id:3, 
-     name:"Bomba de Fumigación", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/bomba.jpg",
-     description:"Bomba de fumigación portátil, resistente y duradera. Ideal para jardines, cultivos y espacios comerciales."
-   },
-   { 
-     id:4, 
-     name:"Thermo Fogger", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/thermo.jpg",
-     description:"Fogger térmico profesional para control de plagas en interiores y exteriores. Genera niebla densa para máxima cobertura."
-   },
-   { 
-     id:5, 
-     name:"Lámpara para Insectos", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/lampara.jpg",
-     description:"Lámpara ultravioleta que atrae y elimina insectos voladores. Eficaz, segura y de bajo consumo energético."
-   },
-   { 
-     id:6, 
-     name:"Insecticida Profesional", 
-     category:"Químicos", 
-     price:0, 
-     img:"img/insecticida.jpg",
-     description:"Insecticida concentrado de amplio espectro. Ideal para eliminar moscas, cucarachas y otros insectos domésticos."
-   },
-   { 
-     id:7, 
-     name:"Advion Insecticida", 
-     category:"Químicos", 
-     price:0, 
-     img:"img/advion.jpg",
-     description:"Gel insecticida profesional de alta efectividad contra cucarachas. Seguro para interiores con aplicación controlada."
-   },
-   { 
-     id:8, 
-     name:"Invict-Cockroach-Gel", 
-     category:"Químicos", 
-     price:0, 
-     img:"img/invict.jpg",
-     description:"Gel atrayente para cucarachas de rápida acción. Efectivo en hogares y negocios, fácil de aplicar."
-   },
-   { 
-     id:9, 
-     name:"Cebadero Ratones", 
-     category:"Control de Roedores", 
-     price:0, 
-     img:"img/cebadero.jpg",
-     description:"Cebadero seguro para atrapar ratones. Permite colocar cebo de manera higiénica y efectiva."
-   },
-   { 
-     id:10, 
-     name:"Trampa Metálica", 
-     category:"Control de Roedores", 
-     price:0, 
-     img:"img/cebadero2.jpg",
-     description:"La trampa para ratones Catchmaster Multi-Catch Mouse es una trampa mecánica de una sola vía. La trampa puede retener hasta 12 ratones por configuración. La trampa se puede usar sin la junta de pegamento para capturar en vivo. Diseñado para ser confiable, efectivo y fácil de usar."
-   },
-   { 
-     id:11, 
-     name:"Trampa Mecánica", 
-     category:"Control de Roedores", 
-     price:0, 
-     img:"img/cebadero3.jpg",
-     description:"Trampa mecánica simple y efectiva para el control de ratones y ratas en hogares y negocios."
-   },
-   { 
-     id:12, 
-     name:"Cebo para Ratas", 
-     category:"Control de Roedores", 
-     price:0, 
-     img:"img/cebo.jpg",
-     description:"Cebo en bloque listo para usar, altamente efectivo para eliminar ratas de manera segura y controlada."
-   },
-   { 
-     id:13, 
-     name:"Guantes de Protección", 
-     category:"Equipos EPP", 
-     price:0, 
-     img:"img/guante.jpg",
-     description:"Guantes resistentes a químicos y abrasión, ideales para fumigación y manejo de productos peligrosos."
-   },
-   { 
-     id:14, 
-     name:"Mascarilla de Protección Carbon Activado", 
-     category:"Equipos EPP", 
-     price:0, 
-     img:"img/mascarilla.jpg",
-     description:"Mascarilla respiratoria con filtro de carbón activado para protección contra vapores y partículas."
-   },
-   { 
-     id:15, 
-     name:"Mascarilla Cara Completa", 
-     category:"Equipos EPP", 
-     price:0, 
-     img:"img/mascara.jpg",
-     description:"Mascarilla de protección facial completa con visor y filtros reemplazables. Ideal para fumigaciones intensivas."
-   },
-   { 
-     id:16, 
-     name:"Fumigadora Estacionaria", 
-     category:"Equipos", 
-     price:0, 
-     img:"img/estacionaria.jpg",
-     description:"Fumigadora estacionaria de gran capacidad, diseñada para cubrir grandes áreas de manera continua y efectiva."
-   }
+   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional."},
+   {id:2, name:"Nebulizador Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador eléctrico potente y eficiente para control de plagas."},
+   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
+   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Generador de niebla térmica para control de plagas de manera rápida y segura."},
+   {id:5, name:"Lámpara para Insectos", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara UV que atrae y elimina insectos de forma ecológica."},
+   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
+   {id:7, name:"Advion Insecticida", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel insecticida de alta eficacia contra cucarachas."},
+   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Gel de control de cucarachas, seguro y de larga duración."},
+   {id:9, name:"Cebadero Ratones", category:"Control de Roedores", price:0, img:"img/cebadero.jpg", description:"Cebo para ratones de fácil aplicación y alta atracción."},
+   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"La trampa para ratones Catchmaster Multi-Catch Mouse es una trampa mecánica de una sola vía. Puede retener hasta 12 ratones y se puede usar sin la junta de pegamento para capturar en vivo. Diseñada para ser confiable, efectiva y fácil de usar."},
+   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampa mecánica eficiente para atrapar ratones de manera rápida."},
+   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
+   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
+   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
+   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
+   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora fija para uso industrial y comercial."}
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function displayProducts(list=products){
     const productList = document.getElementById('product-list');
-    const modalList = document.getElementById('modal-product-list');
     productList.innerHTML = '';
-    modalList.innerHTML = '';
     list.forEach(product=>{
         const col = document.createElement('div');
         col.className='col-md-4';
         col.innerHTML = `
-            <div class="product-card">
+            <div class="product-card" onclick="verDetalle(${product.id})">
                 <img src="${product.img}" alt="${product.name}">
                 <h5>${product.name}</h5>
                 <p>${product.category}</p>
-                <button class="btn btn-success" onclick="addToCart(${product.id})">Añadir al carrito</button>
             </div>`;
         productList.appendChild(col);
-        const modalCol = col.cloneNode(true);
-        modalList.appendChild(modalCol);
     });
 }
 
 function filterProducts(category){
     if(category==='todos') displayProducts();
     else displayProducts(products.filter(p=>p.category===category));
+}
+
+function verDetalle(id){
+    const product = products.find(p => p.id === id);
+    const modalBody = document.getElementById('producto-detalle-body');
+    modalBody.innerHTML = `
+        <div class="text-center">
+            <img src="${product.img}" alt="${product.name}" style="max-width:200px; margin-bottom:15px;">
+            <h4>${product.name}</h4>
+            <p><strong>Categoría:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+            <button class="btn btn-success mt-3" onclick="addToCart(${product.id}); alert('Producto agregado al carrito');">Añadir al carrito</button>
+        </div>
+    `;
+    new bootstrap.Modal(document.getElementById('productoDetalleModal')).show();
 }
 
 function addToCart(id){
@@ -500,41 +279,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
     alert('Mensaje enviado. Gracias por contactarnos.');
     this.reset();
-});
-
-// Función para abrir modal según sección
-function openSectionModal(section){
-  switch(section){
-    case 'productos':
-      new bootstrap.Modal(document.getElementById('productosModal')).show();
-      break;
-    case 'nosotros':
-      new bootstrap.Modal(document.getElementById('nosotrosModal')).show();
-      break;
-    case 'servicios':
-      new bootstrap.Modal(document.getElementById('serviciosModal')).show();
-      break;
-    case 'contacto':
-      new bootstrap.Modal(document.getElementById('contactoModal')).show();
-      break;
-  }
-}
-
-// Modificar los enlaces del nav
-document.querySelectorAll('nav a').forEach(link=>{
-  link.addEventListener('click', function(e){
-    const href = this.getAttribute('href').replace('#','');
-    if(href==='inicio') return; // Inicio se muestra normalmente
-    e.preventDefault();
-    openSectionModal(href);
-  });
-});
-
-// Formulario modal contacto
-document.getElementById('contact-form-modal').addEventListener('submit', function(e){
-  e.preventDefault();
-  alert('Mensaje enviado desde modal. Gracias.');
-  this.reset();
 });
 </script>
 
