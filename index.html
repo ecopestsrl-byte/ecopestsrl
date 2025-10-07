@@ -7,7 +7,7 @@
 <!-- SEO -->
 <title>Eco Pest SRL | Productos y Equipos de Fumigación en República Dominicana</title>
 <meta name="description" content="Eco Pest SRL ofrece productos y equipos de fumigación de alta calidad en República Dominicana. Pulverizadores, insecticidas, guantes, cebaderos, trampas y más. Envíos a todo el país.">
-<meta name="keywords" content="productos de fumigación, equipos de fumigación, control de plagas, insecticidas, pulverizadores, guantes de protección, cebaderos, trampas, Eco Pest SRL, República Dominicana">
+<meta name="keywords" content="productos de fumigación, equipos de fumigación, control de plagas, insecticidas, pulverizadores, guantes, cebaderos, trampas, Eco Pest SRL, República Dominicana">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,39 +17,29 @@ body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f9f9f
 header { position: fixed; top: 0; left: 0; width: 100%; height: 150px; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #ddd; }
 header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); height: 120px; }
 header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
-
 nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#66BB6A; text-align:center; z-index:999; padding:10px 0; }
-nav a, .dropdown-toggle { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
-nav a:hover, .dropdown-item:hover { background-color:#2E7D32; color:white; }
-
+nav a, nav .dropdown-toggle { color: white !important; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
+nav a:hover, nav .dropdown-item:hover { background-color:#2E7D32 !important; color: #fff !important; }
 .main-content { margin-top:210px; }
+.dropdown-submenu { position: relative; }
+.dropdown-submenu .dropdown-menu { top: 0; left: 100%; margin-top: -1px; }
+.dropdown-submenu:hover > .dropdown-menu { display: block; }
 .banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; }
 #particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:1; }
 .banner-content { position:relative; z-index:2; }
 .banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; text-shadow:none; }
-
 .section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
 .product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; cursor:pointer; }
 .product-card:hover { transform:scale(1.05); }
 .product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
-
 #cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:10px; border-radius:8px; width:300px; max-height:400px; overflow-y:auto; display:none; z-index:1000; }
 #cart h5 { margin-top:0; }
-#cart button { margin-top:10px; }
-
-.filter-btn { margin:5px; }
-
-.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; z-index: 1001; text-decoration: none; border-radius: 50%; background-color: transparent; border: 3px solid #25D366; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; }
-.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
-.whatsapp-btn img { width: 100%; height: 100%; object-fit: contain; }
-
 footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
 footer a { color:white; margin:0 10px; text-decoration:none; }
 footer a:hover { text-decoration:underline; }
-
-/* Submenús desplegables */
-.dropdown-submenu .dropdown-menu { top: 0; left: 100%; margin-top: -1px; }
-.dropdown-submenu:hover > .dropdown-menu { display: block; }
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; z-index: 1001; text-decoration: none; border-radius: 50%; background-color: transparent; border: 3px solid #25D366; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
+.whatsapp-btn img { width: 100%; height: 100%; object-fit: contain; }
 
 @media (max-width: 768px) {
   header { height: 100px; padding: 5px; }
@@ -58,10 +48,6 @@ footer a:hover { text-decoration:underline; }
   nav { top: 100px; padding: 5px 0; }
   nav a { font-size: 1rem; padding: 8px; display: inline-block; }
   .main-content { margin-top: 160px; }
-  .banner { height: 120px; }
-  .banner-content h2 { font-size: 1rem; padding: 0 10px; }
-  #product-list .col-md-4 { flex: 0 0 100%; max-width: 100%; }
-  #cart { width: 90%; right: 5%; top: 110px; }
 }
 </style>
 </head>
@@ -72,16 +58,20 @@ footer a:hover { text-decoration:underline; }
   <h1>PRODUCTOS ECO PEST</h1>
 </header>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-  <div class="dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-    <ul class="dropdown-menu" id="menuProductos"></ul>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid justify-content-center">
+    <a class="nav-link" href="#inicio">Inicio</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Productos
+      </a>
+      <ul class="dropdown-menu" id="menuProductos"></ul>
+    </li>
+    <a class="nav-link" href="#nosotros">Nosotros</a>
+    <a class="nav-link" href="#servicios">Servicios</a>
+    <a class="nav-link" href="#contacto">Contacto</a>
+    <a class="nav-link" href="#" onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
   </div>
-  <a href="#inicio">Inicio</a>
-  <a href="#nosotros">Nosotros</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#contacto">Contacto</a>
-  <a href="#" onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
 </nav>
 
 <div class="main-content">
@@ -100,7 +90,7 @@ footer a:hover { text-decoration:underline; }
 
 <section id="nosotros" class="container">
   <h2 class="section-title">Nosotros</h2>
-  <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente.</p>
+  <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad.</p>
 </section>
 
 <section id="servicios" class="container">
@@ -114,27 +104,13 @@ footer a:hover { text-decoration:underline; }
 <section id="contacto" class="container mb-5">
   <h2 class="section-title">Contacto</h2>
   <form id="contact-form">
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" required>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Correo Electrónico</label>
-      <input type="email" class="form-control" id="email" required>
-    </div>
-    <div class="mb-3">
-      <label for="telefono" class="form-label">Teléfono</label>
-      <input type="text" class="form-control" id="telefono">
-    </div>
-    <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea class="form-control" id="mensaje" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Enviar Mensaje</button>
+    <input class="form-control mb-2" id="nombre" placeholder="Nombre" required>
+    <input class="form-control mb-2" id="email" placeholder="Correo Electrónico" type="email" required>
+    <textarea class="form-control mb-2" id="mensaje" placeholder="Mensaje" required></textarea>
+    <button class="btn btn-success">Enviar</button>
   </form>
 </section>
 
-<!-- Carrito -->
 <div id="cart">
   <h5>Carrito de Compras</h5>
   <ul id="cart-items"></ul>
@@ -144,45 +120,42 @@ footer a:hover { text-decoration:underline; }
 
 <footer>
   <p>© 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
-  <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
-  <p>Tienda principal: Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
-  <p>Sucursal: Verón, Punta Cana</p>
-  <div style="text-align:center; margin:15px 0;">
-    <a href="https://www.facebook.com/eco.pest.srl/" target="_blank"><img src="img/facebook.jpg" alt="Facebook" style="width:35px; height:35px; margin:0 5px;"></a>
-    <a href="https://www.instagram.com/ecopestsrl/" target="_blank"><img src="img/instagram.jpg" alt="Instagram" style="width:35px; height:35px; margin:0 5px;"></a>
-  </div>
 </footer>
 
-<a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+<a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
+  <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
 
-<!-- Modal de producto -->
+<!-- Modal Detalle -->
 <div class="modal fade" id="productoDetalleModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Detalle del Producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body" id="producto-detalle-body"></div>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <script>
-// === Partículas ===
-particlesJS("particles-js", {
-  "particles": { "number": { "value": 50 }, "color": { "value": ["#007BFF", "#2E7D32"] }, "shape": { "type": "circle" },
-  "opacity": { "value": 0.6 }, "size": { "value": 3 },
-  "line_linked": { "enable": true, "distance": 150, "color": "#007BFF", "opacity": 0.5, "width": 1 },
-  "move": { "enable": true, "speed": 2 }}, "interactivity": {"events": {"onhover": {"enable": true,"mode": "grab"}}}, "retina_detect": true });
+// === LISTA DE PRODUCTOS ===
+const products = [
+  { id:1, name:"Pulverizador Manual 18L", category:"Equipos", img:"img/pulverizador.jpg", description:"Pulverizador de alta capacidad ideal para uso profesional." },
+  { id:2, name:"Nebulizador ULV", category:"Equipos", img:"img/nebulizador.jpg", description:"Equipo de nebulización de ultra bajo volumen." },
+  { id:3, name:"Cybor 10EA / Cipermetrina", category:"Químicos", img:"img/cybor.jpg", description:"Insecticida de amplio espectro para control de insectos." },
+  { id:4, name:"Biociper 25EW", category:"Químicos", img:"img/biociper.jpg", description:"Insecticida emulsionable ideal para exteriores." },
+  { id:5, name:"Trampa Metálica", category:"Control de Roedores", img:"img/trampa-metalica.jpg", description:"Trampa resistente para captura segura de roedores." },
+  { id:6, name:"Estación de Cebo", category:"Control de Roedores", img:"img/estacion.jpg", description:"Caja de cebo con llave de seguridad." },
+  { id:7, name:"Guantes de Nitrilo", category:"EPP", img:"img/guantes.jpg", description:"Protección resistente a productos químicos." },
+  { id:8, name:"Mascarilla 3M", category:"EPP", img:"img/mascarilla.jpg", description:"Mascarilla con filtro intercambiable para fumigación." }
+];
 
-// === Productos (idénticos a tu lista anterior) ===
-const products = [/* tu lista completa de productos aquí */];
-
-// === Generar menú desplegable ===
+// === GENERADOR DE MENÚ DINÁMICO ===
 function generarMenuProductos() {
   const menu = document.getElementById("menuProductos");
   menu.innerHTML = "";
@@ -192,8 +165,10 @@ function generarMenuProductos() {
     liCat.classList.add("dropdown-submenu", "position-relative");
     const aCat = document.createElement("a");
     aCat.classList.add("dropdown-item", "dropdown-toggle");
-    aCat.href = "#"; aCat.textContent = cat;
+    aCat.href = "#";
+    aCat.textContent = cat;
     aCat.addEventListener("click", e => e.preventDefault());
+    liCat.appendChild(aCat);
     const subUl = document.createElement("ul");
     subUl.classList.add("dropdown-menu");
     products.filter(p => p.category === cat).forEach(prod => {
@@ -206,20 +181,75 @@ function generarMenuProductos() {
       subLi.appendChild(subA);
       subUl.appendChild(subLi);
     });
-    liCat.appendChild(aCat);
     liCat.appendChild(subUl);
     menu.appendChild(liCat);
   });
 }
 
-// === Funciones principales (verDetalle, carrito, etc.) ===
-// ... (mantén las funciones que ya tenías: displayProducts, filterProducts, verDetalle, addToCart, updateCart, toggleCart, checkout, etc.)
+// === MOSTRAR PRODUCTOS EN CATÁLOGO ===
+function displayProducts() {
+  const list = document.getElementById("product-list");
+  list.innerHTML = "";
+  products.forEach(p => {
+    const div = document.createElement("div");
+    div.classList.add("col-md-3", "col-sm-6");
+    div.innerHTML = `
+      <div class="product-card" onclick="verDetalle(${p.id})">
+        <img src="${p.img}" alt="${p.name}">
+        <h5>${p.name}</h5>
+        <p>${p.category}</p>
+      </div>`;
+    list.appendChild(div);
+  });
+}
+
+// === MODAL DETALLE ===
+function verDetalle(id) {
+  const prod = products.find(p => p.id === id);
+  const modalBody = document.getElementById("producto-detalle-body");
+  modalBody.innerHTML = `
+    <div class="text-center">
+      <img src="${prod.img}" class="img-fluid mb-3" style="max-width:250px">
+      <h4>${prod.name}</h4>
+      <p>${prod.description}</p>
+      <button class="btn btn-success" onclick="addToCart(${prod.id})">Agregar al carrito 🛒</button>
+    </div>`;
+  new bootstrap.Modal(document.getElementById("productoDetalleModal")).show();
+}
+
+// === CARRITO ===
+let cart = [];
+function addToCart(id) {
+  const prod = products.find(p => p.id === id);
+  cart.push(prod);
+  updateCart();
+}
+function updateCart() {
+  document.getElementById("cart-count").textContent = cart.length;
+  const list = document.getElementById("cart-items");
+  list.innerHTML = "";
+  cart.forEach(p => {
+    const li = document.createElement("li");
+    li.textContent = p.name;
+    list.appendChild(li);
+  });
+  document.getElementById("cart").style.display = cart.length ? "block" : "none";
+}
+function toggleCart() {
+  const cartDiv = document.getElementById("cart");
+  cartDiv.style.display = cartDiv.style.display === "none" ? "block" : "none";
+}
+function checkout() {
+  alert("Gracias por su compra. Nos comunicaremos con usted pronto.");
+  cart = [];
+  updateCart();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   generarMenuProductos();
   displayProducts();
-  updateCart();
 });
 </script>
 </body>
 </html>
+
