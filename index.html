@@ -217,44 +217,70 @@ const products = [
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function displayProducts(list = products) {
+function displayProducts(list=products){
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
-
-    // Obtener todas las categorías únicas
-    const categorias = [...new Set(list.map(p => p.category))];
-
-    // Crear secciones por categoría
-    categorias.forEach(cat => {
-        // Título de la categoría
-        const catTitle = document.createElement('h3');
-        catTitle.textContent = cat;
-        catTitle.className = 'section-title';
-        productList.appendChild(catTitle);
-
-        // Contenedor de productos de esta categoría
-        const catRow = document.createElement('div');
-        catRow.className = 'row mb-4';
-
-        // Agregar productos que pertenezcan a esta categoría
-        list
-            .filter(p => p.category === cat)
-            .forEach(product => {
-                const col = document.createElement('div');
-                col.className = 'col-md-4';
-                col.innerHTML = `
-                    <div class="product-card" onclick="verDetalle(${product.id})">
-                        <img src="${product.img}" alt="${product.name}">
-                        <h5>${product.name}</h5>
-                    </div>
-                `;
-                catRow.appendChild(col);
-            });
-
-        // Añadir el grupo completo al DOM
-        productList.appendChild(catRow);
+    list.forEach(product=>{
+        const col = document.createElement('div');
+        col.className='col-md-4';
+        col.innerHTML = `
+            <div class="product-card" onclick="verDetalle(${product.id})">
+                <img src="${product.img}" alt="${product.name}">
+                <h5>${product.name}</h5>
+                <p>${product.category}</p>
+            </div>`;
+        productList.appendChild(col);
     });
 }
+
+function filterProducts(category){
+    if(category==='todos') displayProducts();
+    else displayProducts(products.filter(p=>p.category===category));
+}
+
+function verDetalle(id){
+    const product = products.find(p => p.id === id);
+    const modalBody = document.getElementById('producto-detalle-body');
+    modalBody.innerHTML = `
+        <div class="text-center">
+            <img src="${product.img}" alt="${product.name}" style="max-width:200px; margin-bottom:15px;">
+            <h4>${product.name}</h4>
+            <p><strong>Categoría:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+            <button class="btn btn-success mt-3" onclick="addToCart(${product.id}); alert('Producto agregado al carrito');">Añadir al carrito</button>
+        </div>
+    `;
+    new bootstrap.Modal(document.getElementById('productoDetalleModal')).show();
+}
+
+function addToCart(id){
+    const product = products.find(p=>p.id===id);
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+
+function updateCart(){
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    cartItems.innerHTML = '';
+    let total=0;
+    cart.forEach((item,index)=>{
+        const li = document.createElement('li');
+        li.textContent = item.name;
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+    cartCount.textContent = cart.length;
+    cartTotal.textContent = total;
+}
+
+function toggleCart(){
+    const cartDiv = document.getElementById('cart');
+    cartDiv.style.display = cartDiv.style.display==='none'?'block':'none';
+}
+
 // FUNCION FINALIZAR COMPRA POR WHATSAPP
 function checkout(){
     if(cart.length === 0){
@@ -289,3 +315,4 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
 
 </body>
 </html>
+
