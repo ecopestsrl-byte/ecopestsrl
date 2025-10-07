@@ -6,157 +6,312 @@
 
 <!-- SEO -->
 <title>Eco Pest SRL | Productos y Equipos de Fumigación en República Dominicana</title>
-<meta name="description" content="Venta de productos y equipos de fumigación, control de plagas, desinfección y saneamiento ambiental en República Dominicana. Calidad, garantía y respaldo profesional con Eco Pest SRL.">
-<meta name="keywords" content="fumigación, control de plagas, equipos, insecticidas, desinfección, República Dominicana, Eco Pest, productos de fumigación">
-<meta name="author" content="Eco Pest SRL">
+<meta name="description" content="Eco Pest SRL ofrece productos y equipos de fumigación de alta calidad en República Dominicana. Pulverizadores, insecticidas, guantes, cebaderos, trampas y más. Envíos a todo el país.">
+<meta name="keywords" content="productos de fumigación, equipos de fumigación, control de plagas, insecticidas, pulverizadores, guantes de protección, cebaderos, trampas, Eco Pest SRL, República Dominicana">
 
-<link rel="icon" href="img/logo1.jpg" type="image/jpg">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-/* 🌿 Estilos generales */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f9f9f9; }
+header { position: fixed; top: 0; left: 0; width: 100%; height: 150px; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #ddd; }
+header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); height: 120px; }
+header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
+nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#66BB6A; text-align:center; z-index:999; padding:10px 0; }
+nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
+nav a:hover { background-color:#2E7D32; }
+.main-content { margin-top:210px; }
+.banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; }
+#particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:1; }
+.banner-content { position:relative; z-index:2; }
+.banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; text-shadow:none; }
+.section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
+.product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; cursor:pointer; }
+.product-card:hover { transform:scale(1.05); }
+.product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
+#cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:10px; border-radius:8px; width:300px; max-height:400px; overflow-y:auto; display:none; z-index:1000; }
+#cart h5 { margin-top:0; }
+#cart button { margin-top:10px; }
+.filter-btn { margin:5px; }
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; z-index: 1001; text-decoration: none; border-radius: 50%; background-color: transparent; border: 3px solid #25D366; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
+.whatsapp-btn img { width: 100%; height: 100%; object-fit: contain; }
+footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
+footer a { color:white; margin:0 10px; text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+@media (max-width: 768px) {
+    header { height: 100px; padding: 5px; }
+    header img { height: 70px; left: 10px; }
+    header h1 { font-size: 1.2rem; text-align: center; margin-left: 90px; }
+    nav { top: 100px; padding: 5px 0; }
+    nav a { font-size: 1rem; padding: 8px; display: inline-block; }
+    .main-content { margin-top: 160px; }
+    .banner { height: 120px; }
+    .banner-content h2 { font-size: 1rem; padding: 0 10px; }
+    #product-list .col-md-4 { flex: 0 0 100%; max-width: 100%; }
+    #cart { width: 90%; right: 5%; top: 110px; }
 }
-
-/* 🌈 Fondo animado ecológico */
-@keyframes fondoEcoPest {
-  0%   { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-  25%  { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-  50%  { background: linear-gradient(135deg, #f1f8e9, #a5d6a7); }
-  75%  { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); }
-  100% { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-}
-
-/* Fondo animado con partículas */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  animation: fondoEcoPest 20s ease infinite;
-  background-size: 400% 400%;
-}
-
-/* Estructura de contenido */
-header, nav, .banner, .main-content, footer {
-  position: relative;
-  z-index: 2;
-}
-
-/* Encabezado */
-header {
-  text-align: center;
-  padding: 40px 20px;
-}
-header img {
-  max-width: 160px;
-  border-radius: 12px;
-}
-header h1 {
-  color: #1b5e20;
-  margin-top: 10px;
-}
-
-/* Navegación */
-nav {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
-  padding: 10px;
-}
-nav a {
-  color: #2e7d32;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #1b5e20;
-}
-
-/* Contenido principal */
-.main-content {
-  padding: 20px;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #2e7d32;
-  background: rgba(255, 255, 255, 0.75);
-  margin-top: 40px;
+@media (max-width: 400px) {
+    nav a { font-size: 0.9rem; padding: 6px; }
+    header h1 { font-size: 1rem; }
+    .banner-content h2 { font-size: 0.9rem; }
 }
 </style>
 </head>
-
 <body>
-  <!-- 🔹 Fondo animado -->
-  <div id="particles-js"></div>
 
-  <!-- 🔹 Encabezado -->
-  <header>
+<header>
     <img src="img/logo1.jpg" alt="Logo ECO PEST">
     <h1>PRODUCTOS ECO PEST</h1>
-  </header>
+</header>
 
-  <!-- 🔹 Navegación -->
-  <nav>
+<nav>
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
     <a href="#" onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
-  </nav>
+</nav>
 
-  <!-- 🔹 Contenido -->
-  <div class="main-content">
-    <h2 id="productos">Catálogo de Productos</h2>
-    <p>Explora nuestra amplia gama de productos y equipos de fumigación profesional. Garantía, calidad y respaldo Eco Pest SRL.</p>
-    <!-- Aquí puedes colocar tus cards de productos o galería -->
+<div class="main-content">
+
+<section class="banner" id="inicio">
+    <div id="particles-js"></div>
+    <div class="banner-content">
+        <h2>Protege tu hogar y negocio con los mejores equipos y productos de fumigación</h2>
+    </div>
+</section>
+
+<section id="productos" class="container">
+    <h2 class="section-title">Nuestros Productos</h2>
+    <div class="text-center mb-3">
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('todos')">Todos</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos')">Equipos</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Químicos')">Químicos</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos EPP')">Equipos EPP</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Control de Roedores</button>
+    </div>
+    <div class="row" id="product-list"></div>
+</section>
+
+<section id="nosotros" class="container">
+    <h2 class="section-title">Nosotros</h2>
+    <p>
+        ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación 
+        de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente.
+    </p>
+</section>
+
+<section id="servicios" class="container">
+    <h2 class="section-title">Servicios</h2>
+    <ul>
+        <li>Asesoría y venta de equipos de fumigación.</li>
+        <li>Venta al por mayor y al detalle.</li>
+    </ul>
+</section>
+
+<section id="contacto" class="container mb-5">
+    <h2 class="section-title">Contacto</h2>
+    <form id="contact-form">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono">
+        </div>
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Enviar Mensaje</button>
+    </form>
+</section>
+
+<div id="cart">
+    <h5>Carrito de Compras</h5>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
+    <p>Tel: +1 809-738-3196 | Email: ecopestsrl@gmail.com</p>
+    <p>Tienda principal: Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
+    <p>Sucursal: Verón, Punta Cana</p>
+
+    <div style="text-align:center; margin:15px 0;">
+        <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
+            <img src="img/facebook.jpg" alt="Facebook" style="width:35px; height:35px; margin:0 5px;">
+        </a>
+        <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
+            <img src="img/instagram.jpg" alt="Instagram" style="width:35px; height:35px; margin:0 5px;">
+        </a>
+    </div>
+
+    <p style="margin-top:10px;">Aceptamos pagos con:</p>
+    <div style="text-align:center; margin-top:5px;">
+        <img src="img/visa.png" alt="Visa" style="width:60px; margin:0 10px;">
+        <img src="img/mastercard.png" alt="Mastercard" style="width:60px; margin:0 10px;">
+    </div>
+</footer>
+
+<a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
+
+<!-- Modal Detalle Producto -->
+<div class="modal fade" id="productoDetalleModal" tabindex="-1" aria-labelledby="productoDetalleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productoDetalleModalLabel">Detalle del Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="producto-detalle-body">
+        <!-- Contenido dinámico aquí -->
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- 🔹 Pie de página -->
-  <footer>
-    © 2025 ECO PEST S.R.L | Todos los derechos reservados
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ParticlesJS
+particlesJS("particles-js", {
+  "particles": { "number": { "value": 50 }, "color": { "value": ["#007BFF", "#2E7D32"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.6 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#007BFF", "opacity": 0.5, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" } },
+  "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } }, "push": { "particles_nb": 4 } } },
+  "retina_detect": true
+});
 
-  <!-- 🔹 Partículas animadas -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-  particlesJS("particles-js", {
-    "particles": {
-      "number": { "value": 70 },
-      "color": { "value": ["#43A047", "#A5D6A7", "#FFFFFF"] },
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.6 },
-      "size": { "value": 3, "random": true },
-      "line_linked": { "enable": true, "distance": 130, "color": "#81C784", "opacity": 0.5, "width": 1 },
-      "move": { "enable": true, "speed": 1.8, "direction": "none", "out_mode": "out" }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": { "enable": true, "mode": "grab" },
-        "onclick": { "enable": true, "mode": "push" },
-        "resize": true
-      },
-      "modes": {
-        "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } },
-        "push": { "particles_nb": 4 }
-      }
-    },
-    "retina_detect": true
-  });
-  </script>
+// Productos
+const products = [
+   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. El pulverizador manual de jardín STIHL SG 71 se caracteriza por su diseño robusto y su gran depósito de agente pulverizador transparente de 18L para un uso profesional en grandes superficies de cultivo. El pulverizador a presión de mochila viene con un sistema de transporte especialmente cómodo para un uso cómodo durante largos periodos de tiempo. Este arnés se puede acoplar en dos posiciones diferentes para una óptima adaptación al tamaño del usuario. El panel trasero contorneado contribuye a su comodidad al trabajar con la bomba pulverizadora STIHL SG 71."},
+   {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador para desinfección en frio ULV (ultra bajo volumen) con motor eléctrico. Para aplicar disoluciones a base de agua o aceite, que genera niebla fría formada por pequeñas gotas entre 5-50 micrones. Utilizado para desinfecciones debido al tamaño de gota óptimo para combatir virus, bacterias, gérmenes y hongos.Con manguera flexible y diseño ergonómico de la boquilla para comodidad y la eficacia, permite al aplicador precisión en el control y dirección del flujo. Permite a la niebla acceder a todos los rincones del área a tratar. El controlador de caudal de flujo facilita regular el tamaño de la gota entre 0 y 400 ml por minuto. Datos técnicos:Referencia: ULV2680-AMotor eléctrico: 800W, 220VAC / 50HzBoquilla de nebulización: Boquillas de vórtice rotatoriasTamaño de gota: 5-50 micrones, ajustableCapacidad del tanque: 6 LDimensiones (L x W x H): 48 × 21,5 × 24,5 cmPeso en vacío: 4,2 Kg"},
+   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
+   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"El termonebulizador TS-35A(E) puede dispensar productos químicos a base de agua y aceite, como la mayoría de los pesticidas, fungicidas, desinfectantes, acaricidas, vacunas avícolas y neutralizadores de olores. Se utiliza principalmente para el control de mosquitos, malaria, dengue, plagas, protección de la salud pública y profesionales del saneamiento."},
+   {id:5, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Las lámpara Fly Hunter 6801 son el producto más ideal que atrapan y matan insectos voladores con tableros de pegamento, sin chispas molestas ni ruidos de zapping, sin trampa química."},
+   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
+   {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"El producto Advion Cockroach es un novedoso gel con el ingrediente activo Indoxacarb de gran efectividad para el control de plagas urbanas, en especial tiene alto impacto en la eliminación de cucarachas. Es un cebo para insectos altamente palatable para el control de las cucarachas como ningún otro. Su compuesto activo, Indoxacarb, tiene un modo único de acción que provee muertes primarias y secundarias en cadena. Dentro del catálogo de productos para el control de plagas, el Advion Cockroach es ideal para usarse en sitios sensitivos como escuelas, establecimientos de manejo de alimentos y hospitales."},
+   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Uno de los productos para el control de plagas en República Dominicana, es el cebo Invict gel cucarachas, un gel que actúa rápidamente ante las cucarachas. Las cucarachas empiezan a morir en solo 20 minutos después de consumida la sustancia del cebo. Del mismo modo que Advion Cockroach provee muertes secundarias al contacto con cucarachas infectadas. Invict Gel Cucarachas cuenta con un grado alimenticio diferente a otros cebos, haciendo este producto una de las soluciones para el control de plagas en Rep.Dom."},
+   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"La estación de cebo para ratas Max-A reduce el tiempo de servicio, lo que ahorra tiempo y dinero. Siempre puede funcionar correctamente, dándole la tranquilidad de saber que siempre está protegido."},
+   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"La trampa para ratones Multi-Catch Mouse es una trampa mecánica de una sola vía. Puede retener hasta 12 ratones y se puede usar sin la junta de pegamento para capturar en vivo. Diseñada para ser confiable, efectiva y fácil de usar."},
+   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Las trampas de captura sin muerte ofrecen una alternativa ética y eficaz para el control de ratones, permitiendo capturar a los roedores sin causarles daño. En Ecopest, comprendemos la importancia de utilizar métodos que sean efectivos y respetuosos con el bienestar animal, por lo que te presentamos una selección de trampas diseñadas para mantener tu granja en óptimas condiciones."},
+   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
+   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
+   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
+   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
+   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora Estacionaria a Gasolina de 6.5 Hp."},
+   {id:17, name:"Tablero de pegamento para trampa para ratones", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Por qué elegir este artículo **No tóxico y seguro de usar alrededor de niños y mascotas *Se pliega en forma de túnel para usar en áreas estrechas o polvorientas *Multi-función-funcional para ratones, cucarachas,Grillos y otras plagas domésticas"},
+   {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Estas placas adhesivas capturan ratas y ratones sin la necesidad de utilizar veneno. Además de ratones podrá atrapar cucharachas, escorpiones, culebras, pulgas, garrapatas, àcaros, piojos, araña reclusa marrón y otras arañas. Ideales para usar en plantas de alimentos, cocinas, restaurantes, plantas de procesamiento de alimentos, hospitales, residencias, zoológicos y otras áreas sensibles donde el uso de veneno está prohibido o desaconsejado.."}
+];
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function displayProducts(list=products){
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';
+    list.forEach(product=>{
+        const col = document.createElement('div');
+        col.className='col-md-4';
+        col.innerHTML = `
+            <div class="product-card" onclick="verDetalle(${product.id})">
+                <img src="${product.img}" alt="${product.name}">
+                <h5>${product.name}</h5>
+                <p>${product.category}</p>
+            </div>`;
+        productList.appendChild(col);
+    });
+}
+
+function filterProducts(category){
+    if(category==='todos') displayProducts();
+    else displayProducts(products.filter(p=>p.category===category));
+}
+
+function verDetalle(id){
+    const product = products.find(p => p.id === id);
+    const modalBody = document.getElementById('producto-detalle-body');
+    modalBody.innerHTML = `
+        <div class="text-center">
+            <img src="${product.img}" alt="${product.name}" style="max-width:200px; margin-bottom:15px;">
+            <h4>${product.name}</h4>
+            <p><strong>Categoría:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+            <button class="btn btn-success mt-3" onclick="addToCart(${product.id}); alert('Producto agregado al carrito');">Añadir al carrito</button>
+        </div>
+    `;
+    new bootstrap.Modal(document.getElementById('productoDetalleModal')).show();
+}
+
+function addToCart(id){
+    const product = products.find(p=>p.id===id);
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+
+function updateCart(){
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    cartItems.innerHTML = '';
+    let total=0;
+    cart.forEach((item,index)=>{
+        const li = document.createElement('li');
+        li.textContent = item.name;
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+    cartCount.textContent = cart.length;
+    cartTotal.textContent = total;
+}
+
+function toggleCart(){
+    const cartDiv = document.getElementById('cart');
+    cartDiv.style.display = cartDiv.style.display==='none'?'block':'none';
+}
+
+// FUNCION FINALIZAR COMPRA POR WHATSAPP
+function checkout(){
+    if(cart.length === 0){
+        alert('El carrito está vacío');
+        return;
+    }
+
+    let mensaje = "Hola, quiero comprar los siguientes productos:\n\n";
+    cart.forEach(item => {
+        mensaje += `- ${item.name}\n  Imagen: ${window.location.origin}/${item.img}\n`;
+    });
+
+    const encodedMensaje = encodeURIComponent(mensaje);
+    const whatsappUrl = `https://wa.me/18097383196?text=${encodedMensaje}`;
+    window.open(whatsappUrl, "_blank");
+
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+
+displayProducts();
+updateCart();
+
+// Formulario normal
+document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Mensaje enviado. Gracias por contactarnos.');
+    this.reset();
+});
+</script>
+
 </body>
 </html>
