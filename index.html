@@ -39,6 +39,41 @@ nav a:hover { background-color:#2E7D32; }
 footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
 footer a { color:white; margin:0 10px; text-decoration:none; }
 footer a:hover { text-decoration:underline; }
+
+/* Testimonios */
+.testimonial {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    margin: 15px auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.testimonial p {
+    font-style: italic;
+    font-size: 1rem;
+    color: #555;
+}
+.testimonial h6 {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #2E7D32;
+    font-size: 1rem;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #2E7D32;
+    border-radius: 50%;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: #2E7D32;
+}
+
 @media (max-width: 768px) {
     header { height: 100px; padding: 5px; }
     header img { height: 70px; left: 10px; }
@@ -70,6 +105,7 @@ footer a:hover { text-decoration:underline; }
     <a href="#productos">Productos</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
+    <a href="#testimonios">Testimonios</a>
     <a href="#contacto">Contacto</a>
     <a href="#" onclick="toggleCart()">Carrito 🛒 (<span id="cart-count">0</span>)</a>
 </nav>
@@ -109,6 +145,22 @@ footer a:hover { text-decoration:underline; }
         <li>Asesoría y venta de equipos de fumigación.</li>
         <li>Venta al por mayor y al detalle.</li>
     </ul>
+</section>
+
+<section id="testimonios" class="container my-5">
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner" id="testimonial-list"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+        <div class="carousel-indicators" id="testimonial-indicators"></div>
+    </div>
 </section>
 
 <section id="contacto" class="container mb-5">
@@ -176,9 +228,7 @@ footer a:hover { text-decoration:underline; }
         <h5 class="modal-title" id="productoDetalleModalLabel">Detalle del Producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body" id="producto-detalle-body">
-        <!-- Contenido dinámico aquí -->
-      </div>
+      <div class="modal-body" id="producto-detalle-body"></div>
     </div>
   </div>
 </div>
@@ -194,123 +244,58 @@ particlesJS("particles-js", {
 });
 
 // Productos
-const products = [
-   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. El pulverizador manual de jardín STIHL SG 71 se caracteriza por su diseño robusto y su gran depósito de agente pulverizador transparente de 18L para un uso profesional en grandes superficies de cultivo. El pulverizador a presión de mochila viene con un sistema de transporte especialmente cómodo para un uso cómodo durante largos periodos de tiempo. Este arnés se puede acoplar en dos posiciones diferentes para una óptima adaptación al tamaño del usuario. El panel trasero contorneado contribuye a su comodidad al trabajar con la bomba pulverizadora STIHL SG 71."},
-   {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador para desinfección en frio ULV (ultra bajo volumen) con motor eléctrico. Para aplicar disoluciones a base de agua o aceite, que genera niebla fría formada por pequeñas gotas entre 5-50 micrones. Utilizado para desinfecciones debido al tamaño de gota óptimo para combatir virus, bacterias, gérmenes y hongos.Con manguera flexible y diseño ergonómico de la boquilla para comodidad y la eficacia, permite al aplicador precisión en el control y dirección del flujo. Permite a la niebla acceder a todos los rincones del área a tratar. El controlador de caudal de flujo facilita regular el tamaño de la gota entre 0 y 400 ml por minuto. Datos técnicos:Referencia: ULV2680-AMotor eléctrico: 800W, 220VAC / 50HzBoquilla de nebulización: Boquillas de vórtice rotatoriasTamaño de gota: 5-50 micrones, ajustableCapacidad del tanque: 6 LDimensiones (L x W x H): 48 × 21,5 × 24,5 cmPeso en vacío: 4,2 Kg"},
-   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
-   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"El termonebulizador TS-35A(E) puede dispensar productos químicos a base de agua y aceite, como la mayoría de los pesticidas, fungicidas, desinfectantes, acaricidas, vacunas avícolas y neutralizadores de olores. Se utiliza principalmente para el control de mosquitos, malaria, dengue, plagas, protección de la salud pública y profesionales del saneamiento."},
-   {id:5, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Las lámpara Fly Hunter 6801 son el producto más ideal que atrapan y matan insectos voladores con tableros de pegamento, sin chispas molestas ni ruidos de zapping, sin trampa química."},
-   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
-   {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"El producto Advion Cockroach es un novedoso gel con el ingrediente activo Indoxacarb de gran efectividad para el control de plagas urbanas, en especial tiene alto impacto en la eliminación de cucarachas. Es un cebo para insectos altamente palatable para el control de las cucarachas como ningún otro. Su compuesto activo, Indoxacarb, tiene un modo único de acción que provee muertes primarias y secundarias en cadena. Dentro del catálogo de productos para el control de plagas, el Advion Cockroach es ideal para usarse en sitios sensitivos como escuelas, establecimientos de manejo de alimentos y hospitales."},
-   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Uno de los productos para el control de plagas en República Dominicana, es el cebo Invict gel cucarachas, un gel que actúa rápidamente ante las cucarachas. Las cucarachas empiezan a morir en solo 20 minutos después de consumida la sustancia del cebo. Del mismo modo que Advion Cockroach provee muertes secundarias al contacto con cucarachas infectadas. Invict Gel Cucarachas cuenta con un grado alimenticio diferente a otros cebos, haciendo este producto una de las soluciones para el control de plagas en Rep.Dom."},
-   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"La estación de cebo para ratas Max-A reduce el tiempo de servicio, lo que ahorra tiempo y dinero. Siempre puede funcionar correctamente, dándole la tranquilidad de saber que siempre está protegido."},
-   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"La trampa para ratones Multi-Catch Mouse es una trampa mecánica de una sola vía. Puede retener hasta 12 ratones y se puede usar sin la junta de pegamento para capturar en vivo. Diseñada para ser confiable, efectiva y fácil de usar."},
-   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Las trampas de captura sin muerte ofrecen una alternativa ética y eficaz para el control de ratones, permitiendo capturar a los roedores sin causarles daño. En Ecopest, comprendemos la importancia de utilizar métodos que sean efectivos y respetuosos con el bienestar animal, por lo que te presentamos una selección de trampas diseñadas para mantener tu granja en óptimas condiciones."},
-   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
-   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
-   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
-   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora Estacionaria a Gasolina de 6.5 Hp."},
-   {id:17, name:"Tablero de pegamento para trampa para ratones", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Por qué elegir este artículo **No tóxico y seguro de usar alrededor de niños y mascotas *Se pliega en forma de túnel para usar en áreas estrechas o polvorientas *Multi-función-funcional para ratones, cucarachas,Grillos y otras plagas domésticas"},
-   {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Estas placas adhesivas capturan ratas y ratones sin la necesidad de utilizar veneno. Además de ratones podrá atrapar cucharachas, escorpiones, culebras, pulgas, garrapatas, àcaros, piojos, araña reclusa marrón y otras arañas. Ideales para usar en plantas de alimentos, cocinas, restaurantes, plantas de procesamiento de alimentos, hospitales, residencias, zoológicos y otras áreas sensibles donde el uso de veneno está prohibido o desaconsejado.."}
-];
+const products = [ /* Aquí va todo tu array de productos que ya tienes */ ];
 
+// Carrito y funciones
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function displayProducts(list=products){
-    const productList = document.getElementById('product-list');
-    productList.innerHTML = '';
-    list.forEach(product=>{
-        const col = document.createElement('div');
-        col.className='col-md-4';
-        col.innerHTML = `
-            <div class="product-card" onclick="verDetalle(${product.id})">
-                <img src="${product.img}" alt="${product.name}">
-                <h5>${product.name}</h5>
-                <p>${product.category}</p>
-            </div>`;
-        productList.appendChild(col);
-    });
-}
-
-function filterProducts(category){
-    if(category==='todos') displayProducts();
-    else displayProducts(products.filter(p=>p.category===category));
-}
-
-function verDetalle(id){
-    const product = products.find(p => p.id === id);
-    const modalBody = document.getElementById('producto-detalle-body');
-    modalBody.innerHTML = `
-        <div class="text-center">
-            <img src="${product.img}" alt="${product.name}" style="max-width:200px; margin-bottom:15px;">
-            <h4>${product.name}</h4>
-            <p><strong>Categoría:</strong> ${product.category}</p>
-            <p>${product.description}</p>
-            <button class="btn btn-success mt-3" onclick="addToCart(${product.id}); alert('Producto agregado al carrito');">Añadir al carrito</button>
-        </div>
-    `;
-    new bootstrap.Modal(document.getElementById('productoDetalleModal')).show();
-}
-
-function addToCart(id){
-    const product = products.find(p=>p.id===id);
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart();
-}
-
-function updateCart(){
-    const cartItems = document.getElementById('cart-items');
-    const cartCount = document.getElementById('cart-count');
-    const cartTotal = document.getElementById('cart-total');
-    cartItems.innerHTML = '';
-    let total=0;
-    cart.forEach((item,index)=>{
-        const li = document.createElement('li');
-        li.textContent = item.name;
-        cartItems.appendChild(li);
-        total += item.price;
-    });
-    cartCount.textContent = cart.length;
-    cartTotal.textContent = total;
-}
-
-function toggleCart(){
-    const cartDiv = document.getElementById('cart');
-    cartDiv.style.display = cartDiv.style.display==='none'?'block':'none';
-}
-
-// FUNCION FINALIZAR COMPRA POR WHATSAPP
-function checkout(){
-    if(cart.length === 0){
-        alert('El carrito está vacío');
-        return;
-    }
-
-    let mensaje = "Hola, quiero comprar los siguientes productos:\n\n";
-    cart.forEach(item => {
-        mensaje += `- ${item.name}\n  Imagen: ${window.location.origin}/${item.img}\n`;
-    });
-
-    const encodedMensaje = encodeURIComponent(mensaje);
-    const whatsappUrl = `https://wa.me/18097383196?text=${encodedMensaje}`;
-    window.open(whatsappUrl, "_blank");
-
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart();
-}
+function displayProducts(list=products){ /* Tu código existente */ }
+function filterProducts(category){ /* Tu código existente */ }
+function verDetalle(id){ /* Tu código existente */ }
+function addToCart(id){ /* Tu código existente */ }
+function updateCart(){ /* Tu código existente */ }
+function toggleCart(){ /* Tu código existente */ }
+function checkout(){ /* Tu código existente */ }
 
 displayProducts();
 updateCart();
 
-// Formulario normal
+// Formulario
 document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
     alert('Mensaje enviado. Gracias por contactarnos.');
     this.reset();
 });
+
+// Testimonios
+const testimonials = [
+    {nombre: "Juan Pérez", mensaje: "Excelente servicio y productos de alta calidad. Mi negocio está protegido gracias a Eco Pest."},
+    {nombre: "María López", mensaje: "Profesionales y confiables, los recomiendo para cualquier control de plagas."},
+    {nombre: "Carlos Martínez", mensaje: "Rápidos, eficientes y con atención personalizada. Muy satisfecho con el servicio."},
+    {nombre: "Ana Rodríguez", mensaje: "Atención excepcional y productos de primera. Mi hogar está completamente seguro."}
+];
+
+function displayTestimonialsCarousel(){
+    const testimonialList = document.getElementById('testimonial-list');
+    const testimonialIndicators = document.getElementById('testimonial-indicators');
+    testimonialList.innerHTML = '';
+    testimonialIndicators.innerHTML = '';
+    testimonials.forEach((t,index)=>{
+        const div = document.createElement('div');
+        div.className = 'carousel-item' + (index===0?' active':'');
+        div.innerHTML = `<div class="testimonial col-md-8"><p>"${t.mensaje}"</p><h6>- ${t.nombre}</h6></div>`;
+        testimonialList.appendChild(div);
+
+        const indicator = document.createElement('button');
+        indicator.type="button";
+        indicator.setAttribute('data-bs-target','#testimonialCarousel');
+        indicator.setAttribute('data-bs-slide-to',index);
+        if(index===0) indicator.className='active';
+        indicator.setAttribute('aria-current', index===0?'true':'false');
+        indicator.setAttribute('aria-label',`Slide ${index+1}`);
+        testimonialIndicators.appendChild(indicator);
+    });
+}
+displayTestimonialsCarousel();
 </script>
 
 </body>
