@@ -150,28 +150,63 @@ footer a:hover { text-decoration:underline; }
     </div>
 </section>
     
+<!-- SECCIÓN DE CONTACTO -->
 <section id="contacto" class="container mb-5">
-    <h2 class="section-title">Contacto</h2>
-    <form id="contact-form">
+  <h2 class="section-title text-center mb-4">Contáctanos</h2>
+
+  <div class="row">
+    <!-- Columna izquierda: información de contacto -->
+    <div class="col-md-5 mb-4">
+      <p style="font-size:1.1rem; line-height:1.8;">
+        <strong><i class="fa fa-phone text-success me-2"></i>Tel:</strong> 
+        <a href="tel:+18097383196" style="color:#2E7D32; text-decoration:none;">+1 809-738-3196</a><br>
+
+        <strong><i class="fa fa-envelope text-success me-2"></i>Email:</strong> 
+        <a href="mailto:ecopestsrl@gmail.com" style="color:#2E7D32; text-decoration:none;">ecopestsrl@gmail.com</a><br><br>
+
+        <strong><i class="fa fa-map-marker text-success me-2"></i>Tienda principal:</strong><br>
+        Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional<br><br>
+
+        <strong><i class="fa fa-map-marker-alt text-success me-2"></i>Sucursal:</strong><br>
+        Verón, Punta Cana
+      </p>
+    </div>
+
+    <!-- Columna derecha: formulario -->
+    <div class="col-md-7">
+      <form id="contact-form">
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" required>
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" required>
         </div>
         <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="text" class="form-control" id="telefono">
         </div>
         <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4" required></textarea>
         </div>
         <button type="submit" class="btn btn-success">Enviar Mensaje</button>
-    </form>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mapa de ubicación -->
+  <div class="mt-5">
+    <h3 class="text-center mb-3" style="color:#2E7D32;">Ubícanos</h3>
+    <div class="ratio ratio-16x9 shadow rounded-3">
+      <iframe 
+        src="https://www.google.com/maps/place/ECOPEST+S.R.L/@18.44305,-69.9339436,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8ea5630059e4b7ed:0xaa6e330e62f1d6d7!8m2!3d18.4430449!4d-69.9313687!16s%2Fg%2F11wbvrk2c6?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D">
+      </iframe>
+    </div>
+  </div>
 </section>
+
 
 <div id="cart">
     <h5>Carrito de Compras</h5>
