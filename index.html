@@ -150,34 +150,64 @@ footer a:hover { text-decoration:underline; }
     </div>
 </section>
     
-<!-- SECCIÓN DE CONTACTO -->
+<!-- SECCIÓN DE CONTACTO PREMIUM -->
 <section id="contacto" style="padding:60px 15px; background-color:#f5f5f5;">
-  <div class="container" style="max-width:900px; margin:auto;">
+  <div class="container" style="max-width:1000px; margin:auto;">
 
     <h2 class="section-title text-center mb-5" style="color:#2E7D32; font-weight:700;">Contáctanos</h2>
 
-    <div class="row align-items-start">
-      
-      <!-- Información de contacto -->
-      <div class="col-md-5 mb-4 text-center text-md-start">
-        <p style="font-size:1.1rem; line-height:1.8;">
-          <strong><i class="fa fa-phone text-success me-2"></i>Tel:</strong> 
-          <a href="tel:+18097383196" style="color:#2E7D32; text-decoration:none;">+1 809-738-3196</a><br>
+    <div class="row justify-content-center mb-5">
 
-          <strong><i class="fa fa-envelope text-success me-2"></i>Email:</strong> 
-          <a href="mailto:ecopestsrl@gmail.com" style="color:#2E7D32; text-decoration:none;">ecopestsrl@gmail.com</a><br><br>
-
-          <strong><i class="fa fa-map-marker text-success me-2"></i>Tienda principal:</strong><br>
-          Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional<br><br>
-
-          <strong><i class="fa fa-map-marker-alt text-success me-2"></i>Sucursal:</strong><br>
-          Verón, Punta Cana
-        </p>
+      <!-- Tarjeta Teléfono -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-center shadow-sm border-0 h-100">
+          <div class="card-body">
+            <i class="fa fa-phone fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Teléfono</h5>
+            <p class="card-text"><a href="tel:+18097383196" style="color:#2E7D32; text-decoration:none;">+1 809-738-3196</a></p>
+          </div>
+        </div>
       </div>
 
-      <!-- Formulario de contacto -->
-      <div class="col-md-7 mb-4">
-        <form id="contact-form">
+      <!-- Tarjeta Email -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-center shadow-sm border-0 h-100">
+          <div class="card-body">
+            <i class="fa fa-envelope fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Email</h5>
+            <p class="card-text"><a href="mailto:ecopestsrl@gmail.com" style="color:#2E7D32; text-decoration:none;">ecopestsrl@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Tienda Principal -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-center shadow-sm border-0 h-100">
+          <div class="card-body">
+            <i class="fa fa-map-marker fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Tienda Principal</h5>
+            <p class="card-text">Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Sucursal -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-center shadow-sm border-0 h-100">
+          <div class="card-body">
+            <i class="fa fa-map-marker-alt fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Sucursal</h5>
+            <p class="card-text">Verón, Punta Cana</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulario -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <form id="contact-form" class="shadow-sm p-4 rounded bg-white">
           <div class="mb-3">
             <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
           </div>
@@ -191,22 +221,23 @@ footer a:hover { text-decoration:underline; }
             <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje" required></textarea>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-success px-4">Enviar Mensaje</button>
+            <button type="submit" class="btn btn-success px-5">Enviar Mensaje</button>
           </div>
         </form>
       </div>
-
     </div>
 
     <!-- Mapa -->
-    <div class="mt-5">
-      <h3 class="text-center mb-3" style="color:#2E7D32;">Ubícanos</h3>
-      <div class="ratio ratio-16x9 shadow rounded-3">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.044780016913!2d-69.933943625661!3d18.44304498260795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739522686000!5m2!1ses!2sdo" 
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h3 class="text-center mb-3" style="color:#2E7D32;">Ubícanos</h3>
+        <div class="ratio ratio-16x9 shadow rounded-3">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.044780016913!2d-69.933943625661!3d18.44304498260795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739522686000!5m2!1ses!2sdo" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
 
