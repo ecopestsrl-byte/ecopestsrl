@@ -150,7 +150,7 @@ footer a:hover { text-decoration:underline; }
     </div>
 </section>
     
-<!-- SECCIÓN DE CONTACTO COMPLETA E INTERACTIVA -->
+<!-- SECCIÓN DE CONTACTO PROFESIONAL -->
 <section id="contacto" style="padding:60px 15px; background-color:#f5f5f5;">
   <div class="container" style="max-width:1000px; margin:auto;">
 
@@ -225,24 +225,18 @@ footer a:hover { text-decoration:underline; }
       </div>
     </div>
 
-    <!-- MAPA CON UBICACIONES DINÁMICAS -->
+    <!-- MAPA INTERACTIVO -->
     <div class="row justify-content-center">
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <h3 class="text-center mb-3" style="color:#2E7D32;">Ubícanos</h3>
-        <div class="ratio ratio-16x9 shadow rounded-3">
-          <iframe id="mapa" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.445!2d-69.9364973!3d18.4430449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2e1!5e0!3m2!1ses!2sdo!4v1739545000000!5m2!1ses!2sdo" 
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+        <div id="map" style="width:100%; height:400px;" class="shadow rounded-3"></div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ESTILO HOVER PARA TARJETAS -->
+<!-- ESTILO HOVER TARJETAS -->
 <style>
 .card-hover {
   transition: all 0.3s ease;
@@ -255,26 +249,50 @@ footer a:hover { text-decoration:underline; }
 }
 </style>
 
-<!-- SCRIPT FORMULARIO Y MAPA DINÁMICO -->
+<!-- SCRIPT FORMULARIO Y MAPA GOOGLE API -->
 <script>
-// FORMULARIO
 document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
     alert('Mensaje enviado. Gracias por contactarnos.');
     this.reset();
 });
 
-// UBICACIONES DEL MAPA
-const ubicaciones = {
-    principal: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.445!2d-69.9364973!3d18.4430449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2e1!5e0!3m2!1ses!2sdo!4v1739545000000!5m2!1ses!2sdo",
-    sucursal: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.445!2d-68.412071!3d18.585711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2e1!5e0!3m2!1ses!2sdo!4v1739546000000!5m2!1ses!2sdo"
+// COORDENADAS DE UBICACIONES
+const locations = {
+    principal: {lat: 18.443045, lng: -69.931369, title: "Tienda Principal"},
+    sucursal: {lat: 18.585711, lng: -68.409496, title: "Sucursal"}
 };
 
-// FUNCIÓN ZOOM AL HACER CLIC EN TARJETA
+let map, markers = [];
+
+// INICIALIZAR MAPA
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 18.514378, lng: -69.670432},
+        zoom: 8
+    });
+
+    // AÑADIR MARCADORES
+    for (let key in locations) {
+        const marker = new google.maps.Marker({
+            position: locations[key],
+            map: map,
+            title: locations[key].title
+        });
+        markers.push(marker);
+    }
+}
+
+// FUNCION PARA ZOOM AL HACER CLIC
 function zoomToLocation(lugar){
-    document.getElementById('mapa').src = ubicaciones[lugar];
+    const loc = locations[lugar];
+    map.setCenter(loc);
+    map.setZoom(15);
 }
 </script>
+
+<!-- GOOGLE MAPS API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
 
 <div id="cart">
     <h5>Carrito de Compras</h5>
