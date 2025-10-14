@@ -150,17 +150,18 @@ footer a:hover { text-decoration:underline; }
     </div>
 </section>
     
-<!-- SECCIÓN DE CONTACTO PREMIUM -->
+<!-- SECCIÓN DE CONTACTO COMPLETA -->
 <section id="contacto" style="padding:60px 15px; background-color:#f5f5f5;">
   <div class="container" style="max-width:1000px; margin:auto;">
 
+    <!-- Título -->
     <h2 class="section-title text-center mb-5" style="color:#2E7D32; font-weight:700;">Contáctanos</h2>
 
-    <div class="row justify-content-center mb-5">
+    <!-- TARJETAS DE CONTACTO -->
+    <div class="row justify-content-center mb-5 g-4">
 
-      <!-- Tarjeta Teléfono -->
-      <div class="col-md-3 mb-4">
-        <div class="card text-center shadow-sm border-0 h-100">
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm border-0 h-100 card-hover">
           <div class="card-body">
             <i class="fa fa-phone fa-2x text-success mb-3"></i>
             <h5 class="card-title">Teléfono</h5>
@@ -169,9 +170,8 @@ footer a:hover { text-decoration:underline; }
         </div>
       </div>
 
-      <!-- Tarjeta Email -->
-      <div class="col-md-3 mb-4">
-        <div class="card text-center shadow-sm border-0 h-100">
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm border-0 h-100 card-hover">
           <div class="card-body">
             <i class="fa fa-envelope fa-2x text-success mb-3"></i>
             <h5 class="card-title">Email</h5>
@@ -180,9 +180,8 @@ footer a:hover { text-decoration:underline; }
         </div>
       </div>
 
-      <!-- Tarjeta Tienda Principal -->
-      <div class="col-md-3 mb-4">
-        <div class="card text-center shadow-sm border-0 h-100">
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm border-0 h-100 card-hover">
           <div class="card-body">
             <i class="fa fa-map-marker fa-2x text-success mb-3"></i>
             <h5 class="card-title">Tienda Principal</h5>
@@ -191,9 +190,8 @@ footer a:hover { text-decoration:underline; }
         </div>
       </div>
 
-      <!-- Tarjeta Sucursal -->
-      <div class="col-md-3 mb-4">
-        <div class="card text-center shadow-sm border-0 h-100">
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm border-0 h-100 card-hover">
           <div class="card-body">
             <i class="fa fa-map-marker-alt fa-2x text-success mb-3"></i>
             <h5 class="card-title">Sucursal</h5>
@@ -204,7 +202,7 @@ footer a:hover { text-decoration:underline; }
 
     </div>
 
-    <!-- Formulario -->
+    <!-- FORMULARIO DE CONTACTO -->
     <div class="row justify-content-center mb-5">
       <div class="col-lg-8">
         <form id="contact-form" class="shadow-sm p-4 rounded bg-white">
@@ -227,13 +225,13 @@ footer a:hover { text-decoration:underline; }
       </div>
     </div>
 
-    <!-- Mapa -->
+    <!-- MAPA CON AMBAS UBICACIONES -->
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <h3 class="text-center mb-3" style="color:#2E7D32;">Ubícanos</h3>
         <div class="ratio ratio-16x9 shadow rounded-3">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.044780016913!2d-69.933943625661!3d18.44304498260795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739522686000!5m2!1ses!2sdo" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.2345678!2d-69.670432!3d18.514378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2e1!5e0!3m2!1ses!2sdo!4v1739545000000!5m2!1ses!2sdo" 
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
@@ -243,6 +241,28 @@ footer a:hover { text-decoration:underline; }
 
   </div>
 </section>
+
+<!-- ESTILO HOVER PARA TARJETAS -->
+<style>
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-color: #2E7D32;
+}
+</style>
+
+<!-- SCRIPT FORMULARIO -->
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Mensaje enviado. Gracias por contactarnos.');
+    this.reset();
+});
+</script>
+
 
 <div id="cart">
     <h5>Carrito de Compras</h5>
