@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
+  <!-- Páginas principales -->
   <url>
     <loc>https://www.ecopestsrl.com/</loc>
     <lastmod>2025-10-18</lastmod>
@@ -29,6 +30,115 @@
     <loc>https://www.ecopestsrl.com/contacto</loc>
     <lastmod>2025-10-18</lastmod>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Productos individuales -->
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/pulverizador-manual</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/nebulizador-ulv-electrico</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/bomba-de-fumigacion</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/thermo-fogger</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/fly-hunter-smart-30</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/insecticida-profesional</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/advion-cockroach</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/invict-cockroach-gel</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/estacion-de-cebo-para-ratas</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/trampa-metalica</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/trampa-mecanica</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/cebo-para-ratas</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/guantes-de-proteccion</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/mascarilla-de-proteccion-carbon-activado</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/mascarilla-cara-completa</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/fumigadora-estacionaria</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/tablero-de-pegamento-para-trampa-para-ratones</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecopestsrl.com/productos/trampa-engomada-para-roedores</loc>
+    <lastmod>2025-10-18</lastmod>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
