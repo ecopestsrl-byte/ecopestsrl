@@ -102,6 +102,69 @@ footer a:hover { text-decoration:underline; }
     <div class="row" id="product-list"></div>
 </section>
 
+<!-- MODAL DE PRODUCTO -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center mb-3">
+          <img id="productModalImg" src="" alt="" style="max-width:300px; max-height:300px;">
+        </div>
+        <p id="productModalDesc"></p>
+        <div class="text-center">
+          <a id="productModalWhats" href="#" class="btn btn-success" target="_blank">Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// FUNCIONES DE PRODUCTOS
+function displayProducts(list) {
+  const container = document.getElementById('product-list');
+  container.innerHTML = '';
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'col-md-4';
+    card.innerHTML = `
+      <div class="product-card" onclick="openProductModal(${p.id})">
+        <img src="${p.img}" alt="${p.name}">
+        <h5>${p.name}</h5>
+        <a href="https://wa.me/18097383196?text=Hola,%20quiero%20consultar%20por%20${encodeURIComponent(p.name)}" class="btn btn-success mt-2" target="_blank">Consultar por WhatsApp</a>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function filterProducts(category) {
+  if(category==='todos') displayProducts(products);
+  else displayProducts(products.filter(p => p.category === category));
+}
+
+// ABRIR MODAL CON DETALLES
+function openProductModal(id) {
+  const product = products.find(p => p.id === id);
+  if(product){
+    document.getElementById('productModalLabel').textContent = product.name;
+    document.getElementById('productModalImg').src = product.img;
+    document.getElementById('productModalDesc').textContent = product.description;
+    document.getElementById('productModalWhats').href = `https://wa.me/18097383196?text=Hola,%20quiero%20consultar%20por%20${encodeURIComponent(product.name)}`;
+    
+    // Mostrar modal usando Bootstrap 5
+    const modal = new bootstrap.Modal(document.getElementById('productModal'));
+    modal.show();
+  }
+}
+
+// Inicializar
+displayProducts(products);
+</script>
+
 <!-- NOSOTROS -->
 <section id="nosotros" class="container">
     <h2 class="section-title">Nosotros</h2>
