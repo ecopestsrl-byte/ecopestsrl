@@ -13,14 +13,14 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.ecopestsrl.com/">
 
-<!-- Open Graph para redes sociales -->
+<!-- Open Graph -->
 <meta property="og:title" content="ECOPEST SRL | Equipos y Productos de Fumigación en República Dominicana">
 <meta property="og:description" content="Venta de equipos, productos y soluciones profesionales para fumigación y control de plagas en República Dominicana.">
 <meta property="og:image" content="https://www.ecopestsrl.com/img/logo1.jpg">
 <meta property="og:url" content="https://www.ecopestsrl.com/">
 <meta property="og:type" content="website">
 
-<!-- Datos estructurados de negocio local -->
+<!-- LocalBusiness JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,6 +47,7 @@
 <!-- FUENTES Y ESTILOS -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f9f9f9; }
@@ -55,20 +56,24 @@ header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50
 header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
 nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#2E7D32; text-align:center; z-index:999; padding:10px 0; }
 nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
-nav a:hover { background-color:#2E7D32; }
+nav a:hover { background-color:#1b5e20; }
 .main-content { margin-top:210px; }
-.banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; }
+.banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; overflow:hidden; }
 #particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:1; }
 .banner-content { position:relative; z-index:2; }
 .banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; text-shadow:none; }
+
 .section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
 .product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; cursor:pointer; }
 .product-card:hover { transform:scale(1.05); }
 .product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
+
 #cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:10px; border-radius:8px; width:300px; max-height:400px; overflow-y:auto; display:none; z-index:1000; }
 #cart h5 { margin-top:0; }
 #cart button { margin-top:10px; }
+
 .filter-btn { margin:5px; }
+
 .whatsapp-btn {
     position: fixed;
     bottom: 15px;
@@ -85,18 +90,16 @@ nav a:hover { background-color:#2E7D32; }
     box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
 }
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-}
-.whatsapp-btn img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-}
-footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 10px; }
-footer a { color:white; margin:0 5px; text-decoration:none; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
+.whatsapp-btn img { width: 60%; height: 60%; object-fit: contain; }
+
+footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
+footer a { color:white; margin:0 10px; text-decoration:none; }
 footer a:hover { text-decoration:underline; }
+
+.card-hover { transition: all 0.3s ease; cursor: pointer; }
+.card-hover:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: #2E7D32; }
+
 @media (max-width: 768px) {
     header { height: 100px; padding: 5px; }
     header img { height: 70px; left: 10px; }
@@ -134,6 +137,7 @@ footer a:hover { text-decoration:underline; }
 
 <div class="main-content">
 
+<!-- BANNER CON PARTICULAS -->
 <section class="banner" id="inicio">
     <div id="particles-js"></div>
     <div class="banner-content">
@@ -141,26 +145,26 @@ footer a:hover { text-decoration:underline; }
     </div>
 </section>
 
+<!-- PRODUCTOS -->
 <section id="productos" class="container">
     <h2 class="section-title">Nuestros Productos</h2>
     <div class="text-center mb-3">
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('todos')">Todos</button>
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos')">Equipos</button>
         <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Químicos')">Químicos</button>
-        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos EPP')">Equipos EPP</button>
-        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Control de Roedores</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Equipos EPP')">EPP</button>
+        <button class="btn btn-outline-success filter-btn" onclick="filterProducts('Control de Roedores')">Roedores</button>
     </div>
     <div class="row" id="product-list"></div>
 </section>
 
+<!-- NOSOTROS -->
 <section id="nosotros" class="container">
     <h2 class="section-title">Nosotros</h2>
-    <p>
-        ECOPEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación 
-        de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente.
-    </p>
+    <p>ECOPEST S.R.L es líder en República Dominicana ofreciendo productos y equipos de fumigación de alta calidad con compromiso a la seguridad, salud y medio ambiente.</p>
 </section>
 
+<!-- SERVICIOS -->
 <section id="servicios" class="container">
     <h2 class="section-title">Servicios</h2>
     <ul>
@@ -169,6 +173,7 @@ footer a:hover { text-decoration:underline; }
     </ul>
 </section>
 
+<!-- CONTACTO -->
 <section id="contacto" style="padding:60px 15px; background-color:#f5f5f5;">
   <div class="container" style="max-width:1200px; margin:auto;">
     <h2 class="section-title text-center mb-5" style="color:#2E7D32; font-weight:700;">Contáctanos</h2>
@@ -194,65 +199,150 @@ footer a:hover { text-decoration:underline; }
       </div>
     </div>
 
+    <!-- MAPAS -->
     <div class="row justify-content-center g-4">
       <div class="col-lg-6 col-md-12">
         <h4 class="text-center mb-3" style="color:#2E7D32;">Tienda Principal</h4>
         <div class="ratio ratio-16x9 shadow rounded-3">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.445!2d-69.933944!3d18.443045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739545000000!5m2!1ses!2sdo" 
-            style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.445!2d-69.933944!3d18.443045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739545000000!5m2!1ses!2sdo" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
       <div class="col-lg-6 col-md-12">
         <h4 class="text-center mb-3" style="color:#2E7D32;">Sucursal Punta Cana</h4>
         <div class="ratio ratio-16x9 shadow rounded-3">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.2!2d-68.412071!3d18.585711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea89300524212bb%3A0x8eecb0d86110f6a3!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739545000001!5m2!1ses!2sdo" 
-            style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.2!2d-68.412071!3d18.585711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea89300524212bb%3A0x8eecb0d86110f6a3!2sECOPEST%20S.R.L.!5e0!3m2!1ses!2sdo!4v1739545000001!5m2!1ses!2sdo" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2025 ECOPEST S.R.L | Todos los derechos reservados</p>
-  <p>📞 Tel: <a href="tel:+18097383196">+1 809-738-3196</a> | ✉️ Email: <a href="mailto:ecopestsrl@gmail.com">ecopestsrl@gmail.com</a></p>
-  <p>📍 Tienda Principal: <a href="https://goo.gl/maps/..." target="_blank" style="color:white;">Calle Principal #45, Santo Domingo</a></p>
-  <p>📍 Sucursal Punta Cana: <a href="https://goo.gl/maps/..." target="_blank" style="color:white;">Calle Secundaria #123, Punta Cana</a></p>
-  <p>⏰ Horario: Lunes a Viernes 08:00 – 18:00</p>
+<!-- Carrito -->
+<div id="cart">
+    <h5>Carrito de Compras</h5>
+    <ul id="cart-items"></ul>
+    <p>Total productos: <span id="cart-total">0</span></p>
+    <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+</div>
 
-  <div style="margin:10px 0;">
-    <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
-      <img src="img/facebook.jpg" alt="Facebook" style="width:25px; margin:0 5px;">
-    </a>
-    <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
-      <img src="img/instagram.jpg" alt="Instagram" style="width:25px; margin:0 5px;">
-    </a>
-  </div>
-
-  <p style="margin:5px 0;">Aceptamos pagos con:</p>
-  <div style="text-align:center; margin:5px 0;">
-    <img src="img/visa.png" alt="Visa" style="width:40px; margin:0 5px;">
-    <img src="img/mastercard.png" alt="Mastercard" style="width:40px; margin:0 5px;">
-  </div>
-
-  <p style="margin:10px 0 0 0; font-size:0.85rem; color:#c8e6c9;">
-    Diseñado por <strong>💻 Soluciones CodeWave</strong>
-  </p>
-</footer>
-
+<!-- WhatsApp -->
 <a href="https://wa.me/18097383196" class="whatsapp-btn" target="_blank">
     <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
 
+<!-- Footer -->
+<footer>
+  <p style="margin:5px 0; font-size:0.9rem;">© 2025 ECOPEST S.R.L | Todos los derechos reservados</p>
+  <div style="text-align:center; margin:10px 0;">
+    <a href="https://www.facebook.com/eco.pest.srl/" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+    <a href="https://www.instagram.com/ecopestsrl/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
+  <p style="margin:5px 0; font-size:0.85rem;">Aceptamos pagos con:</p>
+  <div style="text-align:center; margin:5px 0;">
+    <img src="img/visa.png" alt="Visa" style="width:40px; margin:0 5px;">
+    <img src="img/mastercard.png" alt="Mastercard" style="width:40px; margin:0 5px;">
+  </div>
+  <p style="margin:5px 0; font-size:0.8rem;">Diseñado por 💻 Soluciones CodeWave</p>
+</footer>
+
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/particles.min.js"></script>
-<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+// PARTICULAS
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value": 60,"density": {"enable": true,"value_area": 800}},
+    "color": {"value": "#2E7D32"},
+    "shape": {"type": "circle"},
+    "opacity": {"value": 0.5,"random": false},
+    "size": {"value": 3,"random": true},
+    "line_linked": {"enable": true,"distance": 150,"color": "#2E7D32","opacity": 0.4,"width": 1},
+    "move": {"enable": true,"speed": 3,"direction": "none","random": false,"straight": false,"out_mode": "out"}
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {"enable": true,"mode": "grab"},
+      "onclick": {"enable": true,"mode": "push"}
+    },
+    "modes": {"grab":{"distance":140,"line_linked":{"opacity":1}},"push":{"particles_nb":4}}
+  },
+  "retina_detect": true
+});
+
+// PRODUCTOS
+const products = [
+  {id:1, name:"Pulverizador 5L", category:"Equipos", price:1500, img:"img/pulverizador5l.png"},
+  {id:2, name:"Insecticida Multiusos", category:"Químicos", price:800, img:"img/insecticida.png"},
+  {id:3, name:"Guantes Protección", category:"Equipos EPP", price:200, img:"img/guantes.png"},
+  {id:4, name:"Trampa para Ratón", category:"Control de Roedores", price:120, img:"img/trampa.png"},
+  {id:5, name:"Pulverizador 10L", category:"Equipos", price:2500, img:"img/pulverizador10l.png"},
+];
+
+function displayProducts(list) {
+  const container = document.getElementById('product-list');
+  container.innerHTML = '';
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'col-md-4';
+    card.innerHTML = `
+      <div class="product-card">
+        <img src="${p.img}" alt="${p.name}">
+        <h5>${p.name}</h5>
+        <p>RD$ ${p.price}</p>
+        <button class="btn btn-success" onclick="addToCart(${p.id})">Agregar al carrito</button>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function filterProducts(category) {
+  if(category==='todos') displayProducts(products);
+  else displayProducts(products.filter(p => p.category === category));
+}
+
+// CARRITO
+let cart = [];
+function addToCart(id) {
+  const product = products.find(p=>p.id===id);
+  cart.push(product);
+  document.getElementById('cart-count').textContent = cart.length;
+  updateCartItems();
+}
+
+function updateCartItems() {
+  const ul = document.getElementById('cart-items');
+  ul.innerHTML = '';
+  cart.forEach((p,i) => {
+    const li = document.createElement('li');
+    li.textContent = `${p.name} - RD$ ${p.price}`;
+    ul.appendChild(li);
+  });
+  document.getElementById('cart-total').textContent = cart.length;
+}
+
+function toggleCart() {
+  const cartDiv = document.getElementById('cart');
+  cartDiv.style.display = cartDiv.style.display==='block'?'none':'block';
+}
+
+function checkout() {
+  if(cart.length===0) alert("El carrito está vacío");
+  else {
+    alert("Gracias por su compra! Total productos: "+cart.length);
+    cart=[];
+    updateCartItems();
+    document.getElementById('cart-count').textContent = 0;
+    toggleCart();
+  }
+}
+
+// Inicializar
+displayProducts(products);
+</script>
 
 </body>
 </html>
-
