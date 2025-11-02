@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO PRINCIPAL -->
 <title>ECOPEST SRL | Productos y Equipos Profesionales de Fumigación</title>
 <meta name="description" content="ECOPEST SRL ofrece productos y equipos profesionales para fumigación y control de plagas en República Dominicana. Consulta por WhatsApp.">
 <meta name="keywords" content="ECOPEST, fumigación, control de plagas, equipos, productos, República Dominicana">
@@ -22,50 +21,176 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f9f9f9; }
-header { position: fixed; top: 0; left: 0; width: 100%; height: 150px; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #ddd; }
-header img { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); height: 120px; }
-header h1 { margin:0; font-family:'Montserrat', sans-serif; color:#2E7D32; font-size:2rem; }
-nav { position: fixed; top: 150px; left: 0; width: 100%; background-color:#2E7D32; text-align:center; z-index:999; padding:10px 0; }
-nav a { color: white; text-decoration: none; padding: 15px; display: inline-block; font-size: 1.3rem; font-weight: bold; }
-nav a:hover { background-color:#1b5e20; }
-.main-content { margin-top:210px; }
-.banner { position:relative; height:180px; display:flex; align-items:center; justify-content:center; color:#2E7D32; text-align:center; background-color:#ffffff; border-bottom: 1px solid #ddd; overflow:hidden; }
-#particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:1; }
-.banner-content { position:relative; z-index:2; }
-.banner-content h2 { font-size:2rem; margin-top:5px; color:#2E7D32; }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
 
-.section-title { text-align:center; margin:40px 0 20px; font-family:'Montserrat', sans-serif; color:#2E7D32; }
-.product-card { border:1px solid #ddd; border-radius:8px; padding:15px; text-align:center; margin-bottom:20px; transition: transform 0.2s; background:white; cursor:pointer; }
-.product-card:hover { transform:scale(1.05); }
-.product-card img { width:140px; height:140px; object-fit:contain; margin-bottom:10px; }
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+}
+header img {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px;
+}
+header h1 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #2E7D32;
+  font-size: 1.8rem;
+  text-align: center;
+}
 
+/* ---------- NAV ---------- */
+nav {
+  position: fixed;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  background-color: #2E7D32;
+  text-align: center;
+  z-index: 999;
+  padding: 8px 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+nav a:hover { background-color: #1b5e20; }
+
+.main-content { margin-top: 190px; }
+
+/* ---------- BANNER ---------- */
+.banner {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2E7D32;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+#particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
+.banner-content { position: relative; z-index: 2; padding: 10px; }
+.banner-content h2 { font-size: 1.5rem; margin-top: 5px; color: #2E7D32; }
+
+/* ---------- PRODUCTOS ---------- */
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #2E7D32;
+}
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: white;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.product-card h5 {
+  font-size: 1rem;
+  min-height: 45px;
+}
+
+/* ---------- WHATSAPP ---------- */
 .whatsapp-btn {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
-    text-decoration: none;
-    border-radius: 50%;
-    background-color: #25D366;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  text-decoration: none;
+  border-radius: 50%;
+  background-color: #25D366;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(0,0,0,0.4); }
 .whatsapp-btn img { width: 60%; height: 60%; object-fit: contain; }
 
-footer { background-color:#2E7D32; color:white; text-align:center; padding:20px 0; margin-top:40px; }
-footer a { color:white; margin:0 10px; text-decoration:none; }
-footer a:hover { text-decoration:underline; }
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #2E7D32;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 40px;
+}
+footer a { color: white; margin: 0 8px; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991px) {
+  header { height: 110px; }
+  header img { height: 80px; }
+  header h1 { font-size: 1.4rem; }
+  nav { top: 110px; padding: 6px 0; }
+  nav a { font-size: 0.95rem; padding: 8px; }
+  .main-content { margin-top: 170px; }
+  .banner-content h2 { font-size: 1.2rem; }
+  .product-card img { width: 110px; height: 110px; }
+}
+@media (max-width: 768px) {
+  header { flex-direction: column; height: auto; padding: 15px 10px; text-align: center; }
+  header img { position: static; transform: none; height: 70px; margin-bottom: 5px; }
+  header h1 { font-size: 1.3rem; }
+  nav { position: static; display: flex; flex-wrap: wrap; justify-content: center; }
+  nav a { font-size: 0.9rem; padding: 6px 10px; }
+  .main-content { margin-top: 20px; }
+  .product-card { padding: 10px; }
+}
+@media (max-width: 480px) {
+  .banner { height: auto; padding: 20px 10px; }
+  .banner-content h2 { font-size: 1rem; }
+  .section-title { font-size: 1.2rem; }
+  .product-card h5 { font-size: 0.9rem; }
+}
 </style>
 </head>
 <body>
-
+    
 <header>
     <img src="img/logo1.jpg" alt="Logo ECOPEST">
     <h1>PRODUCTOS ECOPEST</h1>
