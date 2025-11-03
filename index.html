@@ -6,21 +6,6 @@
 <title>Eco Pest SRL | Productos y Equipos de Fumigación - República Dominicana</title>
 <meta name="description" content="Eco Pest SRL - Productos y equipos de fumigación: pulverizadores, nebulizadores, termonebulizadores, trampas, cebos y EPP. Envíos a todo el país.">
 <meta name="keywords" content="Ecopest, fumigación, pulverizadores, insecticidas, control de plagas, equipos EPP, República Dominicana">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.ecopestsrl.com/">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="Eco Pest SRL | Productos y Equipos de Fumigación">
-<meta property="og:description" content="Pulverizadores, termonebulizadores, cebos, trampas y EPP. Envíos a todo el país.">
-<meta property="og:image" content="https://www.ecopestsrl.com/img/logo1.jpg">
-<meta property="og:url" content="https://www.ecopestsrl.com/">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Eco Pest SRL | Productos y Equipos de Fumigación">
-<meta name="twitter:description" content="Pulverizadores, termonebulizadores, cebos, trampas y EPP. Envíos a todo el país.">
-<meta name="twitter:image" content="https://www.ecopestsrl.com/img/logo1.jpg">
 
 <!-- Schema LocalBusiness -->
 <script type="application/ld+json">
@@ -45,23 +30,12 @@
 }
 </script>
 
-<!-- Breadcrumbs Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.ecopestsrl.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.ecopestsrl.com/#productos"}
-  ]
-}
-</script>
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+  /* Variables */
   :root{
     --eco-green: #2E7D32;
     --eco-green-2: #66BB6A;
@@ -71,7 +45,8 @@
   }
   *{box-sizing:border-box}
   body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:#222;scroll-behavior:smooth}
-  a{color:inherit;text-decoration:none}
+  a{color:inherit}
+  /* Header */
   header{
     background:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 40px;
     box-shadow:0 2px 10px rgba(0,0,0,0.06);position:sticky;top:0;z-index:1200;
@@ -82,6 +57,7 @@
     text-decoration:none;color:#0b3b23;font-weight:600;padding:8px 14px;border-radius:18px;transition:all .18s;
   }
   header nav ul li a:hover{background:var(--eco-green-2);color:#fff;transform:translateY(-2px)}
+  /* Banner */
   .banner{
     position:relative;height:640px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;
     background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
@@ -95,8 +71,10 @@
     box-shadow:0 8px 28px rgba(46,125,50,0.12);
   }
   .btn-outline-cta{background:#fff;padding:10px 16px;border-radius:24px;color:var(--eco-green);font-weight:700;text-decoration:none;margin-left:10px}
+  /* Sections */
   section{padding:72px 60px}
   .section-title{text-align:center;margin-bottom:28px;font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:1.45rem}
+  /* Products */
   .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
   .product-card{
     background:#fff;border-radius:var(--card-radius);padding:18px;border:1px solid #eef6ec;
@@ -108,45 +86,45 @@
   .product-card p{color:var(--muted);font-size:0.95rem;min-height:56px;margin:0 0 12px}
   .btn-wapp{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f2fbf4);border:2px solid rgba(37,211,102,0.12);color:var(--eco-green);font-weight:700;text-decoration:none;width:100%}
   .btn-wapp img{height:20px}
+  /* Cotizador (sección similar a Requetelimpia) */
   .cotizador{background:linear-gradient(180deg, var(--eco-green-2), var(--eco-green));color:#fff;padding:42px 20px;border-radius:12px;text-align:center}
   .cotizador input,.cotizador textarea{width:90%;max-width:520px;padding:12px;margin:10px 0;border-radius:8px;border:none}
   .cotizador button{background:#fff;color:var(--eco-green);padding:10px 22px;border-radius:26px;border:none;font-weight:700;cursor:pointer}
+  /* Nosotros, Beneficios */
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
   .card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
   .card h3{color:var(--eco-green);margin-top:10px}
+  /* Galería */
   .galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
   .galeria-item{overflow:hidden;border-radius:12px}
   .galeria-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
   .galeria-item:hover img{transform:scale(1.08)}
+  /* Contacto & Footer */
   footer{background:var(--eco-green);color:#fff;padding:28px 18px;text-align:center}
   footer a{color:#fff}
   .whatsapp-fixed{position:fixed;right:18px;bottom:18px;z-index:1400}
   .whatsapp-fixed img{width:70px;height:70px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.18)}
-
   /* Responsive */
   @media (max-width: 992px){
-    .products-grid{grid-template-columns:repeat(2,1fr);gap:18px;padding:0 12px;}
+    .products-grid{grid-template-columns:repeat(2,1fr)}
     header{padding:12px 20px}
     .banner{height:520px}
-    .banner h1{font-size:36px}
-    .banner p{font-size:18px}
     section{padding:48px 20px}
   }
   @media (max-width: 576px){
-    header{flex-direction:column;align-items:flex-start;padding:10px;}
+    header{flex-direction:row;gap:10px;padding:10px}
     header img{height:60px}
     header nav ul{display:none}
     .banner{height:420px;padding:14px}
     .banner h1{font-size:22px}
-    .banner p{font-size:16px}
-    .products-grid{grid-template-columns:1fr;gap:12px;padding:0 8px;}
-    .product-card img{width:130px;height:130px}
-    section{padding:30px 12px}
-    .cotizador input,.cotizador textarea{width:100%;}
+    .products-grid{grid-template-columns:1fr;gap:14px;padding:0 12px}
+    .product-card img{width:140px;height:140px}
+    section{padding:36px 14px}
   }
 </style>
 </head>
 <body>
+
 <!-- HEADER -->
 <header>
   <div style="display:flex;align-items:center;gap:14px">
@@ -156,6 +134,7 @@
       <div style="font-size:0.85rem;color:#546b56">Productos y Equipos de Fumigación</div>
     </div>
   </div>
+
   <nav aria-label="Menú principal">
     <ul>
       <li><a href="#inicio">Inicio</a></li>
@@ -176,8 +155,8 @@
     <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
     <p>Pulverizadores, termonebulizadores, cebos, trampas y EPP — Servicio y envío a todo el país.</p>
     <div style="margin-top:18px">
-      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open"></i> Ver Catálogo</a>
-      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments"></i> Solicitar Cotización</a>
+      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open" aria-hidden="true"></i> Ver Catálogo</a>
+      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments" aria-hidden="true"></i> Solicitar Cotización</a>
     </div>
   </div>
 </section>
@@ -185,7 +164,9 @@
 <!-- PRODUCTOS -->
 <section id="productos">
   <h2 class="section-title">Nuestros Productos</h2>
-  <div class="products-grid" id="product-list"></div>
+  <div class="products-grid" id="product-list">
+    <!-- JS injectará las tarjetas -->
+  </div>
 </section>
 
 <!-- COTIZACIÓN -->
@@ -249,7 +230,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2025 ECO PEST S.R.L — Todos los derechos reservados</p>
-  <p style="margin-top:8px;font-size:0.95rem">Diseñado por <strong>EcoPest</strong></p>
+  <p style="margin-top:8px;font-size:0.95rem">Diseñado por <strong>💻 Soluciones CodeWave</strong></p>
 </footer>
 
 <!-- WhatsApp flotante -->
@@ -258,38 +239,126 @@
 </a>
 
 <!-- Modal detalle producto -->
-<div id="modalProducto" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.48);align-items:center;justify-content:center;z-index:1500">
-  <div style="background:#fff;padding:20px;border-radius:12px;max-width:520px;width:90%;position:relative">
-    <span style="position:absolute;top:10px;right:16px;cursor:pointer;font-size:24px;font-weight:700" onclick="document.getElementById('modalProducto').style.display='none'">&times;</span>
-    <h3 id="modalTitle" style="margin-top:0"></h3>
-    <img id="modalImg" src="" alt="" style="width:100%;height:auto;margin:12px 0">
-    <p id="modalDesc"></p>
-    <p style="color:var(--eco-green);font-weight:700;font-size:1.05rem" id="modalPrice"></p>
+<div class="modal" id="productoModal" tabindex="-1" style="display:none;position:fixed;inset:0;z-index:1500;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;max-width:900px;width:92%;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 id="modal-title" style="margin:0;color:var(--eco-green)"></h3>
+      <button onclick="closeModal()" style="background:transparent;border:none;font-size:20px;cursor:pointer">&times;</button>
+    </div>
+    <div id="modal-body" style="margin-top:12px"></div>
+    <div style="margin-top:14px;text-align:right">
+      <a id="modal-wapp" href="#" target="_blank" class="btn-wapp" style="max-width:260px">Consultar por WhatsApp</a>
+    </div>
   </div>
 </div>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-const products = [
-  {id:1,name:"Pulverizador Manual",category:"Equipos",price:0,img:"img/pulverizador.jpg",description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito transparente de 18L."},
-  {id:2,name:"Nebulizador Eléctrico",category:"Equipos",price:0,img:"img/nebulizador.jpg",description:"Nebulizador eléctrico de alta eficiencia, ideal para fumigación rápida."},
-  {id:3,name:"Termonebulizador",category:"Equipos",price:0,img:"img/termonebulizador.jpg",description:"Termonebulizador profesional para uso agrícola y urbano."}
-  // Agrega más productos según necesites
-];
-const container=document.getElementById('product-list');
-products.forEach(p=>{
-  const card=document.createElement('div');card.className='product-card';
-  card.innerHTML=`<img src="${p.img}" alt="${p.name}"><h4>${p.name}</h4><p>${p.description}</p>
-  <a class="btn-wapp" href="https://wa.me/18097383196?text=Hola,%20quiero%20más%20información%20sobre%20${encodeURIComponent(p.name)}" target="_blank">Contactar por WhatsApp</a>`;
-  container.appendChild(card);
+/* Particles: full banner background */
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value": 45},
+    "color": {"value":["#66BB6A","#2E7D32"]},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.55},
+    "size":{"value":3},
+    "line_linked":{"enable":true,"distance":140,"color":"#66BB6A","opacity":0.18,"width":1},
+    "move":{"enable":true,"speed":2,"out_mode":"out"}
+  },
+  "interactivity":{
+    "detect_on":"canvas",
+    "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},
+    "modes":{"grab":{"distance":140},"push":{"particles_nb":3}}
+  },
+  "retina_detect":true
 });
+</script>
+
+<script>
+/* Productos: uso los productos que me diste */
+const products = [
+   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
+   {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV eléctrico para desinfecciones. Tamaño de gota 5-50 micrones. Capacidad 6 L."},
+   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
+   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Termonebulizador para control de mosquitos y desinfecciones en áreas grandes."},
+   {id:5, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara para atrapar insectos voladores sin ruidos ni chispas."},
+   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
+   {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel cebo con Indoxacarb, altamente efectivo contra cucarachas."},
+   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Cebo en gel que actúa rápidamente sobre cucarachas."},
+   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo Max-A, segura y eficiente para control de ratas."},
+   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa Multi-Catch para captura múltiple de ratones."},
+   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampas de captura sin muerte, opción ética para control de roedores."},
+   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
+   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
+   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
+   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
+   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de 6.5 Hp."},
+   {id:17, name:"Tablero de pegamento", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero no tóxico, multi-función para diversas plagas."},
+   {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Placas adhesivas que capturan roedores y otras plagas sin veneno."}
+];
+
+function shortText(text, max=110){ return text && text.length>max ? text.slice(0,max).trim() + '...' : text; }
+
+function renderProducts(){
+  const container = document.getElementById('product-list');
+  container.innerHTML = '';
+  products.forEach(p=>{
+    const card = document.createElement('article');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <h4>${p.name}</h4>
+      <p>${shortText(p.description, 100)}</p>
+      <a class="btn-wapp" role="button" onclick="openModal(${p.id})">
+        <img src="img/whatsapp.png" alt="W"> Consultar por WhatsApp
+      </a>
+    `;
+    container.appendChild(card);
+  });
+}
+
+/* Modal handling */
+function openModal(id){
+  const product = products.find(x=>x.id===id);
+  if(!product) return;
+  document.getElementById('modal-title').textContent = product.name;
+  document.getElementById('modal-body').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="text-align:center"><img src="${product.img}" alt="${product.name}" style="max-width:240px;height:auto"></div>
+      <div><strong>Categoría:</strong> ${product.category}</div>
+      <div>${product.description}</div>
+    </div>
+  `;
+  const imgUrl = product.img.startsWith('http') ? product.img : window.location.origin + '/' + product.img.replace(/^\/+/,'');
+  const mensaje = `Hola, quiero más información sobre este producto:%0A%0A${product.name}%0A${product.category}%0A%0ADescripción:%0A${product.description}%0A%0AImagen:%0A${imgUrl}`;
+  document.getElementById('modal-wapp').href = `https://wa.me/18097383196?text=${encodeURIComponent(mensaje)}`;
+  // show modal (simple)
+  const modal = document.getElementById('productoModal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){ document.getElementById('productoModal').style.display='none'; document.body.style.overflow=''; }
+
+/* Cotización: abre WhatsApp con mensaje */
 function handleCotizacion(e){
   e.preventDefault();
-  const nombre=document.getElementById('cot-nombre').value;
-  const email=document.getElementById('cot-email').value;
-  const mensaje=document.getElementById('cot-mensaje').value;
-  const url=`https://wa.me/18097383196?text=${encodeURIComponent(`Hola, soy ${nombre} (${email}), quiero información sobre: ${mensaje}`)}`;
-  window.open(url,'_blank');
+  const nombre = document.getElementById('cot-nombre').value.trim();
+  const email = document.getElementById('cot-email').value.trim();
+  const mensaje = document.getElementById('cot-mensaje').value.trim();
+  const text = `Hola, mi nombre es ${nombre}%0ACorreo: ${email}%0A%0ASolicito cotización:%0A${mensaje}`;
+  window.open(`https://wa.me/18097383196?text=${text}`, '_blank');
 }
+
+/* Init */
+renderProducts();
+
+/* Cerrar modal con Escape o clic fuera */
+window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+window.addEventListener('click', (ev)=>{ const modal = document.getElementById('productoModal'); if(ev.target===modal) closeModal(); });
+
+/* Formulario de contacto simple (si quieres mantener envío por email, reemplaza) */
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit', e=>{ /* el de cotizacion ya maneja su submit */ }));
 </script>
 </body>
 </html>
