@@ -19,8 +19,8 @@
   --bg: #f7f9f6;
   --card-radius: 14px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Roboto',sans-serif;background:var(--bg);color:#222;scroll-behavior:smooth;overflow-x:hidden}
+*{box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:#222;scroll-behavior:smooth}
 a{color:inherit;text-decoration:none}
 
 /* Header */
@@ -29,21 +29,22 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
+  padding:12px 40px;
   box-shadow:0 2px 10px rgba(0,0,0,0.06);
   position:sticky;
   top:0;
   z-index:1200;
   flex-wrap:wrap;
 }
-header img{height:70px;width:auto;object-fit:contain}
+header img{height:88px;width:auto;object-fit:contain}
 header nav ul{
   list-style:none;
   display:flex;
-  gap:12px;
+  gap:18px;
+  margin:0;
+  padding:0;
   align-items:center;
   flex-wrap:wrap;
-  justify-content:center;
 }
 header nav ul li a{
   padding:8px 14px;
@@ -61,7 +62,7 @@ header nav ul li a:hover{
 /* Banner */
 .banner{
   position:relative;
-  min-height:60vh;
+  min-height:640px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -69,42 +70,47 @@ header nav ul li a:hover{
   text-align:center;
   overflow:hidden;
   background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
-  padding:20px;
 }
 .banner-inner{
   position:relative;
   z-index:2;
-  max-width:100%;
-  width:100%;
+  padding:20px;
+  max-width:1100px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
-.banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:2rem;margin-bottom:12px}
-.banner p{color:#2f4f35;font-size:1rem;margin-bottom:16px}
-.banner .banner-buttons {display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:48px;margin:0 0 10px}
+.banner p{color:#2f4f35;font-size:20px;margin:8px 0 18px}
+.banner .banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
 .banner .banner-buttons a {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:10px 18px;
-  border-radius:30px;
-  font-weight:700;
-  text-decoration:none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
 }
 .btn-primary-cta{background:var(--eco-green);color:#fff;box-shadow:0 8px 28px rgba(46,125,50,0.12);}
-.btn-outline-cta{background:#fff;color:var(--eco-green);border:2px solid var(--eco-green);}
+.btn-outline-cta{background:#fff;color:var(--eco-green);margin-left:10px}
 
 /* Sections */
-section{padding:50px 20px}
-.section-title{text-align:center;margin-bottom:28px;font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:1.5rem;}
+section{padding:72px 60px}
+.section-title{text-align:center;margin-bottom:28px;font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:1.45rem}
 
 /* Productos */
 .products-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
   max-width:1200px;
   margin:0 auto;
 }
@@ -116,71 +122,51 @@ section{padding:50px 20px}
   transition:transform .18s,box-shadow .18s;
 }
 .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,60,20,0.06)}
-.product-card img{width:150px;height:150px;object-fit:contain;margin-bottom:12px}
+.product-card img{width:170px;height:170px;object-fit:contain;margin-bottom:12px}
 .product-card h4{margin:6px 0;color:#0c4f2b;font-size:1.05rem}
-.product-card p{color:var(--muted);font-size:0.95rem;min-height:50px;margin:0 0 12px}
+.product-card p{color:var(--muted);font-size:0.95rem;min-height:56px;margin:0 0 12px}
 .btn-wapp{
-  display:flex;
-  justify-content:center;
+  display:inline-flex;
   align-items:center;
-  gap:10px;
-  padding:10px 18px;
-  border-radius:10px;
+  justify-content:center;
+  gap:8px;
+  padding:10px 20px;
+  border-radius:14px;
   background:linear-gradient(180deg,#ffffff,#f2fbf4);
-  border:2px solid rgba(37,211,102,0.25);
+  border:2px solid rgba(37,211,102,0.2);
   color:var(--eco-green);
   font-weight:700;
   text-decoration:none;
-  width:100%;
+  text-align:center;
   transition:all .2s;
 }
 .btn-wapp:hover{
-  background:var(--eco-green);
-  color:#fff;
   transform:translateY(-2px);
+  background:linear-gradient(180deg,#e0f1de,#c4e5c1);
 }
 
 /* Cotizador */
-.cotizador{background:linear-gradient(180deg, var(--eco-green-2), var(--eco-green));color:#fff;padding:32px 10px;border-radius:12px;text-align:center}
+.cotizador{background:linear-gradient(180deg, var(--eco-green-2), var(--eco-green));color:#fff;padding:42px 20px;border-radius:12px;text-align:center}
 .cotizador input,.cotizador textarea{width:90%;max-width:520px;padding:12px;margin:10px 0;border-radius:8px;border:none}
-.cotizador button{background:#fff;color:var(--eco-green);padding:10px 22px;border-radius:26px;border:none;font-weight:700;cursor:pointer;transition:all .2s}
-.cotizador button:hover{background:#f2fbf4; color:var(--eco-green-2); transform:translateY(-2px)}
+.cotizador button{background:#fff;color:var(--eco-green);padding:10px 22px;border-radius:26px;border:none;font-weight:700;cursor:pointer}
 
-/* Misión, Visión, Valores */
-.mvv-container{display:flex;justify-content:space-around;gap:16px;flex-wrap:wrap;text-align:center}
-.mvv-card{background:#fff;padding:24px 16px;border-radius:12px;flex:1 1 250px;box-shadow:0 8px 22px rgba(15,60,20,0.06)}
-.mvv-card h3{color:var(--eco-green);margin-bottom:12px}
-.mvv-card p{color:#555;font-size:0.95rem;line-height:1.5}
-
-/* NOSOTROS horizontal */
-.nosotros-container-horizontal{
-  display:flex;
-  overflow-x:auto;
-  gap:16px;
-  padding-bottom:12px;
+/* Galería */
+.galeria-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
 }
-.nosotros-container-horizontal::-webkit-scrollbar{height:8px;}
-.nosotros-container-horizontal::-webkit-scrollbar-thumb{background:var(--eco-green-2);border-radius:4px;}
-.nosotros-card{flex:0 0 280px;background:#fff;padding:24px 18px;border-radius:12px;box-shadow:0 8px 22px rgba(15,60,20,0.06);text-align:center;scroll-snap-align:start;}
-.nosotros-container-horizontal{scroll-snap-type:x mandatory;}
-
-/* TESTIMONIOS horizontal */
-.testimonials-horizontal{background:#eef6ec;padding:50px 10px;text-align:center;}
-.testimonial-scroll{
-  display:flex;
-  overflow-x:auto;
-  gap:16px;
-  padding-bottom:12px;
-  scroll-snap-type:x mandatory;
+.galeria-item{
+  width:100%;
+  padding-top:100%;
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
 }
-.testimonial-scroll::-webkit-scrollbar{height:8px;}
-.testimonial-scroll::-webkit-scrollbar-thumb{background:var(--eco-green-2);border-radius:4px;}
-.testimonial-card{flex:0 0 280px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 22px rgba(15,60,20,0.06);scroll-snap-align:start;}
-
-/* Ubicaciones */
-.locations{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-.location-card{flex:1 1 300px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 8px 22px rgba(15,60,20,0.06);text-align:center}
-.location-card iframe{width:100%;height:220px;border:0;border-radius:12px}
+.galeria-item img{
+  position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;display:block;transition:transform .3s;
+}
+.galeria-item:hover img{transform:scale(1.05);}
 
 /* Footer y WhatsApp */
 footer{background:var(--eco-green);color:#fff;padding:28px 18px;text-align:center}
@@ -188,17 +174,51 @@ footer a{color:#fff}
 .whatsapp-fixed{position:fixed;right:18px;bottom:18px;z-index:1400}
 .whatsapp-fixed img{width:70px;height:70px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.18)}
 
-/* Responsive */
+/* Banner responsive */
 @media (max-width: 992px) {
-  .banner h1{font-size:1.8rem;}
-  .banner p{font-size:0.95rem;}
-  .products-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .banner h1 { font-size: 32px; line-height: 1.2; }
+  .banner p { font-size: 16px; line-height: 1.4; }
+  .banner .banner-buttons a { font-size: 0.9rem; padding: 10px 16px; }
+  .products-grid{grid-template-columns:repeat(2,1fr);}
 }
-@media (max-width: 576px){
-  .banner h1{font-size:1.5rem;}
-  .banner p{font-size:0.9rem;}
-  .banner-inner{padding:12px;}
+
+@media (max-width: 576px) {
+  .banner h1 { font-size: 22px; line-height: 1.2; }
+  .banner p { font-size: 14px; line-height: 1.3; }
+  .banner-inner { padding: 12px; }
+  .banner .banner-buttons a { 
+    font-size: 0.8rem; 
+    padding: 8px 14px; 
+    width: 100%;       
+    max-width: 220px;  
+  }
   .products-grid{grid-template-columns:1fr;}
+  header nav ul {
+    display: flex;          
+    flex-direction: row;    
+    flex-wrap: wrap;        
+    gap: 8px;               
+    justify-content: center; 
+    margin: 8px 0;
+  }
+  header nav ul li a {
+    padding: 6px 10px;
+    font-size: 0.85rem;     
+  }
+}
+
+/* Ajuste para pantallas grandes: tarjetas más compactas y botón centrado */
+@media (min-width: 992px){
+  .products-grid{
+    gap:16px;
+    justify-items:center;
+  }
+  .product-card{
+    max-width:280px;
+  }
+  .product-card .btn-wapp{
+    width:auto;
+  }
 }
 </style>
 </head>
@@ -209,8 +229,8 @@ footer a{color:#fff}
   <div style="display:flex;align-items:center;gap:14px">
     <img src="img/logo1.jpg" alt="Logo ECO PEST">
     <div>
-      <div style="font-family:'Montserrat',sans-serif;color:var(--eco-green);font-weight:700;font-size:1rem">ECO PEST S.R.L</div>
-      <div style="font-size:0.8rem;color:#546b56">Productos y Equipos de Fumigación</div>
+      <div style="font-family:'Montserrat',sans-serif;color:var(--eco-green);font-weight:700;font-size:1.05rem">ECO PEST S.R.L</div>
+      <div style="font-size:0.85rem;color:#546b56">Productos y Equipos de Fumigación</div>
     </div>
   </div>
 
@@ -218,11 +238,9 @@ footer a{color:#fff}
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#productos">Productos</a></li>
-      <li><a href="#mvv">Misión/Valores</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#testimonios">Testimonios</a></li>
       <li><a href="#cotizacion">Cotización</a></li>
-      <li><a href="#ubicaciones">Ubicaciones</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -234,8 +252,8 @@ footer a{color:#fff}
     <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
     <p>Pulverizadores, termonebulizadores, cebos, trampas y EPP — Servicio y envío a todo el país.</p>
     <div class="banner-buttons">
-      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open"></i> Ver Catálogo</a>
-      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments"></i> Solicitar Cotización</a>
+      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open" aria-hidden="true"></i> Ver Catálogo</a>
+      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments" aria-hidden="true"></i> Solicitar Cotización</a>
     </div>
   </div>
 </section>
@@ -244,88 +262,6 @@ footer a{color:#fff}
 <section id="productos">
   <h2 class="section-title">Nuestros Productos</h2>
   <div class="products-grid" id="product-list"></div>
-</section>
-
-<!-- MISIÓN, VISIÓN, VALORES -->
-<section id="mvv">
-  <h2 class="section-title">Misión, Visión y Valores</h2>
-  <div class="mvv-container">
-    <div class="mvv-card">
-      <h3>Misión</h3>
-      <p>Ofrecer soluciones de fumigación profesional con equipos de alta calidad y compromiso con la seguridad y el medio ambiente.</p>
-    </div>
-    <div class="mvv-card">
-      <h3>Visión</h3>
-      <p>Ser líderes en República Dominicana en el suministro de equipos y servicios de control de plagas, garantizando confianza y eficacia.</p>
-    </div>
-    <div class="mvv-card">
-      <h3>Valores</h3>
-      <p>Responsabilidad, profesionalismo, innovación, seguridad y respeto al cliente y al entorno.</p>
-    </div>
-  </div>
-</section>
-
-<!-- NOSOTROS -->
-<section id="nosotros">
-  <h2 class="section-title">Sobre Nosotros</h2>
-  <div class="nosotros-container-horizontal">
-    <div class="nosotros-card">
-      <h4>Experiencia</h4>
-      <p>Más de 10 años ofreciendo soluciones profesionales en control de plagas en toda República Dominicana.</p>
-    </div>
-    <div class="nosotros-card">
-      <h4>Equipo Profesional</h4>
-      <p>Contamos con personal capacitado y comprometido con la seguridad y eficacia de cada servicio.</p>
-    </div>
-    <div class="nosotros-card">
-      <h4>Compromiso Ambiental</h4>
-      <p>Utilizamos productos y técnicas que minimizan el impacto ambiental y cuidan la salud de nuestros clientes.</p>
-    </div>
-    <div class="nosotros-card">
-      <h4>Innovación</h4>
-      <p>Implementamos tecnología de punta en todos nuestros equipos para garantizar resultados eficientes.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section id="testimonios" class="testimonials-horizontal">
-  <h2 class="section-title" style="color:var(--eco-green)">Testimonios</h2>
-  <div class="testimonial-scroll">
-    <div class="testimonial-card">
-      <p>"Excelente servicio y productos de alta calidad. Mi negocio ahora está protegido contra plagas."</p>
-      <h4>Juan Pérez</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"Recomendados 100%. Atención rápida y productos profesionales."</p>
-      <h4>María López</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"Servicio confiable y atención personalizada. Muy recomendados."</p>
-      <h4>Carlos Martínez</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"Calidad y profesionalismo. Todo el equipo funciona a la perfección."</p>
-      <h4>Ana Rodríguez</h4>
-    </div>
-  </div>
-</section>
-
-<!-- UBICACIONES -->
-<section id="ubicaciones">
-  <h2 class="section-title">Nuestras Sucursales</h2>
-  <div class="locations">
-    <div class="location-card">
-      <h4>Distrito Nacional</h4>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.31981417417!2d-69.9339436845449!3d18.44304493395503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L!5e0!3m2!1ses!2sdo!4v1698955094721!5m2!1ses!2sdo" loading="lazy"></iframe>
-      <p>Calle 11, No.15, Las Antillas, El Cacique</p>
-    </div>
-    <div class="location-card">
-      <h4>Punta Cana</h4>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.820262520847!2d-68.41207118462005!3d18.585711012931454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea89300524212bb%3A0x8eecb0d86110f6a3!2sECOPEST%20S.R.L!5e0!3m2!1ses!2sdo!4v1698955169403!5m2!1ses!2sdo" loading="lazy"></iframe>
-      <p>Verón, Punta Cana</p>
-    </div>
-  </div>
 </section>
 
 <!-- COTIZACIÓN -->
@@ -342,27 +278,111 @@ footer a{color:#fff}
   </div>
 </section>
 
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <h2 class="section-title">Nosotros</h2>
+  <div style="max-width:980px;margin:0 auto;text-align:left">
+    <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente. Contamos con una amplia gama de equipos profesionales, insumos y EPP, además de asesoría técnica para elegir la solución adecuada.</p>
+  </div>
+</section>
+
+<!-- MISION, VISION, VALORES -->
+<section id="mvv">
+  <h2 class="section-title">Misión, Visión y Valores</h2>
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;text-align:center;">
+    <div>
+      <h3>Misión</h3>
+      <p>Proveer soluciones integrales de fumigación con productos y servicios seguros, eficientes y responsables con el medio ambiente.</p>
+    </div>
+    <div>
+      <h3>Visión</h3>
+      <p>Ser la empresa líder en control de plagas y fumigación profesional en República Dominicana, destacando por la calidad y confianza.</p>
+    </div>
+    <div>
+      <h3>Valores</h3>
+      <p>Compromiso, responsabilidad, innovación, seguridad, respeto y atención al cliente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <h2 class="section-title">Testimonios</h2>
+  <div style="max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;text-align:center;">
+    <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);">
+      <p>"Excelente atención y productos de calidad. Muy recomendados para fumigación profesional."</p>
+      <strong>- Juan P., Santo Domingo</strong>
+    </div>
+    <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);">
+      <p>"Servicios rápidos y confiables, además los equipos funcionan de maravilla."</p>
+      <strong>- María L., Punta Cana</strong>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIONES -->
+<section id="ubicaciones">
+  <h2 class="section-title">Nuestras Sucursales</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;">
+      <h4>Distrito Nacional</h4>
+      <a href="https://www.google.com/maps/place/ECOPEST+S.R.L/@18.44305,-69.9339436,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8ea5630059e4b7ed:0xaa6e330e62f1d6d7!8m2!3d18.4430449!4d-69.9313687!16s%2Fg%2F11wbvrk2c6?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps</a>
+    </div>
+    <div style="text-align:center;">
+      <h4>Punta Cana</h4>
+      <a href="https://www.google.com/maps/place/ECOPEST+S.R.L/@18.5857161,-68.412071,1030m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8ea89300524212bb:0x8eecb0d86110f6a3!8m2!3d18.585711!4d-68.4094961!16s%2Fg%2F11xs7yykvr?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <h2 class="section-title">Galería de productos</h2>
+  <div class="galeria-grid">
+    <div class="galeria-item"><img src="img/pulverizador.jpg" alt="Pulverizador Manual"></div>
+    <div class="galeria-item"><img src="img/nebulizador.jpg" alt="Nebulizador ULV Eléctrico"></div>
+    <div class="galeria-item"><img src="img/bomba.jpg" alt="Bomba de Fumigación"></div>
+    <div class="galeria-item"><img src="img/thermo.jpg" alt="Thermo Fogger"></div>
+    <div class="galeria-item"><img src="img/lampara.jpg" alt="Fly Hunter Smart 30"></div>
+    <div class="galeria-item"><img src="img/insecticida.jpg" alt="Insecticida Profesional"></div>
+    <div class="galeria-item"><img src="img/advion.jpg" alt="Advion Cockroach"></div>
+    <div class="galeria-item"><img src="img/invict.jpg" alt="Invict-Cockroach-Gel"></div>
+    <div class="galeria-item"><img src="img/estacion.jpg" alt="Estación de Cebo para Ratas"></div>
+    <div class="galeria-item"><img src="img/cebadero2.jpg" alt="Trampa Metálica"></div>
+    <div class="galeria-item"><img src="img/cebadero3.jpg" alt="Trampa Mecánica"></div>
+    <div class="galeria-item"><img src="img/cebo.jpg" alt="Cebo para Ratas"></div>
+    <div class="galeria-item"><img src="img/guante.jpg" alt="Guantes de Protección"></div>
+    <div class="galeria-item"><img src="img/mascarilla.jpg" alt="Mascarilla de Protección Carbon Activado"></div>
+    <div class="galeria-item"><img src="img/mascara.jpg" alt="Mascarilla Cara Completa"></div>
+    <div class="galeria-item"><img src="img/estacionaria.jpg" alt="Fumigadora Estacionaria"></div>
+    <div class="galeria-item"><img src="img/tablero.png" alt="Tablero de pegamento"></div>
+    <div class="galeria-item"><img src="img/pegamento.jpg" alt="Trampa Engomada Para Roedores"></div>
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section id="contacto">
   <h2 class="section-title">Contáctanos</h2>
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <p style="font-size:1.05rem"><i class="fa fa-phone"></i> +1 (809) 738-3196 &nbsp; | &nbsp; <i class="fa fa-envelope"></i> ecopestsrl@gmail.com</p>
-    <p><i class="fa fa-map-marker-alt"></i> Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional</p>
+  <div style="max-width:800px;margin:0 auto;text-align:center">
+    <p>Teléfono / WhatsApp: <a href="https://wa.me/18091234567" target="_blank">+1 809 123 4567</a></p>
+    <p>Correo: <a href="mailto:info@ecopestsrl.com">info@ecopestsrl.com</a></p>
+    <p>Horario: Lunes a Viernes, 8:00am - 5:00pm</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  &copy; 2025 ECO PEST S.R.L | Todos los derechos reservados
+  <p>&copy; 2025 ECO PEST S.R.L | Todos los derechos reservados</p>
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp-fixed" href="https://wa.me/18297383196" target="_blank" aria-label="WhatsApp">
-  <img src="img/whatsapp.png" alt="WhatsApp">
-</a>
+<!-- WhatsApp flotante -->
+<div class="whatsapp-fixed">
+  <a href="https://wa.me/18091234567" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+</div>
 
-<!-- SCRIPT PRODUCTOS -->
+<!-- SCRIPTS -->
 <script>
+// Productos
 const products = [
    {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
    {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV eléctrico para desinfecciones. Tamaño de gota 5-50 micrones. Capacidad 6 L."},
@@ -386,20 +406,25 @@ const products = [
 
 const productList = document.getElementById('product-list');
 products.forEach(p=>{
-  const div=document.createElement('div');
-  div.className='product-card';
-  div.innerHTML=`<img src="${p.img}" alt="${p.name}"><h4>${p.name}</h4><p>${p.description}</p><a href="https://wa.me/18297383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}" class="btn-wapp"><i class="fa fa-comments"></i> Cotizar</a>`;
-  productList.appendChild(div);
+  const card = document.createElement('div');
+  card.className='product-card';
+  card.innerHTML=`
+    <img src="${p.img}" alt="${p.name}">
+    <h4>${p.name}</h4>
+    <p>${p.description}</p>
+    <a href="https://wa.me/18091234567?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(p.name)}" target="_blank" class="btn-wapp">Cotizar</a>
+  `;
+  productList.appendChild(card);
 });
 
 // Cotización
 function handleCotizacion(e){
   e.preventDefault();
-  const nombre=document.getElementById('cot-nombre').value;
-  const email=document.getElementById('cot-email').value;
-  const mensaje=document.getElementById('cot-mensaje').value;
-  const texto=`Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)},%20correo:%20${encodeURIComponent(email)}.%20${encodeURIComponent(mensaje)}`;
-  window.open(`https://wa.me/18297383196?text=${texto}`,'_blank');
+  const nombre = document.getElementById('cot-nombre').value;
+  const email = document.getElementById('cot-email').value;
+  const mensaje = document.getElementById('cot-mensaje').value;
+  const text = `Hola, mi nombre es ${nombre}. Correo: ${email}. Mensaje: ${mensaje}`;
+  window.open(`https://wa.me/18091234567?text=${encodeURIComponent(text)}`,'_blank');
 }
 </script>
 
