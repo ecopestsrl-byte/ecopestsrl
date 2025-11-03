@@ -215,28 +215,28 @@ footer a {
   color: #fff;
 }
 
-/* Botón flotante de WhatsApp */
+/* Botón flotante de WhatsApp (más pequeño y discreto) */
 .whatsapp-fixed {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 16px;
+  bottom: 16px;
   z-index: 1500;
   background: #25D366; /* Verde oficial WhatsApp */
   border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  padding: 6px; /* más pequeño */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-fixed:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 
 .whatsapp-fixed img {
-  width: 48px;
-  height: 48px;
-  filter: brightness(0) invert(1); /* Ícono blanco visible en fondos claros */
+  width: 42px;
+  height: 42px;
+  filter: brightness(0) invert(1); /* Ícono blanco visible sobre fondo verde */
 }
 
 /* Responsive */
