@@ -85,7 +85,7 @@ header nav ul li a:hover{
 /* Banner */
 .banner{
   position:relative;
-  height:640px;
+  min-height:640px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -94,16 +94,38 @@ header nav ul li a:hover{
   overflow:hidden;
   background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
 }
-.banner-inner{position:relative;z-index:2;padding:20px;max-width:1100px}
+.banner-inner{
+  position:relative;
+  z-index:2;
+  padding:20px;
+  max-width:1100px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 .banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:48px;margin:0 0 10px}
 .banner p{color:#2f4f35;font-size:20px;margin:8px 0 18px}
-.btn-primary-cta{
-  display:inline-flex;gap:10px;align-items:center;
-  padding:12px 20px;border-radius:30px;
-  background:var(--eco-green);color:#fff;font-weight:700;
-  box-shadow:0 8px 28px rgba(46,125,50,0.12);
+
+/* Botones del banner centrados */
+.banner .banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
 }
-.btn-outline-cta{background:#fff;padding:10px 16px;border-radius:24px;color:var(--eco-green);font-weight:700;margin-left:10px}
+.banner .banner-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-primary-cta{background:var(--eco-green);color:#fff;box-shadow:0 8px 28px rgba(46,125,50,0.12);}
+.btn-outline-cta{background:#fff;color:var(--eco-green);margin-left:10px}
 
 /* Sections */
 section{padding:72px 60px}
@@ -136,11 +158,6 @@ section{padding:72px 60px}
 .cotizador input,.cotizador textarea{width:90%;max-width:520px;padding:12px;margin:10px 0;border-radius:8px;border:none}
 .cotizador button{background:#fff;color:var(--eco-green);padding:10px 22px;border-radius:26px;border:none;font-weight:700;cursor:pointer}
 
-/* Grid 3 */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
-.card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
-.card h3{color:var(--eco-green);margin-top:10px}
-
 /* Galería */
 .galeria-grid{
   display:grid;
@@ -169,31 +186,34 @@ footer a{color:#fff}
 @media (max-width: 992px) {
   .banner h1 { font-size: 32px; line-height: 1.2; }
   .banner p { font-size: 16px; line-height: 1.4; }
-  .btn-primary-cta, .btn-outline-cta { font-size: 0.9rem; padding: 10px 16px; }
+  .banner .banner-buttons a { font-size: 0.9rem; padding: 10px 16px; }
+  .products-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 @media (max-width: 576px) {
   .banner h1 { font-size: 22px; line-height: 1.2; }
   .banner p { font-size: 14px; line-height: 1.3; }
-  .btn-primary-cta, .btn-outline-cta { font-size: 0.8rem; padding: 8px 14px; }
   .banner-inner { padding: 12px; }
-}
-  
-@media (max-width: 576px){
+  .banner .banner-buttons a { 
+    font-size: 0.8rem; 
+    padding: 8px 14px; 
+    width: 100%;       
+    max-width: 220px;  
+  }
+  .products-grid{grid-template-columns:1fr;}
   header nav ul {
-    display: flex;          /* mostrar menú en móviles */
-    flex-direction: row;    /* horizontal */
-    flex-wrap: wrap;        /* que se vaya a otra línea si hace falta */
-    gap: 8px;               /* espacio entre botones */
-    justify-content: center; /* centrar los botones */
+    display: flex;          
+    flex-direction: row;    
+    flex-wrap: wrap;        
+    gap: 8px;               
+    justify-content: center; 
     margin: 8px 0;
   }
   header nav ul li a {
     padding: 6px 10px;
-    font-size: 0.85rem;     /* tamaño de texto más adecuado */
+    font-size: 0.85rem;     
   }
 }
-  
 </style>
 </head>
 <body>
@@ -227,18 +247,16 @@ footer a{color:#fff}
     <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
     <p>Pulverizadores, termonebulizadores, cebos, trampas y EPP — Servicio y envío a todo el país.</p>
     <div class="banner-buttons">
-  <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open" aria-hidden="true"></i> Ver Catálogo</a>
-  <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments" aria-hidden="true"></i> Solicitar Cotización</a>
-</div>
+      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open" aria-hidden="true"></i> Ver Catálogo</a>
+      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments" aria-hidden="true"></i> Solicitar Cotización</a>
+    </div>
   </div>
 </section>
 
 <!-- PRODUCTOS -->
 <section id="productos">
   <h2 class="section-title">Nuestros Productos</h2>
-  <div class="products-grid" id="product-list">
-    <!-- JS injectará las tarjetas -->
-  </div>
+  <div class="products-grid" id="product-list"></div>
 </section>
 
 <!-- COTIZACIÓN -->
@@ -287,7 +305,7 @@ footer a{color:#fff}
     <div class="galeria-item"><img src="img/pegamento.jpg" alt="Trampa Engomada Para Roedores"></div>
   </div>
 </section>
-  
+
 <!-- CONTACTO -->
 <section id="contacto">
   <h2 class="section-title">Contáctanos</h2>
@@ -329,7 +347,7 @@ footer a{color:#fff}
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-/* Particles: full banner background */
+/* Particles banner */
 particlesJS("particles-js", {
   "particles": {
     "number": {"value": 45},
@@ -347,10 +365,8 @@ particlesJS("particles-js", {
   },
   "retina_detect":true
 });
-</script>
 
-<script>
-/* Productos: uso los productos que me diste */
+/* Productos */
 const products = [
    {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
    {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV eléctrico para desinfecciones. Tamaño de gota 5-50 micrones. Capacidad 6 L."},
@@ -407,14 +423,13 @@ function openModal(id){
   const imgUrl = product.img.startsWith('http') ? product.img : window.location.origin + '/' + product.img.replace(/^\/+/,'');
   const mensaje = `Hola, quiero más información sobre este producto:%0A%0A${product.name}%0A${product.category}%0A%0ADescripción:%0A${product.description}%0A%0AImagen:%0A${imgUrl}`;
   document.getElementById('modal-wapp').href = `https://wa.me/18097383196?text=${encodeURIComponent(mensaje)}`;
-  // show modal (simple)
   const modal = document.getElementById('productoModal');
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 function closeModal(){ document.getElementById('productoModal').style.display='none'; document.body.style.overflow=''; }
 
-/* Cotización: abre WhatsApp con mensaje */
+/* Cotización */
 function handleCotizacion(e){
   e.preventDefault();
   const nombre = document.getElementById('cot-nombre').value.trim();
@@ -426,13 +441,9 @@ function handleCotizacion(e){
 
 /* Init */
 renderProducts();
-
-/* Cerrar modal con Escape o clic fuera */
 window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 window.addEventListener('click', (ev)=>{ const modal = document.getElementById('productoModal'); if(ev.target===modal) closeModal(); });
-
-/* Formulario de contacto simple (si quieres mantener envío por email, reemplaza) */
-document.querySelectorAll('form').forEach(f=>f.addEventListener('submit', e=>{ /* el de cotizacion ya maneja su submit */ }));
 </script>
+
 </body>
 </html>
