@@ -407,6 +407,27 @@ function handleCotizacion(e){
   const texto=`Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)},%20correo:%20${encodeURIComponent(email)}.%20${encodeURIComponent(mensaje)}`;
   window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
 }
+  
+<!-- PARTICLES.JS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value":50,"density":{"enable":true,"value_area":800}},
+    "color":{"value":"#66BB6A"},
+    "shape":{"type":"circle","stroke":{"width":0,"color":"#000"}},
+    "opacity":{"value":0.6,"random":false},
+    "size":{"value":3,"random":true},
+    "line_linked":{"enable":true,"distance":120,"color":"#66BB6A","opacity":0.4,"width":1},
+    "move":{"enable":true,"speed":2,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false}
+  },
+  "interactivity":{
+    "detect_on":"canvas",
+    "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},
+    "modes":{"grab":{"distance":140,"line_linked":{"opacity":0.5}},"bubble":{"distance":400,"size":4,"duration":0.3,"opacity":1,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}
+  },
+  "retina_detect":true
+});
 </script>
 
 </body>
