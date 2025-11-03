@@ -94,39 +94,39 @@
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
   .card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
   .card h3{color:var(--eco-green);margin-top:10px}
-  /* Galería */
+  
 /* Galería horizontal */
-.galeria-scroll {
-  display: flex;           /* fila horizontal */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
-  overflow-x: auto;        /* scroll horizontal */
-  padding-bottom: 12px;
-  scroll-behavior: smooth;
 }
 
 .galeria-item {
-  flex: 0 0 auto;
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  padding-top: 100%; /* para hacer el cuadrado perfecto */
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .galeria-item img {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .galeria-item:hover img {
   transform: scale(1.05);
 }
 
-/* Ajustes responsive */
-@media (max-width: 992px) { .galeria-item { width: 160px; height: 160px; } }
-@media (max-width: 576px) { .galeria-item { width: 140px; height: 140px; } }
+/* Responsive */
+@media (max-width: 992px) { .galeria-item { padding-top: 100%; } }
+@media (max-width: 576px) { .galeria-item { padding-top: 100%; } }
 
   /* Contacto & Footer */
   footer{background:var(--eco-green);color:#fff;padding:28px 18px;text-align:center}
@@ -219,10 +219,10 @@
   </div>
 </section>
 
-<!-- GALERÍA: reemplazamos los ejemplos por tus productos -->
+<!-- GALERÍA -->
 <section id="galeria">
   <h2 class="section-title">Galería de productos</h2>
-  <div class="galeria-scroll">
+  <div class="galeria-grid">
     <div class="galeria-item"><img src="img/pulverizador.jpg" alt="Pulverizador Manual"></div>
     <div class="galeria-item"><img src="img/nebulizador.jpg" alt="Nebulizador ULV Eléctrico"></div>
     <div class="galeria-item"><img src="img/bomba.jpg" alt="Bomba de Fumigación"></div>
