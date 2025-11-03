@@ -3,168 +3,264 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Eco Pest SRL | Productos y Equipos de Fumigación - República Dominicana</title>
-<meta name="description" content="Eco Pest SRL - Productos y equipos de fumigación: pulverizadores, nebulizadores, termonebulizadores, trampas, cebos y EPP. Envíos a todo el país.">
-<meta name="keywords" content="Ecopest, fumigación, pulverizadores, insecticidas, control de plagas, equipos EPP, República Dominicana">
-
-<!-- Schema LocalBusiness -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"ECO PEST S.R.L",
-  "image":"https://www.ecopestsrl.com/img/logo1.jpg",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Calle 11, No.15, Las Antillas, El Cacique",
-    "addressLocality":"Distrito Nacional",
-    "addressCountry":"DO"
-  },
-  "telephone":"+18097383196",
-  "url":"https://www.ecopestsrl.com",
-  "sameAs":[
-    "https://www.facebook.com/eco.pest.srl/",
-    "https://www.instagram.com/ecopestsrl/"
-  ],
-  "description":"Venta de equipos, insumos y EPP para fumigación profesional en República Dominicana. Pulverizadores, nebulizadores, termonebulizadores, cebos y trampas."
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Eco Pest SRL | Productos y Equipos Profesionales de Fumigación</title>
+<meta name="description" content="Eco Pest SRL ofrece equipos y productos profesionales para fumigación: pulverizadores, termonebulizadores, cebos, trampas, insecticidas y más. Envíos a toda la República Dominicana.">
+<meta name="keywords" content="ecopest, fumigación, control de plagas, pulverizadores, termonebulizadores, trampas, cebos, equipos, EPP, insecticidas, República Dominicana">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Eco Pest SRL">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-  /* Variables */
-  :root{
-    --eco-green: #2E7D32;
-    --eco-green-2: #66BB6A;
-    --muted: #6b6b6b;
-    --bg: #f7f9f6;
-    --card-radius: 14px;
-  }
-  *{box-sizing:border-box}
-  body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:#222;scroll-behavior:smooth}
-  a{color:inherit}
-  /* Header */
-  header{
-    background:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 40px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.06);position:sticky;top:0;z-index:1200;
-  }
-  header img{height:88px;width:auto;object-fit:contain}
-  header nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
-  header nav ul li a{
-    text-decoration:none;color:#0b3b23;font-weight:600;padding:8px 14px;border-radius:18px;transition:all .18s;
-  }
-  header nav ul li a:hover{background:var(--eco-green-2);color:#fff;transform:translateY(-2px)}
-  /* Banner */
-  .banner{
-    position:relative;height:640px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;
-    background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
-  }
-  #particles-js{position:absolute;inset:0;z-index:1}
-  .banner-inner{position:relative;z-index:2;padding:20px;max-width:1100px}
-  .banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:48px;margin:0 0 10px}
-  .banner p{color:#2f4f35;font-size:20px;margin:8px 0 18px}
-  .btn-primary-cta{
-    display:inline-flex;gap:10px;align-items:center;padding:12px 20px;border-radius:30px;background:var(--eco-green);color:#fff;font-weight:700;text-decoration:none;
-    box-shadow:0 8px 28px rgba(46,125,50,0.12);
-  }
-  .btn-outline-cta{background:#fff;padding:10px 16px;border-radius:24px;color:var(--eco-green);font-weight:700;text-decoration:none;margin-left:10px}
-  /* Sections */
-  section{padding:72px 60px}
-  .section-title{text-align:center;margin-bottom:28px;font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:1.45rem}
-  /* Products */
-  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
-  .product-card{
-    background:#fff;border-radius:var(--card-radius);padding:18px;border:1px solid #eef6ec;
-    box-shadow:0 8px 22px rgba(15,60,20,0.03);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .18s,box-shadow .18s;
-  }
-  .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,60,20,0.06)}
-  .product-card img{width:170px;height:170px;object-fit:contain;margin-bottom:12px}
-  .product-card h4{margin:6px 0;color:#0c4f2b;font-size:1.05rem}
-  .product-card p{color:var(--muted);font-size:0.95rem;min-height:56px;margin:0 0 12px}
-  .btn-wapp{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f2fbf4);border:2px solid rgba(37,211,102,0.12);color:var(--eco-green);font-weight:700;text-decoration:none;width:100%}
-  .btn-wapp img{height:20px}
-  /* Cotizador (sección similar a Requetelimpia) */
-  .cotizador{background:linear-gradient(180deg, var(--eco-green-2), var(--eco-green));color:#fff;padding:42px 20px;border-radius:12px;text-align:center}
-  .cotizador input,.cotizador textarea{width:90%;max-width:520px;padding:12px;margin:10px 0;border-radius:8px;border:none}
-  .cotizador button{background:#fff;color:var(--eco-green);padding:10px 22px;border-radius:26px;border:none;font-weight:700;cursor:pointer}
-  /* Nosotros, Beneficios */
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
-  .card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
-  .card h3{color:var(--eco-green);margin-top:10px}
-  
-/* Galería horizontal */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
+:root{
+  --eco-green:#2E7D32;
+  --eco-green-2:#66BB6A;
+  --eco-blue:#1976D2;
+  --eco-blue-light:#42A5F5;
+  --muted:#6b6b6b;
+  --bg:#f7f9f6;
+  --card-radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Roboto',sans-serif;background:var(--bg);color:#222;scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:1200;
+  flex-wrap:wrap;
+}
+header img{height:88px;width:auto;object-fit:contain}
+header nav ul{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  margin:0;
+  padding:0;
+  align-items:center;
+  flex-wrap:wrap;
+}
+header nav ul li a{
+  padding:8px 14px;
+  border-radius:18px;
+  font-weight:600;
+  color:#0b3b23;
+  transition:all .18s;
+}
+header nav ul li a:hover{
+  background:var(--eco-green-2);
+  color:#fff;
+  transform:translateY(-2px);
 }
 
-.galeria-item {
-  width: 100%;
-  padding-top: 100%; /* para hacer el cuadrado perfecto */
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
+/* BANNER */
+.banner{
+  position:relative;
+  height:640px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
+}
+#particles-js{
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  z-index:1;
+}
+.banner-inner{
+  position:relative;
+  z-index:2;
+  padding:20px;
+  max-width:1100px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.banner h1{
+  font-family:'Montserrat',sans-serif;
+  color:var(--eco-green);
+  font-size:48px;
+  margin-bottom:10px;
+}
+.banner p{
+  color:#2f4f35;
+  font-size:20px;
+  margin:8px 0 18px;
+}
+.banner .banner-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.banner .banner-buttons a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  transition:all .3s;
+}
+.btn-primary-cta{
+  background:var(--eco-green);
+  color:#fff;
+  box-shadow:0 8px 28px rgba(46,125,50,0.12);
+}
+.btn-primary-cta:hover{background:#1B5E20;transform:scale(1.05);}
+.btn-outline-cta{
+  background:#fff;
+  color:var(--eco-green);
+  border:2px solid var(--eco-green);
+}
+.btn-outline-cta:hover{background:var(--eco-green);color:#fff;transform:scale(1.05);}
+
+/* SECCIONES */
+section{padding:72px 60px}
+.section-title{
+  text-align:center;
+  margin-bottom:28px;
+  font-family:'Montserrat',sans-serif;
+  color:var(--eco-green);
+  font-size:1.45rem;
 }
 
-.galeria-item img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.3s;
+/* PRODUCTOS */
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.product-card{
+  background:#fff;
+  border-radius:var(--card-radius);
+  padding:18px;
+  border:1px solid #eef6ec;
+  box-shadow:0 8px 22px rgba(15,60,20,0.03);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  transition:transform .18s,box-shadow .18s;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,60,20,0.06)}
+.product-card img{width:170px;height:170px;object-fit:contain;margin-bottom:12px}
+.product-card h4{margin:6px 0;color:#0c4f2b;font-size:1.05rem}
+.product-card p{color:var(--muted);font-size:0.95rem;min-height:56px;margin:0 0 12px}
+
+/* BOTÓN COTIZAR */
+.btn-wapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#2E7D32 0%,#42A5F5 100%);
+  color:#fff;
+  font-weight:700;
+  font-family:'Montserrat',sans-serif;
+  box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  transition:all .3s ease-in-out;
+  width:fit-content;
+  min-width:150px;
+  text-align:center;
+}
+.btn-wapp:hover{
+  transform:scale(1.07);
+  background:linear-gradient(135deg,#1B5E20 0%,#1976D2 100%);
+  box-shadow:0 8px 18px rgba(0,0,0,0.22);
+}
+.btn-wapp img{height:22px;width:22px;object-fit:contain}
+
+/* GALERÍA */
+.galeria-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+}
+.galeria-item{
+  width:200px;
+  height:200px;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+}
+.galeria-item img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:transform .3s;
+}
+.galeria-item:hover img{transform:scale(1.05);}
+
+/* FOOTER Y WHATSAPP */
+footer{
+  background:var(--eco-green);
+  color:#fff;
+  padding:28px 18px;
+  text-align:center;
+}
+footer a{color:#fff}
+.whatsapp-fixed{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1400;
+}
+.whatsapp-fixed img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
 }
 
-.galeria-item:hover img {
-  transform: scale(1.05);
+/* RESPONSIVE */
+@media (max-width:992px){
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .banner h1{font-size:32px;}
+  .banner p{font-size:16px;}
 }
-
-/* Responsive */
-@media (max-width: 992px) { .galeria-item { padding-top: 100%; } }
-@media (max-width: 576px) { .galeria-item { padding-top: 100%; } }
-
-  /* Contacto & Footer */
-  footer{background:var(--eco-green);color:#fff;padding:28px 18px;text-align:center}
-  footer a{color:#fff}
-  .whatsapp-fixed{position:fixed;right:18px;bottom:18px;z-index:1400}
-  .whatsapp-fixed img{width:70px;height:70px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.18)}
-  /* Responsive */
-  @media (max-width: 992px){
-    .products-grid{grid-template-columns:repeat(2,1fr)}
-    header{padding:12px 20px}
-    .banner{height:520px}
-    section{padding:48px 20px}
-  }
-  @media (max-width: 576px){
-    header{flex-direction:row;gap:10px;padding:10px}
-    header img{height:60px}
-    header nav ul{display:none}
-    .banner{height:420px;padding:14px}
-    .banner h1{font-size:22px}
-    .products-grid{grid-template-columns:1fr;gap:14px;padding:0 12px}
-    .product-card img{width:140px;height:140px}
-    section{padding:36px 14px}
-  }
+@media (max-width:576px){
+  .products-grid{grid-template-columns:1fr;}
+  header nav ul{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px;}
+  header nav ul li a{font-size:0.85rem;padding:6px 10px;}
+  .banner h1{font-size:22px;}
+  .banner p{font-size:14px;}
+}
 </style>
 </head>
-<body>
 
-<!-- HEADER -->
+<body>
 <header>
   <div style="display:flex;align-items:center;gap:14px">
-    <img src="img/logo1.jpg" alt="Logo ECO PEST">
+    <img src="img/logo1.jpg" alt="Logo Eco Pest">
     <div>
-      <div style="font-family:'Montserrat',sans-serif;color:var(--eco-green);font-weight:700;font-size:1.05rem">ECO PEST S.R.L</div>
-      <div style="font-size:0.85rem;color:#546b56">Productos y Equipos de Fumigación</div>
+      <div style="font-family:'Montserrat',sans-serif;color:var(--eco-green);font-weight:700;font-size:1.05rem;">ECO PEST S.R.L</div>
+      <div style="font-size:0.85rem;color:#546b56;">Productos y Equipos de Fumigación</div>
     </div>
   </div>
-
-  <nav aria-label="Menú principal">
+  <nav>
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#productos">Productos</a></li>
@@ -176,50 +272,23 @@
   </nav>
 </header>
 
-<!-- BANNER -->
-<section class="banner" id="inicio" aria-label="Banner principal">
+<section class="banner" id="inicio">
   <div id="particles-js"></div>
   <div class="banner-inner">
     <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
     <p>Pulverizadores, termonebulizadores, cebos, trampas y EPP — Servicio y envío a todo el país.</p>
-    <div style="margin-top:18px">
-      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open" aria-hidden="true"></i> Ver Catálogo</a>
-      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments" aria-hidden="true"></i> Solicitar Cotización</a>
+    <div class="banner-buttons">
+      <a class="btn-primary-cta" href="#productos"><i class="fa fa-box-open"></i> Ver Catálogo</a>
+      <a class="btn-outline-cta" href="#cotizacion"><i class="fa fa-comments"></i> Solicitar Cotización</a>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTOS -->
 <section id="productos">
   <h2 class="section-title">Nuestros Productos</h2>
-  <div class="products-grid" id="product-list">
-    <!-- JS injectará las tarjetas -->
-  </div>
+  <div class="products-grid" id="product-list"></div>
 </section>
 
-<!-- COTIZACIÓN -->
-<section id="cotizacion">
-  <h2 class="section-title" style="color:#fff">Solicita tu Cotización</h2>
-  <div class="cotizador">
-    <p style="font-size:1.05rem;margin-bottom:12px">Rellena el formulario y te contactaremos vía WhatsApp para tu cotización personalizada.</p>
-    <form id="formCotizacion" onsubmit="handleCotizacion(event)">
-      <input type="text" id="cot-nombre" placeholder="Nombre" required><br>
-      <input type="email" id="cot-email" placeholder="Correo electrónico" required><br>
-      <textarea id="cot-mensaje" placeholder="Mensaje / Productos de interés" rows="4" required></textarea><br>
-      <button type="submit">Enviar por WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<!-- NOSOTROS -->
-<section id="nosotros">
-  <h2 class="section-title">Nosotros</h2>
-  <div style="max-width:980px;margin:0 auto;text-align:left">
-    <p>ECO PEST S.R.L es una empresa dedicada a ofrecer productos y equipos de fumigación de alta calidad, con un firme compromiso con la seguridad, la salud y el medio ambiente. Contamos con una amplia gama de equipos profesionales, insumos y EPP, además de asesoría técnica para elegir la solución adecuada.</p>
-  </div>
-</section>
-
-<!-- GALERÍA -->
 <section id="galeria">
   <h2 class="section-title">Galería de productos</h2>
   <div class="galeria-grid">
@@ -228,167 +297,55 @@
     <div class="galeria-item"><img src="img/bomba.jpg" alt="Bomba de Fumigación"></div>
     <div class="galeria-item"><img src="img/thermo.jpg" alt="Thermo Fogger"></div>
     <div class="galeria-item"><img src="img/lampara.jpg" alt="Fly Hunter Smart 30"></div>
-    <div class="galeria-item"><img src="img/insecticida.jpg" alt="Insecticida Profesional"></div>
-    <div class="galeria-item"><img src="img/advion.jpg" alt="Advion Cockroach"></div>
-    <div class="galeria-item"><img src="img/invict.jpg" alt="Invict-Cockroach-Gel"></div>
-    <div class="galeria-item"><img src="img/estacion.jpg" alt="Estación de Cebo para Ratas"></div>
-    <div class="galeria-item"><img src="img/cebadero2.jpg" alt="Trampa Metálica"></div>
-    <div class="galeria-item"><img src="img/cebadero3.jpg" alt="Trampa Mecánica"></div>
-    <div class="galeria-item"><img src="img/cebo.jpg" alt="Cebo para Ratas"></div>
-    <div class="galeria-item"><img src="img/guante.jpg" alt="Guantes de Protección"></div>
-    <div class="galeria-item"><img src="img/mascarilla.jpg" alt="Mascarilla de Protección Carbon Activado"></div>
-    <div class="galeria-item"><img src="img/mascara.jpg" alt="Mascarilla Cara Completa"></div>
-    <div class="galeria-item"><img src="img/estacionaria.jpg" alt="Fumigadora Estacionaria"></div>
-    <div class="galeria-item"><img src="img/tablero.png" alt="Tablero de pegamento"></div>
-    <div class="galeria-item"><img src="img/pegamento.jpg" alt="Trampa Engomada Para Roedores"></div>
-  </div>
-</section>
-  
-<!-- CONTACTO -->
-<section id="contacto">
-  <h2 class="section-title">Contáctanos</h2>
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <p style="font-size:1.05rem"><i class="fa fa-phone"></i> +1 (809) 738-3196 &nbsp; | &nbsp; <i class="fa fa-envelope"></i> ecopestsrl@gmail.com</p>
-    <p><i class="fa fa-map-marker-alt"></i> Calle 11, No.15, Las Antillas, El Cacique, Distrito Nacional — Sucursal: Verón, Punta Cana</p>
-    <p>Síguenos en: 
-      <a href="https://www.facebook.com/eco.pest.srl/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/ecopestsrl/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2025 ECO PEST S.R.L — Todos los derechos reservados</p>
-  <p style="margin-top:8px;font-size:0.95rem">Diseñado por <strong>EcoPest</strong></p>
+  <p>© 2025 Eco Pest SRL. Todos los derechos reservados.</p>
 </footer>
 
-<!-- WhatsApp flotante -->
-<a class="whatsapp-fixed" href="https://wa.me/18097383196" target="_blank" aria-label="Contactar por WhatsApp">
-  <img src="img/whatsapp.png" alt="WhatsApp ECO PEST">
+<a class="whatsapp-fixed" href="https://wa.me/18097383196" target="_blank" aria-label="WhatsApp">
+  <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
 
-<!-- Modal detalle producto -->
-<div class="modal" id="productoModal" tabindex="-1" style="display:none;position:fixed;inset:0;z-index:1500;align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:12px;max-width:900px;width:92%;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.25);">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <h3 id="modal-title" style="margin:0;color:var(--eco-green)"></h3>
-      <button onclick="closeModal()" style="background:transparent;border:none;font-size:20px;cursor:pointer">&times;</button>
-    </div>
-    <div id="modal-body" style="margin-top:12px"></div>
-    <div style="margin-top:14px;text-align:right">
-      <a id="modal-wapp" href="#" target="_blank" class="btn-wapp" style="max-width:260px">Consultar por WhatsApp</a>
-    </div>
-  </div>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-/* Particles: full banner background */
-particlesJS("particles-js", {
-  "particles": {
-    "number": {"value": 45},
-    "color": {"value":["#66BB6A","#2E7D32"]},
-    "shape":{"type":"circle"},
-    "opacity":{"value":0.55},
-    "size":{"value":3},
-    "line_linked":{"enable":true,"distance":140,"color":"#66BB6A","opacity":0.18,"width":1},
-    "move":{"enable":true,"speed":2,"out_mode":"out"}
-  },
-  "interactivity":{
-    "detect_on":"canvas",
-    "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},
-    "modes":{"grab":{"distance":140},"push":{"particles_nb":3}}
-  },
-  "retina_detect":true
+const products = [
+  {name:"Pulverizador Manual",img:"img/pulverizador.jpg",desc:"Pulverizador manual ideal para uso doméstico y profesional."},
+  {name:"Nebulizador ULV Eléctrico",img:"img/nebulizador.jpg",desc:"Nebulizador profesional para control de plagas aéreas."},
+  {name:"Bomba de Fumigación",img:"img/bomba.jpg",desc:"Bomba de presión para fumigación segura y efectiva."},
+  {name:"Thermo Fogger",img:"img/thermo.jpg",desc:"Generador de niebla térmica de alto rendimiento."},
+  {name:"Fly Hunter Smart 30",img:"img/lampara.jpg",desc:"Lámpara atrapainsectos UV de uso industrial."}
+];
+const list=document.getElementById("product-list");
+products.forEach(p=>{
+  list.innerHTML+=`
+    <div class="product-card">
+      <img src="${p.img}" alt="${p.name}">
+      <h4>${p.name}</h4>
+      <p>${p.desc}</p>
+      <a class="btn-wapp" href="https://wa.me/18097383196?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(p.name)}" target="_blank">
+        <img src="img/whatsapp.png" alt="WhatsApp"> Cotizar
+      </a>
+    </div>`;
 });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-/* Productos: uso los productos que me diste */
-const products = [
-   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
-   {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV eléctrico para desinfecciones. Tamaño de gota 5-50 micrones. Capacidad 6 L."},
-   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
-   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Termonebulizador para control de mosquitos y desinfecciones en áreas grandes."},
-   {id:5, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara para atrapar insectos voladores sin ruidos ni chispas."},
-   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
-   {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel cebo con Indoxacarb, altamente efectivo contra cucarachas."},
-   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Cebo en gel que actúa rápidamente sobre cucarachas."},
-   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo Max-A, segura y eficiente para control de ratas."},
-   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa Multi-Catch para captura múltiple de ratones."},
-   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampas de captura sin muerte, opción ética para control de roedores."},
-   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
-   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
-   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
-   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de 6.5 Hp."},
-   {id:17, name:"Tablero de pegamento", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero no tóxico, multi-función para diversas plagas."},
-   {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Placas adhesivas que capturan roedores y otras plagas sin veneno."}
-];
-
-function shortText(text, max=110){ return text && text.length>max ? text.slice(0,max).trim() + '...' : text; }
-
-function renderProducts(){
-  const container = document.getElementById('product-list');
-  container.innerHTML = '';
-  products.forEach(p=>{
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
-      <h4>${p.name}</h4>
-      <p>${shortText(p.description, 100)}</p>
-      <a class="btn-wapp" role="button" onclick="openModal(${p.id})">
-        <img src="img/whatsapp.png" alt="W"> Consultar por WhatsApp
-      </a>
-    `;
-    container.appendChild(card);
-  });
-}
-
-/* Modal handling */
-function openModal(id){
-  const product = products.find(x=>x.id===id);
-  if(!product) return;
-  document.getElementById('modal-title').textContent = product.name;
-  document.getElementById('modal-body').innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="text-align:center"><img src="${product.img}" alt="${product.name}" style="max-width:240px;height:auto"></div>
-      <div><strong>Categoría:</strong> ${product.category}</div>
-      <div>${product.description}</div>
-    </div>
-  `;
-  const imgUrl = product.img.startsWith('http') ? product.img : window.location.origin + '/' + product.img.replace(/^\/+/,'');
-  const mensaje = `Hola, quiero más información sobre este producto:%0A%0A${product.name}%0A${product.category}%0A%0ADescripción:%0A${product.description}%0A%0AImagen:%0A${imgUrl}`;
-  document.getElementById('modal-wapp').href = `https://wa.me/18097383196?text=${encodeURIComponent(mensaje)}`;
-  // show modal (simple)
-  const modal = document.getElementById('productoModal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(){ document.getElementById('productoModal').style.display='none'; document.body.style.overflow=''; }
-
-/* Cotización: abre WhatsApp con mensaje */
-function handleCotizacion(e){
-  e.preventDefault();
-  const nombre = document.getElementById('cot-nombre').value.trim();
-  const email = document.getElementById('cot-email').value.trim();
-  const mensaje = document.getElementById('cot-mensaje').value.trim();
-  const text = `Hola, mi nombre es ${nombre}%0ACorreo: ${email}%0A%0ASolicito cotización:%0A${mensaje}`;
-  window.open(`https://wa.me/18097383196?text=${text}`, '_blank');
-}
-
-/* Init */
-renderProducts();
-
-/* Cerrar modal con Escape o clic fuera */
-window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
-window.addEventListener('click', (ev)=>{ const modal = document.getElementById('productoModal'); if(ev.target===modal) closeModal(); });
-
-/* Formulario de contacto simple (si quieres mantener envío por email, reemplaza) */
-document.querySelectorAll('form').forEach(f=>f.addEventListener('submit', e=>{ /* el de cotizacion ya maneja su submit */ }));
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value":80},
+    "color": {"value":["#2E7D32","#66BB6A","#1976D2","#42A5F5"]},
+    "shape": {"type":"circle"},
+    "opacity": {"value":0.6,"random":true},
+    "size": {"value":3,"random":true},
+    "line_linked": {"enable":true,"distance":150,"color":"#66BB6A","opacity":0.25,"width":1},
+    "move": {"enable":true,"speed":2}
+  },
+  "interactivity": {"events":{"onhover":{"enable":true,"mode":"grab"}}},
+  "retina_detect":true
+});
 </script>
 </body>
 </html>
+
