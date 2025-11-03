@@ -96,9 +96,9 @@
   .card h3{color:var(--eco-green);margin-top:10px}
   /* Galería */
 .galeria-scroll {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
+  display: flex;           /* fila horizontal */
+  gap: 14px;               /* espacio entre imágenes */
+  overflow-x: auto;        /* scroll horizontal */
   padding-bottom: 12px;
   scroll-behavior: smooth;
 }
@@ -113,9 +113,9 @@
 }
 
 .galeria-item {
-  flex: 0 0 auto; /* que no se compriman */
-  width: 180px; /* ancho fijo de cada imagen */
-  height: 180px;
+  flex: 0 0 auto;          /* que no se encoja */
+  width: 180px;             /* ancho fijo */
+  height: 180px;            /* altura fija */
   border-radius: 12px;
   overflow: hidden;
 }
@@ -132,7 +132,7 @@
   transform: scale(1.05);
 }
 
-/* Ajustes responsive */
+/* Responsive */
 @media (max-width: 992px) {
   .galeria-item { width: 160px; height: 160px; }
 }
