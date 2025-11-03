@@ -98,25 +98,16 @@
 /* Galería horizontal */
 .galeria-scroll {
   display: flex;           /* fila horizontal */
-  gap: 14px;               /* espacio entre imágenes */
+  gap: 14px;
   overflow-x: auto;        /* scroll horizontal */
   padding-bottom: 12px;
   scroll-behavior: smooth;
 }
 
-.galeria-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.galeria-scroll::-webkit-scrollbar-thumb {
-  background: var(--eco-green);
-  border-radius: 6px;
-}
-
 .galeria-item {
-  flex: 0 0 auto;          /* que no se encoja */
-  width: 180px;             /* ancho fijo */
-  height: 180px;            /* altura fija */
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -133,13 +124,9 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .galeria-item { width: 160px; height: 160px; }
-}
-@media (max-width: 576px) {
-  .galeria-item { width: 140px; height: 140px; }
-}
+/* Ajustes responsive */
+@media (max-width: 992px) { .galeria-item { width: 160px; height: 160px; } }
+@media (max-width: 576px) { .galeria-item { width: 140px; height: 140px; } }
 
   /* Contacto & Footer */
   footer{background:var(--eco-green);color:#fff;padding:28px 18px;text-align:center}
@@ -233,26 +220,28 @@
 </section>
 
 <!-- GALERÍA: reemplazamos los ejemplos por tus productos -->
-<div class="galeria-scroll">
-  <div class="galeria-item"><img src="img/pulverizador.jpg" alt="Pulverizador Manual"></div>
-  <div class="galeria-item"><img src="img/nebulizador.jpg" alt="Nebulizador ULV Eléctrico"></div>
-  <div class="galeria-item"><img src="img/bomba.jpg" alt="Bomba de Fumigación"></div>
-  <div class="galeria-item"><img src="img/thermo.jpg" alt="Thermo Fogger"></div>
-  <div class="galeria-item"><img src="img/lampara.jpg" alt="Fly Hunter Smart 30"></div>
-  <div class="galeria-item"><img src="img/insecticida.jpg" alt="Insecticida Profesional"></div>
-  <div class="galeria-item"><img src="img/advion.jpg" alt="Advion Cockroach"></div>
-  <div class="galeria-item"><img src="img/invict.jpg" alt="Invict-Cockroach-Gel"></div>
-  <div class="galeria-item"><img src="img/estacion.jpg" alt="Estación de Cebo para Ratas"></div>
-  <div class="galeria-item"><img src="img/cebadero2.jpg" alt="Trampa Metálica"></div>
-  <div class="galeria-item"><img src="img/cebadero3.jpg" alt="Trampa Mecánica"></div>
-  <div class="galeria-item"><img src="img/cebo.jpg" alt="Cebo para Ratas"></div>
-  <div class="galeria-item"><img src="img/guante.jpg" alt="Guantes de Protección"></div>
-  <div class="galeria-item"><img src="img/mascarilla.jpg" alt="Mascarilla de Protección Carbon Activado"></div>
-  <div class="galeria-item"><img src="img/mascara.jpg" alt="Mascarilla Cara Completa"></div>
-  <div class="galeria-item"><img src="img/estacionaria.jpg" alt="Fumigadora Estacionaria"></div>
-  <div class="galeria-item"><img src="img/tablero.png" alt="Tablero de pegamento"></div>
-  <div class="galeria-item"><img src="img/pegamento.jpg" alt="Trampa Engomada Para Roedores"></div>
-</div>
+<section id="galeria">
+  <h2 class="section-title">Galería de productos</h2>
+  <div class="galeria-scroll">
+    <div class="galeria-item"><img src="img/pulverizador.jpg" alt="Pulverizador Manual"></div>
+    <div class="galeria-item"><img src="img/nebulizador.jpg" alt="Nebulizador ULV Eléctrico"></div>
+    <div class="galeria-item"><img src="img/bomba.jpg" alt="Bomba de Fumigación"></div>
+    <div class="galeria-item"><img src="img/thermo.jpg" alt="Thermo Fogger"></div>
+    <div class="galeria-item"><img src="img/lampara.jpg" alt="Fly Hunter Smart 30"></div>
+    <div class="galeria-item"><img src="img/insecticida.jpg" alt="Insecticida Profesional"></div>
+    <div class="galeria-item"><img src="img/advion.jpg" alt="Advion Cockroach"></div>
+    <div class="galeria-item"><img src="img/invict.jpg" alt="Invict-Cockroach-Gel"></div>
+    <div class="galeria-item"><img src="img/estacion.jpg" alt="Estación de Cebo para Ratas"></div>
+    <div class="galeria-item"><img src="img/cebadero2.jpg" alt="Trampa Metálica"></div>
+    <div class="galeria-item"><img src="img/cebadero3.jpg" alt="Trampa Mecánica"></div>
+    <div class="galeria-item"><img src="img/cebo.jpg" alt="Cebo para Ratas"></div>
+    <div class="galeria-item"><img src="img/guante.jpg" alt="Guantes de Protección"></div>
+    <div class="galeria-item"><img src="img/mascarilla.jpg" alt="Mascarilla de Protección Carbon Activado"></div>
+    <div class="galeria-item"><img src="img/mascara.jpg" alt="Mascarilla Cara Completa"></div>
+    <div class="galeria-item"><img src="img/estacionaria.jpg" alt="Fumigadora Estacionaria"></div>
+    <div class="galeria-item"><img src="img/tablero.png" alt="Tablero de pegamento"></div>
+    <div class="galeria-item"><img src="img/pegamento.jpg" alt="Trampa Engomada Para Roedores"></div>
+  </div>
 </section>
   
 <!-- CONTACTO -->
