@@ -14,7 +14,7 @@
 <style>
 :root{
   --eco-green: #2E7D32;
-  --eco-green-2: #66BB6A;
+  --eco-green-2: #66BB6A;   
   --muted: #6b6b6b;
   --bg: #f7f9f6;
   --card-radius: 14px;
@@ -467,7 +467,7 @@ const productList = document.getElementById('product-list');
 products.forEach(p=>{
   const div = document.createElement('div');
   div.className='product-card';
-  div.innerHTML=`<img src="${p.img}" alt="${p.name}"><h4>${p.name}</h4><p>${p.description}</p><a href="https://wa.me/18297383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}" class="btn-wapp"><i class="fa fa-comments"></i> Cotizar</a>`;
+  div.innerHTML=`<img src="${p.img}" alt="${p.name}"><h4>${p.name}</h4><p>${p.description}</p><a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}" class="btn-wapp"><i class="fa fa-comments"></i> Cotizar</a>`;
   productList.appendChild(div);
 });
 
