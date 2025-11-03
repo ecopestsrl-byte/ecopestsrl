@@ -167,11 +167,27 @@ section{padding:72px 20px}
 .mvv-card h3{color:var(--eco-green);margin-bottom:12px}
 .mvv-card p{color:#555;font-size:0.95rem;line-height:1.5}
 
-/* Testimonios */
-.testimonials{background:#eef6ec;padding:60px 20px;text-align:center;overflow-x:auto;white-space:nowrap}
-.testimonial-card{display:inline-block;background:#fff;padding:20px;border-radius:12px;max-width:320px;margin:12px 8px;vertical-align:top;box-shadow:0 8px 22px rgba(15,60,20,0.06)}
-.testimonial-card p{font-style:italic;color:#555;margin-bottom:12px}
-.testimonial-card h4{color:var(--eco-green);font-weight:700}
+/* Testimonios corregido */
+.testimonials {
+  background:#eef6ec;
+  padding:60px 20px;
+  text-align:center;
+  display:flex;
+  flex-wrap:wrap; /* Permite que los cards bajen de línea en móviles */
+  justify-content:center;
+  gap:16px;
+}
+
+.testimonial-card {
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  max-width:320px; /* Máximo ancho */
+  width:100%;       /* Se ajusta al contenedor en móviles */
+  box-shadow:0 8px 22px rgba(15,60,20,0.06);
+  word-wrap: break-word; /* Hace que el texto largo se ajuste */
+  overflow-wrap: break-word;
+}
 
 /* Ubicaciones */
 .locations{display:flex;justify-content:space-around;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
