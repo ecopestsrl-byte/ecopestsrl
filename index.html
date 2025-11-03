@@ -620,6 +620,27 @@ function handleCotizacion(e){
       </a>`;
     productList.appendChild(div);
   });
+  // Renderizar productos en el grid
+const productContainer = document.getElementById("product-list");
+
+function renderProducts() {
+  productContainer.innerHTML = ""; // Limpia antes de renderizar
+
+  products.forEach(product => {
+    productContainer.innerHTML += `
+      <div class="product-card">
+        <img src="${product.img}" alt="${product.name}">
+        <h4>${product.name}</h4>
+        <p>${product.description}</p>
+        <a class="btn-wapp" href="https://wa.me/18097383196?text=Hola! Estoy interesado en el producto: ${product.name}" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Consultar
+        </a>
+      </div>
+    `;
+  });
+}
+
+renderProducts(); // Ejecutar la función al cargar
 </script>
 
 </body>
