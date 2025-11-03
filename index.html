@@ -94,6 +94,14 @@ header nav ul li a:hover{
   overflow:hidden;
   background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
 }
+#particles-js{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
 .banner-inner{
   position:relative;
   z-index:2;
@@ -105,8 +113,6 @@ header nav ul li a:hover{
 }
 .banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:48px;margin:0 0 10px}
 .banner p{color:#2f4f35;font-size:20px;margin:8px 0 18px}
-
-/* Botones del banner centrados */
 .banner .banner-buttons {
   display: flex;
   justify-content: center;
@@ -335,161 +341,98 @@ footer a{color:#fff}
   <div style="background:#fff;border-radius:12px;max-width:900px;width:92%;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.25);">
     <div style="display:flex;justify-content:space-between;align-items:center">
       <h3 id="modal-title" style="margin:0;color:var(--eco-green)"></h3>
-      <button onclick="closeModal()" style="background:transparent;border:none;font-size:20px;cursor:pointer">&times;</button>
+      <button onclick="closeModal()" style="font-size:1.25rem;border:none;background:none;cursor:pointer">&times;</button>
     </div>
-    <div id="modal-body" style="margin-top:12px"></div>
-    <div style="margin-top:14px;text-align:right">
-      <a id="modal-wapp" href="#" target="_blank" class="btn-wapp" style="max-width:260px">Consultar por WhatsApp</a>
-    </div>
+    <img id="modal-img" src="" style="width:100%;max-height:360px;object-fit:contain;margin:12px 0">
+    <p id="modal-desc" style="color:#555;font-size:0.95rem"></p>
   </div>
 </div>
 
-<!-- Scripts -->
+<!-- PARTICLES.JS -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": {
-      "value": 120,        // más partículas para cubrir todo el banner
-      "density": {
-        "enable": true,
-        "value_area": 900  // ajusta la densidad al tamaño del banner
-      }
-    },
-    "color": {
-      "value": ["#2E7D32","#388E3C","#66BB6A","#1976D2","#42A5F5"] // verdes y azules del logo
-    },
-    "shape": {
-      "type": "circle"
-    },
-    "opacity": {
-      "value": 0.55
-    },
-    "size": {
-      "value": 3,
-      "random": true
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 140,
-      "color": "#66BB6A",
-      "opacity": 0.18,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2.5,
-      "direction": "none",
-      "out_mode": "out",
-      "bounce": false
-    }
+    "number": { "value": 60, "density": { "enable": true, "value_area": 900 } },
+    "color": { "value": ["#2E7D32", "#66BB6A", "#1976D2", "#42A5F5"] },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.6, "random": true },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#66BB6A", "opacity": 0.2, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out", "bounce": false }
   },
   "interactivity": {
     "detect_on": "canvas",
     "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" },
       "resize": true
     },
     "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 0.25
-        }
-      },
-      "push": {
-        "particles_nb": 4
-      }
+      "grab": { "distance": 140, "line_linked": { "opacity": 0.3 } },
+      "push": { "particles_nb": 4 }
     }
   },
   "retina_detect": true
 });
+</script>
 
-/* Productos */
+<!-- PRODUCTOS DINÁMICOS -->
+<script>
 const products = [
-   {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
-   {id:2, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV eléctrico para desinfecciones. Tamaño de gota 5-50 micrones. Capacidad 6 L."},
-   {id:3, name:"Bomba de Fumigación", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Bomba para fumigación con excelente rendimiento y durabilidad."},
-   {id:4, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Termonebulizador para control de mosquitos y desinfecciones en áreas grandes."},
-   {id:5, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lampara.jpg", description:"Lámpara para atrapar insectos voladores sin ruidos ni chispas."},
-   {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
-   {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel cebo con Indoxacarb, altamente efectivo contra cucarachas."},
-   {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Cebo en gel que actúa rápidamente sobre cucarachas."},
-   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo Max-A, segura y eficiente para control de ratas."},
-   {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa Multi-Catch para captura múltiple de ratones."},
-   {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampas de captura sin muerte, opción ética para control de roedores."},
-   {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
-   {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
-   {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
-   {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de 6.5 Hp."},
-   {id:17, name:"Tablero de pegamento", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero no tóxico, multi-función para diversas plagas."},
-   {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Placas adhesivas que capturan roedores y otras plagas sin veneno."}
+  {id:1, name:"Pulverizador Manual", img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional."},
+  {id:2, name:"Nebulizador ULV Eléctrico", img:"img/nebulizador.jpg", description:"Nebulizador profesional para control de plagas aéreas."},
+  {id:3, name:"Bomba de Fumigación", img:"img/bomba.jpg", description:"Bomba de presión para fumigación segura y efectiva."},
+  {id:4, name:"Thermo Fogger", img:"img/thermo.jpg", description:"Termonebulizador para exteriores y grandes áreas."},
+  {id:5, name:"Fly Hunter Smart 30", img:"img/lampara.jpg", description:"Lámpara atrapamoscas con tecnología LED."},
+  {id:6, name:"Insecticida Profesional", img:"img/insecticida.jpg", description:"Producto químico para eliminación de insectos."},
+  {id:7, name:"Advion Cockroach", img:"img/advion.jpg", description:"Gel insecticida para control de cucarachas."},
+  {id:8, name:"Invict Cockroach Gel", img:"img/invict.jpg", description:"Gel avanzado para exterminar plagas urbanas."},
+  {id:9, name:"Estación de Cebo para Ratas", img:"img/estacion.jpg", description:"Control seguro de roedores."},
+  {id:10, name:"Trampa Metálica", img:"img/cebadero2.jpg", description:"Trampa mecánica para ratas y ratones."},
+  {id:11, name:"Trampa Mecánica", img:"img/cebadero3.jpg", description:"Trampa para control seguro de roedores."},
+  {id:12, name:"Cebo para Ratas", img:"img/cebo.jpg", description:"Cebo anticoagulante para control de ratas."},
+  {id:13, name:"Guantes de Protección", img:"img/guante.jpg", description:"Guantes de alta resistencia para fumigación."},
+  {id:14, name:"Mascarilla Carbon Activado", img:"img/mascarilla.jpg", description:"Protección respiratoria avanzada."},
+  {id:15, name:"Mascarilla Cara Completa", img:"img/mascara.jpg", description:"Mascarilla profesional para químicos."},
+  {id:16, name:"Fumigadora Estacionaria", img:"img/estacionaria.jpg", description:"Equipo fijo para fumigación industrial."},
+  {id:17, name:"Tablero de pegamento", img:"img/tablero.png", description:"Trampa adhesiva para insectos."},
+  {id:18, name:"Trampa Engomada Para Roedores", img:"img/pegamento.jpg", description:"Control seguro de roedores."}
 ];
 
-function shortText(text, max=110){ return text && text.length>max ? text.slice(0,max).trim() + '...' : text; }
-
-function renderProducts(){
-  const container = document.getElementById('product-list');
-  container.innerHTML = '';
-  products.forEach(p=>{
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
-      <h4>${p.name}</h4>
-      <p>${shortText(p.description, 100)}</p>
-      <a class="btn-wapp" role="button" onclick="openModal(${p.id})">
-        <img src="img/whatsapp.png" alt="W"> Consultar por WhatsApp
-      </a>
-    `;
-    container.appendChild(card);
-  });
-}
-
-/* Modal handling */
-function openModal(id){
-  const product = products.find(x=>x.id===id);
-  if(!product) return;
-  document.getElementById('modal-title').textContent = product.name;
-  document.getElementById('modal-body').innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="text-align:center"><img src="${product.img}" alt="${product.name}" style="max-width:240px;height:auto"></div>
-      <div><strong>Categoría:</strong> ${product.category}</div>
-      <div>${product.description}</div>
-    </div>
+const productList = document.getElementById('product-list');
+products.forEach(p=>{
+  const div = document.createElement('div');
+  div.className = 'product-card';
+  div.innerHTML = `
+    <img src="${p.img}" alt="${p.name}" onclick="openModal('${p.name}','${p.img}','${p.description}')">
+    <h4>${p.name}</h4>
+    <p>${p.description}</p>
+    <a class="btn-wapp" href="https://wa.me/18097383196?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(p.name)}" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp"> Cotizar
+    </a>
   `;
-  const imgUrl = product.img.startsWith('http') ? product.img : window.location.origin + '/' + product.img.replace(/^\/+/,'');
-  const mensaje = `Hola, quiero más información sobre este producto:%0A%0A${product.name}%0A${product.category}%0A%0ADescripción:%0A${product.description}%0A%0AImagen:%0A${imgUrl}`;
-  document.getElementById('modal-wapp').href = `https://wa.me/18097383196?text=${encodeURIComponent(mensaje)}`;
-  const modal = document.getElementById('productoModal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(){ document.getElementById('productoModal').style.display='none'; document.body.style.overflow=''; }
+  productList.appendChild(div);
+});
 
-/* Cotización */
+function openModal(name,img,desc){
+  document.getElementById('modal-title').innerText=name;
+  document.getElementById('modal-img').src=img;
+  document.getElementById('modal-desc').innerText=desc;
+  document.getElementById('productoModal').style.display='flex';
+}
+function closeModal(){document.getElementById('productoModal').style.display='none';}
+
 function handleCotizacion(e){
   e.preventDefault();
-  const nombre = document.getElementById('cot-nombre').value.trim();
-  const email = document.getElementById('cot-email').value.trim();
-  const mensaje = document.getElementById('cot-mensaje').value.trim();
-  const text = `Hola, mi nombre es ${nombre}%0ACorreo: ${email}%0A%0ASolicito cotización:%0A${mensaje}`;
-  window.open(`https://wa.me/18097383196?text=${text}`, '_blank');
+  const nombre=document.getElementById('cot-nombre').value;
+  const email=document.getElementById('cot-email').value;
+  const mensaje=document.getElementById('cot-mensaje').value;
+  const waLink=`https://wa.me/18097383196?text=${encodeURIComponent("Hola, soy "+nombre+", correo: "+email+". "+mensaje)}`;
+  window.open(waLink,'_blank');
 }
-
-/* Init */
-renderProducts();
-window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
-window.addEventListener('click', (ev)=>{ const modal = document.getElementById('productoModal'); if(ev.target===modal) closeModal(); });
 </script>
 
 </body>
 </html>
+
