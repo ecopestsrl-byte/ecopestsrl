@@ -347,23 +347,72 @@ footer a{color:#fff}
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
+<script>
 particlesJS("particles-js", {
   "particles": {
-    "number": {"value":50},
-    "color":{"value":["#2E7D32","#66BB6A","#1976D2","#42A5F5"]},
-    "shape":{"type":"circle"},
-    "opacity":{"value":0.55},
-    "size":{"value":3},
-    "line_linked":{"enable":true,"distance":140,"color":"#66BB6A","opacity":0.18,"width":1},
-    "move":{"enable":true,"speed":2,"out_mode":"out"}
+    "number": {
+      "value": 120,        // más partículas para cubrir todo el banner
+      "density": {
+        "enable": true,
+        "value_area": 900  // ajusta la densidad al tamaño del banner
+      }
+    },
+    "color": {
+      "value": ["#2E7D32","#388E3C","#66BB6A","#1976D2","#42A5F5"] // verdes y azules del logo
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.55
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 140,
+      "color": "#66BB6A",
+      "opacity": 0.18,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2.5,
+      "direction": "none",
+      "out_mode": "out",
+      "bounce": false
+    }
   },
-  "interactivity":{
-    "detect_on":"canvas",
-    "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},
-    "modes":{"grab":{"distance":140},"push":{"particles_nb":3}}
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 0.25
+        }
+      },
+      "push": {
+        "particles_nb": 4
+      }
+    }
   },
-  "retina_detect":true
+  "retina_detect": true
 });
+</script>
 
 /* Productos */
 const products = [
