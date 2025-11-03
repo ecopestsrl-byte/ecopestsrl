@@ -169,23 +169,32 @@ section{padding:72px 20px}
 
 /* Testimonios corregido */
 .testimonials {
-  background:#eef6ec;
-  padding:60px 20px;
-  text-align:center;
-  display:flex;
-  flex-wrap:wrap; /* Permite que los cards bajen de línea en móviles */
-  justify-content:center;
-  gap:16px;
+  background: #eef6ec;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials .section-title {
+  width: 100%;
+  text-align: center; /* Esto asegura que quede centrado en PC */
+  margin-bottom: 40px;
+}
+
+.testimonials-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 
 .testimonial-card {
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  max-width:320px; /* Máximo ancho */
-  width:100%;       /* Se ajusta al contenedor en móviles */
-  box-shadow:0 8px 22px rgba(15,60,20,0.06);
-  word-wrap: break-word; /* Hace que el texto largo se ajuste */
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 8px 22px rgba(15, 60, 20, 0.06);
+  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
@@ -291,16 +300,18 @@ footer a{color:#fff}
 <!-- TESTIMONIOS -->
 <section id="testimonios" class="testimonials">
   <h2 class="section-title" style="color:var(--eco-green)">Testimonios</h2>
-  <div class="testimonial-card">
-    <p>"Excelente servicio y productos de alta calidad. Mi negocio ahora está protegido contra plagas."</p>
-    <h4>Juan Pérez</h4>
-  </div>
-  <div class="testimonial-card">
-    <p>"Recomendados 100%. Atención rápida y productos profesionales."</p>
-    <h4>María López</h4>
+  <div class="testimonials-cards">
+    <div class="testimonial-card">
+      <p>"Excelente servicio y productos de alta calidad. Mi negocio ahora está protegido contra plagas."</p>
+      <h4>Juan Pérez</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Recomendados 100%. Atención rápida y productos profesionales."</p>
+      <h4>María López</h4>
+    </div>
   </div>
 </section>
-
+  
 <!-- UBICACIONES -->
 <section id="ubicaciones">
   <h2 class="section-title">Nuestras Sucursales</h2>
