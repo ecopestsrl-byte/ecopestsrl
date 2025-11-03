@@ -484,7 +484,7 @@ footer a {
 .banner-inner { z-index:2; }
 </style>
 
-<!-- SCRIPT PRODUCTOS -->
+<!-- SCRIPT PRODUCTOS Y MODAL -->
 <script>
 const products = [
    {id:1, name:"Pulverizador Manual", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual ideal para uso doméstico y profesional. Depósito de 18L, arnés cómodo y diseño robusto."},
@@ -495,57 +495,75 @@ const products = [
    {id:6, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado para uso profesional con resultados inmediatos."},
    {id:7, name:"Advion Cockroach", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel cebo con Indoxacarb, altamente efectivo contra cucarachas."},
    {id:8, name:"Invict-Cockroach-Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Cebo en gel que actúa rápidamente sobre cucarachas."},
-   {id:9, name:"Estacion de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo Max-A, segura y eficiente para control de ratas."},
+   {id:9, name:"Estación de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo Max-A, segura y eficiente para control de ratas."},
    {id:10, name:"Trampa Metálica", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa Multi-Catch para captura múltiple de ratones."},
    {id:11, name:"Trampa Mecánica", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampas de captura sin muerte, opción ética para control de roedores."},
    {id:12, name:"Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/cebo.jpg", description:"Cebo efectivo para control de ratas en interiores y exteriores."},
    {id:13, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes para protección durante fumigaciones."},
-   {id:14, name:"Mascarilla de Protección Carbon Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
+   {id:14, name:"Mascarilla de Protección Carbón Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado para mayor seguridad."},
    {id:15, name:"Mascarilla Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla facial completa para protección total."},
    {id:16, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de 6.5 Hp."},
-   {id:17, name:"Tablero de pegamento", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero no tóxico, multi-función para diversas plagas."},
+   {id:17, name:"Tablero de Pegamento", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero no tóxico, multi-función para diversas plagas."},
    {id:18, name:"Trampa Engomada Para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Placas adhesivas que capturan roedores y otras plagas sin veneno."}
 ];
 
-const productList = document.getElementById('product-list');
-products.forEach(p=>{
-  const div = document.createElement('div');
-  div.className='product-card';
-  div.innerHTML=`<img src="${p.img}" alt="${p.name}"><h4>${p.name}</h4><p>${p.description}</p><a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}" class="btn-wapp"><i class="fa fa-comments"></i> Cotizar</a>`;
-  productList.appendChild(div);
-});
-
-// Cotización
-function handleCotizacion(e){
-  e.preventDefault();
-  const nombre=document.getElementById('cot-nombre').value;
-  const email=document.getElementById('cot-email').value;
-  const mensaje=document.getElementById('cot-mensaje').value;
-  const texto=`Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)},%20correo:%20${encodeURIComponent(email)}.%20${encodeURIComponent(mensaje)}`;
-  window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
-}
-<!-- AGREGAR ESTE BLOQUE JUSTO ANTES DEL </body> -->
-<!-- MODAL DE PRODUCTO -->
-<div id="productModal" class="modal">
+// ====== MODAL ======
+const modal = document.createElement("div");
+modal.id = "productModal";
+modal.className = "modal";
+modal.innerHTML = `
   <div class="modal-content">
     <span class="close">&times;</span>
     <img id="modalImg" src="" alt="Producto">
     <h3 id="modalName"></h3>
     <p id="modalDesc"></p>
-  </div>
-</div>
+  </div>`;
+document.body.appendChild(modal);
 
+const modalImg = modal.querySelector("#modalImg");
+const modalName = modal.querySelector("#modalName");
+const modalDesc = modal.querySelector("#modalDesc");
+const closeModal = modal.querySelector(".close");
+
+function openModal(product) {
+  modal.style.display = "flex";
+  modalImg.src = product.img;
+  modalName.textContent = product.name;
+  modalDesc.textContent = product.description;
+}
+
+closeModal.onclick = () => (modal.style.display = "none");
+window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+// ====== RENDER DE PRODUCTOS ======
+const productList = document.getElementById("product-list");
+productList.innerHTML = "";
+
+products.forEach(p => {
+  const div = document.createElement("div");
+  div.className = "product-card";
+  div.onclick = () => openModal(p);
+  div.innerHTML = `
+    <img src="${p.img}" alt="${p.name}">
+    <h4>${p.name}</h4>
+    <p>${p.description.substring(0, 60)}...</p>
+    <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
+       class="btn-wapp" onclick="event.stopPropagation()">
+       <i class="fa-brands fa-whatsapp"></i> Cotizar
+    </a>`;
+  productList.appendChild(div);
+});
+</script>
+
+<!-- ESTILOS DEL MODAL -->
 <style>
-/* MODAL DE PRODUCTO */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
@@ -566,81 +584,28 @@ function handleCotizacion(e){
   border-radius: 10px;
   margin-bottom: 15px;
 }
-.modal-content h3 {
-  color: #0077be;
-  margin-bottom: 10px;
-}
-.modal-content p {
-  color: #333;
-  line-height: 1.5;
-}
+.modal-content h3 { color: var(--eco-green); margin-bottom: 10px; }
+.modal-content p { color: #333; line-height: 1.5; }
 .close {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 10px; right: 20px;
   font-size: 28px;
   color: #333;
   cursor: pointer;
   transition: 0.3s;
 }
-.close:hover { color: #009640; }
+.close:hover { color: var(--eco-green); }
 </style>
 
-<script>
-  // === MODAL FUNCIONAL ===
-  const modal = document.getElementById("productModal");
-  const modalImg = document.getElementById("modalImg");
-  const modalName = document.getElementById("modalName");
-  const modalDesc = document.getElementById("modalDesc");
-  const closeModal = document.querySelector(".close");
-
-  function openModal(product) {
-    modal.style.display = "flex";
-    modalImg.src = product.img;
-    modalName.textContent = product.name;
-    modalDesc.textContent = product.description;
-  }
-
-  closeModal.onclick = () => (modal.style.display = "none");
-  window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
-
-  // === RENDER DE PRODUCTOS CON MODAL ===
-  const productList = document.getElementById('product-list');
-  products.forEach(p=>{
-    const div = document.createElement('div');
-    div.className='product-card';
-    div.onclick = () => openModal(p);
-    div.innerHTML=`
-      <img src="${p.img}" alt="${p.name}">
-      <h4>${p.name}</h4>
-      <p>${p.description.substring(0, 60)}...</p>
-      <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
-         class="btn-wapp" onclick="event.stopPropagation()">
-         <i class="fa fa-comments"></i> Cotizar
-      </a>`;
-    productList.appendChild(div);
-  });
-  // Renderizar productos en el grid
-const productContainer = document.getElementById("product-list");
-
-function renderProducts() {
-  productContainer.innerHTML = ""; // Limpia antes de renderizar
-
-  products.forEach(product => {
-    productContainer.innerHTML += `
-      <div class="product-card">
-        <img src="${product.img}" alt="${product.name}">
-        <h4>${product.name}</h4>
-        <p>${product.description}</p>
-        <a class="btn-wapp" href="https://wa.me/18097383196?text=Hola! Estoy interesado en el producto: ${product.name}" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> Consultar
-        </a>
-      </div>
-    `;
-  });
+// Cotización
+function handleCotizacion(e){
+  e.preventDefault();
+  const nombre=document.getElementById('cot-nombre').value;
+  const email=document.getElementById('cot-email').value;
+  const mensaje=document.getElementById('cot-mensaje').value;
+  const texto=`Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)},%20correo:%20${encodeURIComponent(email)}.%20${encodeURIComponent(mensaje)}`;
+  window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
 }
-
-renderProducts(); // Ejecutar la función al cargar
 </script>
 
 </body>
