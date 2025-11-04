@@ -1,10 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-# Bloquear carpetas internas que no quieres indexar
-Disallow: /admin/
-Disallow: /private/
-Disallow: /tmp/
-
-# Sitemap
 Sitemap: https://www.ecopestsrl.com/sitemap.xml
