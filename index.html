@@ -751,7 +751,26 @@ products.forEach(p => {
   transition: 0.3s;
 }
 .close:hover { color: var(--eco-green); }
+
+  <style>
+.modal { ... }
+
+/* Corrige problema de desplazamiento en móviles */
+.product-card p {
+  max-height: none;
+  overflow-y: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    max-height: none;
+    height: auto;
+  }
+}
 </style>
+
 
 <script>
 function handleCotizacion(e){
