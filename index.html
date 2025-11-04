@@ -278,6 +278,49 @@ footer a {
   .testimonials{padding:40px 0;}
   header nav ul {gap:6px;}
 }
+  /* ==== MODAL CON DESPLAZAMIENTO PARA MÓVILES ==== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* 🔹 Permite desplazamiento vertical */
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+  overflow-y: auto; /* 🔹 Si el texto es largo, se puede hacer scroll dentro */
+  max-height: 80vh; /* 🔹 Altura máxima del modal visible */
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 30px auto;
+    max-height: 85vh;
+    padding: 20px;
+  }
+}
+
 </style>
 </head>
 <body>
