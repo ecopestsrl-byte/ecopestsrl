@@ -478,6 +478,10 @@ footer a {
 <section class="banner" id="inicio" aria-label="Banner principal">
   <div id="particles-js"></div>
   <div class="banner-inner">
+    <div class="banner-offer">
+  <img src="img/oferta.jpeg" alt="Oferta especial ECO PEST">
+</div>
+
     <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
     <p>Pulverizadores, termonebulizadores, cebos, trampas y EPP — Servicio y envío a todo el país.</p>
     <div class="banner-buttons">
@@ -599,6 +603,39 @@ footer a {
   .mvv-card {
     width: 90%;
     margin-bottom: 20px;
+  }
+}
+  /* Imagen de oferta en banner */
+.banner-offer {
+  position: absolute;
+  top: 110px;
+  right: 40px;
+  z-index: 3;
+}
+
+.banner-offer img {
+  width: 220px;
+  max-width: 90%;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animación suave */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+  .banner-offer {
+    position: static;
+    margin: 20px auto 0;
+    text-align: center;
+  }
+
+  .banner-offer img {
+    width: 180px;
   }
 }
 </style>
