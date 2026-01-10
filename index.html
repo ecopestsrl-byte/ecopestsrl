@@ -188,18 +188,31 @@ header nav ul li a:hover{
   transform:translateY(-2px);
 }
 
-/* Banner */
+/* ===== BANNER CON IMAGEN FULL ===== */
 .banner{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-  overflow:hidden;
-  background:linear-gradient(180deg, rgba(46,125,50,0.06), rgba(102,187,106,0.02));
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;               /* ⬜ TEXTO BLANCO */
+  text-align: center;
+  overflow: hidden;
+
+  background-image: url("img/banner.png"); /* ⬜ IMAGEN */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+/* ===== CAPA OSCURA PARA LEER EL TEXTO ===== */
+.banner::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* ⬜ OSCURECE LA IMAGEN */
+  z-index: 1;
+}
+
 #particles-js{
   position:absolute;
   top:0;
