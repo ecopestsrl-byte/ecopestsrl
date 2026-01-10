@@ -231,7 +231,7 @@ header nav ul li a:hover{
   align-items:center;
 }
 .banner h1{font-family:'Montserrat',sans-serif;color:var(--eco-green);font-size:48px;margin:0 0 10px}
-.banner p{color:#2f4f35;font-size:20px;margin:8px 0 18px}
+.banner p{color:#ffffff;font-size:20px;margin:8px 0 18px}
 .banner .banner-buttons {
   display: flex;
   justify-content: center;
@@ -413,6 +413,30 @@ footer a {
     width: 100%;       
     max-width: 260px;  
   }
+  /* ===== AJUSTE DEL BANNER PARA MÓVIL ===== */
+@media (max-width: 768px) {
+  .banner{
+    min-height: 100vh;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  .banner-inner{
+    padding: 16px;
+  }
+
+  .banner h1{
+    font-size: 26px;
+    line-height: 1.2;
+    color: #ffffff; /* ⬜ BLANCO */
+  }
+
+  .banner p{
+    font-size: 16px;
+    color: #ffffff; /* ⬜ BLANCO */
+  }
+}
+
   .products-grid{grid-template-columns:1fr;}
   .mvv-container{flex-direction:column;}
   .locations{flex-direction:column;}
