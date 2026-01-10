@@ -468,15 +468,18 @@ footer a {
     padding: 20px;
   }
 }
-/* ===== AJUSTE DEL BANNER PARA MÓVIL (CORRECTO) ===== */
+/* ===== BANNER MÓVIL IMAGEN COMPLETA ===== */
 @media (max-width: 768px) {
   .banner{
-    min-height: 100vh;
+    min-height: auto;              /* ⬅️ clave */
+    padding: 80px 12px;            /* espacio vertical */
+    background-size: contain;      /* ⬅️ imagen completa */
     background-position: center top;
+    background-repeat: no-repeat;
   }
 
   .banner h1{
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.2;
     color: #ffffff !important;
   }
