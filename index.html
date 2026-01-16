@@ -1008,7 +1008,9 @@ function handleCotizacion(e){
   const email=document.getElementById('cot-email').value;
   const mensaje=document.getElementById('cot-mensaje').value;
   const texto=`Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)},%20correo:%20${encodeURIComponent(email)}.%20${encodeURIComponent(mensaje)}`;
-  window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
+  gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});
+window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
+  
 }
 </script>
 
