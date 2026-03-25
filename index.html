@@ -927,7 +927,7 @@ footer a {
 
 {id:15, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de alto rendimiento, diseñada para trabajos intensivos y aplicaciones en grandes superficies."},
  
-{id:17, name:"Aspersor Profesional de Acero Inoxidable E&P", category:"Equipos", price:0, img:"img/byp.jpeg", description:"Aspersor manual de acero inoxidable resistente a químicos agresivos. Ideal para aplicaciones profesionales de fumigación con alta durabilidad."},
+{id:17, name:"Aspersor Profesional de Acero Inoxidable E&P", category:"Equipos", price:0, img:"img/byp.jpeg", video:"video/aspersor.mp4", description:"Aspersor manual de acero inoxidable resistente a químicos agresivos. Ideal para aplicaciones profesionales de fumigación con alta durabilidad."},
 
 
 // ================ EQUIPOS EPP ================
@@ -965,7 +965,10 @@ modal.className = "modal";
 modal.innerHTML = `
   <div class="modal-content">
     <span class="close">&times;</span>
+
     <img id="modalImg" src="" alt="Producto">
+    <video id="modalVideo" controls style="display:none; width:100%; border-radius:10px; margin-bottom:15px;"></video>
+
     <h3 id="modalName"></h3>
     <p id="modalDesc"></p>
   </div>`;
