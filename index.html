@@ -902,69 +902,120 @@ gtag('event','whatsapp_click');
 <!-- SCRIPT PRODUCTOS Y MODAL -->
 <script>
  const products = [
-  
-// ============ CONTROL DE ROEDORES ============
-{id:1, name:"Estación de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo de alta resistencia fabricada en plástico reforzado. Diseñada para proteger el rodenticida del clima y evitar el acceso de niños y mascotas. Ideal para uso profesional en interiores y exteriores."},
 
-{id:2, name:"Trampa Metálica Multi-Catch", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa metálica mecánica de alta durabilidad que permite la captura múltiple de ratones sin necesidad de veneno. Ideal para negocios, almacenes y uso profesional continuo."},
-   
-{id:3, name:"Trampa Plástica Multicaptura", category:"Control de Roedores", price:0, img:"img/trampaplastica.jpeg", description:"Trampa plástica de captura múltiple, resistente y reutilizable. Permite capturar varios ratones de forma higiénica y sin químicos. Ideal para uso doméstico y comercial."},
+{id:1, name:"Estación de Cebo para Ratas", category:"Control de Roedores", price:0, 
+images:["img/estacion.jpg","img/estacion2.jpg","img/estacion3.jpg"], 
+description:"Estación de cebo de alta resistencia fabricada en plástico reforzado..."},
 
-{id:4, name:"Trampa Mecánica para Ratones", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampa mecánica de acción rápida para captura efectiva de ratones. Fácil de usar, reutilizable y segura para colocar en interiores."},
+{id:2, name:"Trampa Metálica Multi-Catch", category:"Control de Roedores", price:0, 
+images:["img/cebadero2.jpg","img/cebadero2-2.jpg"], 
+description:"Trampa metálica mecánica de alta durabilidad..."},
 
-{id:5, name:"Cebo Rodenticida", category:"Control de Roedores", price:0, img:"img/cebo.jpeg", description:"Cebo rodenticida de alta eficacia formulado para eliminar ratas y ratones. Actúa rápidamente y es ideal para uso en estaciones de cebo en interiores y exteriores."},
+{id:3, name:"Trampa Plástica Multicaptura", category:"Control de Roedores", price:0, 
+images:["img/trampaplastica.jpeg","img/trampaplastica2.jpeg"], 
+description:"Trampa plástica de captura múltiple..."},
 
-{id:6, name:"Tablero Adhesivo para Ratones", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero adhesivo no tóxico para la captura de ratones e insectos rastreros. Fácil de usar, limpio y seguro para uso en hogares y negocios."},
+{id:4, name:"Trampa Mecánica para Ratones", category:"Control de Roedores", price:0, 
+images:["img/cebadero3.jpg"], 
+description:"Trampa mecánica de acción rápida..."},
 
-{id:7, name:"Trampa Adhesiva para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Trampa adhesiva de alta resistencia diseñada para capturar ratas y ratones de forma efectiva. Ideal para áreas donde no se recomienda el uso de venenos."},
+{id:5, name:"Cebo Rodenticida", category:"Control de Roedores", price:0, 
+images:["img/cebo.jpeg"], 
+description:"Cebo rodenticida de alta eficacia..."},
 
+{id:6, name:"Tablero Adhesivo para Ratones", category:"Control de Roedores", price:0, 
+images:["img/tablero.png"], 
+description:"Tablero adhesivo no tóxico..."},
 
-// ================== EQUIPOS ==================
-{id:8, name:"Pulverizador Manual STIHL SG 71", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual de alta capacidad ideal para aplicaciones de pesticidas, herbicidas y desinfectantes. Diseño ergonómico y resistente para uso profesional."},
-   
-{id:9, name:"Fumigadora de Espalda STIHL SR 420", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Fumigadora de mochila de alto rendimiento con gran alcance y potencia. Ideal para control de plagas en áreas amplias y uso profesional intensivo."},
-   
-{id:10, name:"Fumigadora de Espalda STIHL SR 200", category:"Equipos", price:0, img:"img/stihlsr200.jpg", description:"Equipo de fumigación ligero y eficiente, ideal para aplicaciones profesionales en espacios medianos. Fácil de transportar y de alto rendimiento."},
+{id:7, name:"Trampa Adhesiva para Roedores", category:"Control de Roedores", price:0, 
+images:["img/pegamento.jpg"], 
+description:"Trampa adhesiva de alta resistencia..."},
 
-{id:11, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV para aplicaciones en frío que genera partículas finas para desinfección y control de plagas. Ideal para interiores, oficinas y hogares."},
+// EQUIPOS
+{id:8, name:"Pulverizador Manual STIHL SG 71", category:"Equipos", price:0, 
+images:["img/pulverizador.jpg","img/pulverizador2.jpg"], 
+description:"Pulverizador manual de alta capacidad..."},
 
-{id:12, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Termonebulizador profesional que produce humo para el control de mosquitos y otras plagas en exteriores. Alta eficiencia en grandes áreas."},
+{id:9, name:"Fumigadora de Espalda STIHL SR 420", category:"Equipos", price:0, 
+images:["img/bomba.jpg"], 
+description:"Fumigadora de mochila de alto rendimiento..."},
 
-{id:13, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lamparafly.png", description:"Lámpara UV decorativa y funcional que atrae y captura insectos voladores. Perfecta para restaurantes, oficinas y hogares."},
+{id:10, name:"Fumigadora de Espalda STIHL SR 200", category:"Equipos", price:0, 
+images:["img/stihlsr200.jpg"], 
+description:"Equipo de fumigación ligero..."},
 
-{id:14, name:"Fly Hunter Uplight 30", category:"Equipos", price:0, img:"img/lampara.png", description:"Lámpara UV decorativa y funcional que atrae y captura insectos voladores. Perfecta para restaurantes, oficinas y hogares."},
+{id:11, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, 
+images:["img/nebulizador.jpg"], 
+description:"Nebulizador ULV..."},
 
-{id:15, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de alto rendimiento, diseñada para trabajos intensivos y aplicaciones en grandes superficies."},
- 
-{id:17, name:"Aspersor Profesional de Acero Inoxidable E&P", category:"Equipos", price:0, img:"img/byp.jpeg", video:"video/aspersor.mp4", description:"Aspersor manual de acero inoxidable resistente a químicos agresivos. Ideal para aplicaciones profesionales de fumigación con alta durabilidad."},
+{id:12, name:"Thermo Fogger", category:"Equipos", price:0, 
+images:["img/thermo.jpg"], 
+description:"Termonebulizador profesional..."},
 
+{id:13, name:"Fly Hunter Smart 30", category:"Equipos", price:0, 
+images:["img/lamparafly.png"], 
+description:"Lámpara UV..."},
 
-// ================ EQUIPOS EPP ================
-{id:18, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes diseñados para proteger las manos durante la manipulación de químicos y fumigaciones. Cómodos y duraderos."},
+{id:14, name:"Fly Hunter Uplight 30", category:"Equipos", price:0, 
+images:["img/lampara.png"], 
+description:"Lámpara UV..."},
 
-{id:19, name:"Mascarilla con Carbón Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado que protege contra vapores, olores y partículas durante aplicaciones de químicos."},
+{id:15, name:"Fumigadora Estacionaria", category:"Equipos", price:0, 
+images:["img/estacionaria.jpg"], 
+description:"Fumigadora estacionaria..."},
 
-{id:20, name:"Mascarilla de Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla de protección facial completa que brinda máxima seguridad contra gases, vapores y salpicaduras químicas."},
+{id:17, name:"Aspersor Profesional de Acero Inoxidable E&P", category:"Equipos", price:0, 
+images:["img/byp.jpeg"], 
+video:"video/aspersor.mp4",
+description:"Aspersor manual de acero inoxidable..."},
 
+// EPP
+{id:18, name:"Guantes de Protección", category:"Equipos EPP", price:0, 
+images:["img/guante.jpg"], 
+description:"Guantes resistentes..."},
 
-// ================= QUÍMICOS =================
-{id:21, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado de uso profesional para el control de múltiples plagas. Alta efectividad y larga duración."},
+{id:19, name:"Mascarilla con Carbón Activado", category:"Equipos EPP", price:0, 
+images:["img/mascarilla.jpg"], 
+description:"Mascarilla con filtro..."},
 
-{id:22, name:"Advion Cockroach Gel", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel insecticida de alta eficacia para el control de cucarachas. Acción rápida y efecto prolongado, ideal para aplicaciones en grietas y rincones."},
+{id:20, name:"Mascarilla de Cara Completa", category:"Equipos EPP", price:0, 
+images:["img/mascara.jpg"], 
+description:"Mascarilla de protección..."},
 
-{id:23, name:"Invict Cockroach Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Gel insecticida de acción rápida y alta atracción para cucarachas. Ideal para control profesional en interiores."},
+// QUÍMICOS
+{id:21, name:"Insecticida Profesional", category:"Químicos", price:0, 
+images:["img/insecticida.jpg"], 
+description:"Insecticida concentrado..."},
 
-{id:24, name:"Aceite Mineral", category:"Químicos", price:0, img:"img/aceite.jpeg", description:"Aceite mineral utilizado como coadyuvante para mejorar la adherencia y efectividad de insecticidas en aplicaciones de fumigación."},
+{id:22, name:"Advion Cockroach Gel", category:"Químicos", price:0, 
+images:["img/advion.jpg"], 
+description:"Gel insecticida..."},
 
-{id:25, name:"Repelente para Aves en Gel", category:"Químicos", price:0, img:"img/gel.jpg", description:"Gel repelente que evita que aves se posen o aniden en superficies. Ideal para techos, cornisas y estructuras."},
+{id:23, name:"Invict Cockroach Gel", category:"Químicos", price:0, 
+images:["img/invict.jpg"], 
+description:"Gel insecticida..."},
 
-{id:26, name:"Ecofly - Polvo para Moscas", category:"Químicos", price:0, img:"img/ecofly.jpeg", description:"Insecticida en polvo para el control efectivo de moscas. Fácil de aplicar y de acción rápida."},
+{id:24, name:"Aceite Mineral", category:"Químicos", price:0, 
+images:["img/aceite.jpeg"], 
+description:"Aceite mineral..."},
 
+{id:25, name:"Repelente para Aves en Gel", category:"Químicos", price:0, 
+images:["img/gel.jpg"], 
+description:"Gel repelente..."},
 
-// ================= ACCESORIOS =================
-{id:27, name:"Pistola Aplicadora para Gel Insecticida", category:"Accesorios", price:0, img:"img/pistola.png", description:"Pistola aplicadora diseñada para colocar gel insecticida de forma precisa en grietas, rendijas y áreas de difícil acceso."},
+{id:26, name:"Ecofly - Polvo para Moscas", category:"Químicos", price:0, 
+images:["img/ecofly.jpeg"], 
+description:"Insecticida en polvo..."},
 
-{id:28, name:"Lanza Inyectora Profesional", category:"Accesorios", price:0, img:"img/lanza.png", description:"Lanza profesional para la inyección de insecticidas líquidos en grietas, paredes, suelos y estructuras. Ideal para tratamientos contra termitas y plagas ocultas."}
+// ACCESORIOS
+{id:27, name:"Pistola Aplicadora para Gel Insecticida", category:"Accesorios", price:0, 
+images:["img/pistola.png"], 
+description:"Pistola aplicadora..."},
+
+{id:28, name:"Lanza Inyectora Profesional", category:"Accesorios", price:0, 
+images:["img/lanza.png"], 
+description:"Lanza profesional..."}
+
 ];
 
 // ====== MODAL ======
