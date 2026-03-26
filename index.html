@@ -819,7 +819,11 @@ footer a {
 </footer>
 
 <!-- WHATSAPP -->
-<a class="whatsapp-fixed" href="https://wa.me/18097383196" target="_blank" aria-label="WhatsApp" onclick="gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});"> 
+<a class="whatsapp-fixed" href="https://wa.me/18097383196" target="_blank" aria-label="WhatsApp" onclick="
+gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});
+gtag('event','whatsapp_click');
+">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
   
 <!-- PARTICLES.JS -->
@@ -1008,7 +1012,11 @@ products.forEach(p => {
     <p>${p.description.substring(0, 60)}...</p>
     <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
    class="btn-wapp"
-   onclick="event.stopPropagation(); gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});">
+   onclick="
+event.stopPropagation();
+gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});
+gtag('event','whatsapp_click');
+">
        <i class="fa-brands fa-whatsapp"></i> Cotizar
     </a>`;
   productList.appendChild(div);
