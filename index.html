@@ -990,9 +990,19 @@ const closeModal = modal.querySelector(".close");
 
 function openModal(product) {
   modal.style.display = "flex";
-  modalImg.src = product.img;
+
   modalName.textContent = product.name;
   modalDesc.textContent = product.description;
+
+  modalImg.src = product.img;
+  modalImg.style.display = "block";
+
+  if (product.video) {
+    modalVideo.style.display = "block";
+    modalVideo.src = product.video;
+  } else {
+    modalVideo.style.display = "none";
+  }
 }
 
 closeModal.onclick = () => (modal.style.display = "none");
