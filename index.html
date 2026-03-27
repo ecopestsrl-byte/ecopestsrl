@@ -17,8 +17,9 @@
   gtag('config', 'G-TWPLY4GJ06');
 </script>
   
-  <title>Venta de productos y equipos para control de plagas en República Dominicana | ECO PEST</title>
+  <title>ECOPEST S.R.L | Equipos y Productos Profesionales de Fumigación</title>
   <meta name="description" content="ECOPEST S.R.L ofrece equipos, productos y accesorios profesionales para fumigación y control de plagas. Distribuidores oficiales en República Dominicana con asesoría técnica y garantía.">
+  <meta name="keywords" content="fumigación, control de plagas, equipos de fumigación, ECOPEST, productos químicos, EPP, fumigadora, República Dominicana">
   <meta name="author" content="ECOPEST S.R.L">
 
   <!-- Open Graph -->
@@ -533,10 +534,7 @@ footer a {
   <div id="particles-js"></div>
 
   <div class="banner-inner">
-    <h1>Venta de productos y equipos para control de plagas en República Dominicana</h1>
-    <p style="max-width:800px;margin:10px auto;">
-En ECO PEST ofrecemos trampas para ratones, cebos rodenticidas, insecticidas profesionales, lámparas UV, fumigadoras y equipos especializados para el control de plagas en Santo Domingo y toda la República Dominicana.
-</p>
+    <h1>Protege tu hogar y negocio con equipos y productos profesionales</h1>
 
    <p>
   Pulverizadores, termonebulizadores, cebos, trampas y EPP.
@@ -558,18 +556,9 @@ En ECO PEST ofrecemos trampas para ratones, cebos rodenticidas, insecticidas pro
 </section>
 
 <!-- PRODUCTOS -->
-<section>
-  <h2>Productos profesionales para el control de plagas en República Dominicana</h2>
-  <p>
-    En ECO PEST S.R.L somos especialistas en la venta de productos para el control de plagas en República Dominicana. 
-    Contamos con trampas para ratones, cebos rodenticidas, insecticidas profesionales, equipos de fumigación, 
-    lámparas UV para insectos y accesorios especializados.
-  </p>
-
-  <p>
-    Nuestros productos están diseñados para uso doméstico, comercial e industrial, ofreciendo soluciones efectivas 
-    para el control de roedores, cucarachas, mosquitos y otras plagas comunes en Santo Domingo y todo el país.
-  </p>
+<section id="productos">
+  <h2 class="section-title">Nuestros Productos</h2>
+  <div class="products-grid" id="product-list"></div>
 </section>
 
 <!-- NOSOTROS -->
@@ -1028,7 +1017,7 @@ products.forEach(p => {
   div.className = "product-card";
   div.onclick = () => openModal(p);
   div.innerHTML = `
-   <img src="${p.img}" alt="${p.name} en República Dominicana">
+    <img src="${p.img}" alt="${p.name}">
     <h4>${p.name}</h4>
     <p>${p.description.substring(0, 60)}...</p>
     <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
