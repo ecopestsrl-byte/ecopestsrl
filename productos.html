@@ -4,111 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Productos de fumigación en República Dominicana | ECOPEST</title>
-  <meta name="description" content="Catálogo de productos de fumigación en República Dominicana. Equipos, trampas, insecticidas y soluciones profesionales.">
+  <title>Catálogo de productos | ECOPEST</title>
+  <meta name="description" content="Catálogo completo de productos de fumigación en República Dominicana.">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body{font-family:Arial;margin:0;background:#f7f9f6}
     header{background:#2E7D32;color:#fff;padding:15px;text-align:center;font-weight:bold}
-    
-    .container{max-width:1200px;margin:40px auto;padding:20px}
-    
-    h1{text-align:center;color:#2E7D32}
-    
-    .grid{
+
+    h1{text-align:center;color:#2E7D32;margin-top:20px}
+
+    .products-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
-      margin-top:30px;
+      max-width:1200px;
+      margin:30px auto;
+      padding:20px;
     }
 
-    .card{
+    .product-card{
       background:#fff;
       border-radius:12px;
       padding:15px;
       text-align:center;
       box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      cursor:pointer;
     }
 
-    .card img{
+    .product-card img{
       width:100%;
       height:180px;
       object-fit:contain;
     }
 
-    .card h3{color:#2E7D32}
-    .card p{font-size:14px;color:#555}
-
-    .btn{
+    .btn-wapp{
       display:inline-block;
       margin-top:10px;
       background:#25D366;
       color:#fff;
-      padding:10px 15px;
+      padding:10px;
       border-radius:8px;
       text-decoration:none;
       font-weight:bold;
-    }
-
-    footer{
-      background:#2E7D32;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  ECOPEST S.R.L | Catálogo de Productos
-</header>
+<header>ECOPEST S.R.L | Catálogo de Productos</header>
 
-<div class="container">
+<h1>Todos nuestros productos</h1>
 
-  <h1>Productos de Fumigación en República Dominicana</h1>
+<div class="products-grid" id="product-list"></div>
 
-  <div class="grid">
+<script>
+const products = [
+ // ============ CONTROL DE ROEDORES ============
+{id:1, name:"Estación de Cebo para Ratas", category:"Control de Roedores", price:0, img:"img/estacion.jpg", description:"Estación de cebo de alta resistencia fabricada en plástico reforzado. Diseñada para proteger el rodenticida del clima y evitar el acceso de niños y mascotas. Ideal para uso profesional en interiores y exteriores."},
 
-    <!-- PRODUCTO -->
-    <div class="card">
-      <img src="img/pulverizador.jpg">
-      <h3>Pulverizador Manual</h3>
-      <p>Equipo profesional ideal para fumigación en hogares y negocios.</p>
-      <a class="btn" href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20pulverizador">
-        Cotizar por WhatsApp
-      </a>
-    </div>
+{id:2, name:"Trampa Metálica Multi-Catch", category:"Control de Roedores", price:0, img:"img/cebadero2.jpg", description:"Trampa metálica mecánica de alta durabilidad que permite la captura múltiple de ratones sin necesidad de veneno. Ideal para negocios, almacenes y uso profesional continuo."},
+   
+{id:3, name:"Trampa Plástica Multicaptura", category:"Control de Roedores", price:0, img:"img/trampaplastica.jpeg", description:"Trampa plástica de captura múltiple, resistente y reutilizable. Permite capturar varios ratones de forma higiénica y sin químicos. Ideal para uso doméstico y comercial."},
 
-    <div class="card">
-      <img src="img/nebulizador.jpg">
-      <h3>Nebulizador ULV</h3>
-      <p>Perfecto para desinfección y control de plagas en interiores.</p>
-      <a class="btn" href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20nebulizador">
-        Cotizar por WhatsApp
-      </a>
-    </div>
+{id:4, name:"Trampa Mecánica para Ratones", category:"Control de Roedores", price:0, img:"img/cebadero3.jpg", description:"Trampa mecánica de acción rápida para captura efectiva de ratones. Fácil de usar, reutilizable y segura para colocar en interiores."},
 
-    <div class="card">
-      <img src="img/thermo.jpg">
-      <h3>Thermo Fogger</h3>
-      <p>Ideal para fumigación en exteriores y control de mosquitos.</p>
-      <a class="btn" href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20thermo%20fogger">
-        Cotizar por WhatsApp
-      </a>
-    </div>
+{id:5, name:"Cebo Rodenticida", category:"Control de Roedores", price:0, img:"img/cebo.jpeg", description:"Cebo rodenticida de alta eficacia formulado para eliminar ratas y ratones. Actúa rápidamente y es ideal para uso en estaciones de cebo en interiores y exteriores."},
 
-  </div>
+{id:6, name:"Tablero Adhesivo para Ratones", category:"Control de Roedores", price:0, img:"img/tablero.png", description:"Tablero adhesivo no tóxico para la captura de ratones e insectos rastreros. Fácil de usar, limpio y seguro para uso en hogares y negocios."},
 
-</div>
+{id:7, name:"Trampa Adhesiva para Roedores", category:"Control de Roedores", price:0, img:"img/pegamento.jpg", description:"Trampa adhesiva de alta resistencia diseñada para capturar ratas y ratones de forma efectiva. Ideal para áreas donde no se recomienda el uso de venenos."},
 
-<footer>
-  © 2026 ECOPEST S.R.L | Productos de fumigación en RD
-</footer>
+
+// ================== EQUIPOS ==================
+{id:8, name:"Pulverizador Manual STIHL SG 71", category:"Equipos", price:0, img:"img/pulverizador.jpg", description:"Pulverizador manual de alta capacidad ideal para aplicaciones de pesticidas, herbicidas y desinfectantes. Diseño ergonómico y resistente para uso profesional."},
+   
+{id:9, name:"Fumigadora de Espalda STIHL SR 420", category:"Equipos", price:0, img:"img/bomba.jpg", description:"Fumigadora de mochila de alto rendimiento con gran alcance y potencia. Ideal para control de plagas en áreas amplias y uso profesional intensivo."},
+   
+{id:10, name:"Fumigadora de Espalda STIHL SR 200", category:"Equipos", price:0, img:"img/stihlsr200.jpg", description:"Equipo de fumigación ligero y eficiente, ideal para aplicaciones profesionales en espacios medianos. Fácil de transportar y de alto rendimiento."},
+
+{id:11, name:"Nebulizador ULV Eléctrico", category:"Equipos", price:0, img:"img/nebulizador.jpg", description:"Nebulizador ULV para aplicaciones en frío que genera partículas finas para desinfección y control de plagas. Ideal para interiores, oficinas y hogares."},
+
+{id:12, name:"Thermo Fogger", category:"Equipos", price:0, img:"img/thermo.jpg", description:"Termonebulizador profesional que produce humo para el control de mosquitos y otras plagas en exteriores. Alta eficiencia en grandes áreas."},
+
+{id:13, name:"Fly Hunter Smart 30", category:"Equipos", price:0, img:"img/lamparafly.png", description:"Lámpara UV decorativa y funcional que atrae y captura insectos voladores. Perfecta para restaurantes, oficinas y hogares."},
+
+{id:14, name:"Fly Hunter Uplight 30", category:"Equipos", price:0, img:"img/lampara.png", description:"Lámpara UV decorativa y funcional que atrae y captura insectos voladores. Perfecta para restaurantes, oficinas y hogares."},
+
+{id:15, name:"Fumigadora Estacionaria", category:"Equipos", price:0, img:"img/estacionaria.jpg", description:"Fumigadora estacionaria a gasolina de alto rendimiento, diseñada para trabajos intensivos y aplicaciones en grandes superficies."},
+ 
+{id:17, name:"Aspersor Profesional de Acero Inoxidable E&P", category:"Equipos", price:0, img:"img/byp.jpeg", video:"video/aspersor.mp4", description:"Aspersor manual de acero inoxidable resistente a químicos agresivos. Ideal para aplicaciones profesionales de fumigación con alta durabilidad."},
+
+
+// ================ EQUIPOS EPP ================
+{id:18, name:"Guantes de Protección", category:"Equipos EPP", price:0, img:"img/guante.jpg", description:"Guantes resistentes diseñados para proteger las manos durante la manipulación de químicos y fumigaciones. Cómodos y duraderos."},
+
+{id:19, name:"Mascarilla con Carbón Activado", category:"Equipos EPP", price:0, img:"img/mascarilla.jpg", description:"Mascarilla con filtro de carbón activado que protege contra vapores, olores y partículas durante aplicaciones de químicos."},
+
+{id:20, name:"Mascarilla de Cara Completa", category:"Equipos EPP", price:0, img:"img/mascara.jpg", description:"Mascarilla de protección facial completa que brinda máxima seguridad contra gases, vapores y salpicaduras químicas."},
+
+
+// ================= QUÍMICOS =================
+{id:21, name:"Insecticida Profesional", category:"Químicos", price:0, img:"img/insecticida.jpg", description:"Insecticida concentrado de uso profesional para el control de múltiples plagas. Alta efectividad y larga duración."},
+
+{id:22, name:"Advion Cockroach Gel", category:"Químicos", price:0, img:"img/advion.jpg", description:"Gel insecticida de alta eficacia para el control de cucarachas. Acción rápida y efecto prolongado, ideal para aplicaciones en grietas y rincones."},
+
+{id:23, name:"Invict Cockroach Gel", category:"Químicos", price:0, img:"img/invict.jpg", description:"Gel insecticida de acción rápida y alta atracción para cucarachas. Ideal para control profesional en interiores."},
+
+{id:24, name:"Aceite Mineral", category:"Químicos", price:0, img:"img/aceite.jpeg", description:"Aceite mineral utilizado como coadyuvante para mejorar la adherencia y efectividad de insecticidas en aplicaciones de fumigación."},
+
+{id:25, name:"Repelente para Aves en Gel", category:"Químicos", price:0, img:"img/gel.jpg", description:"Gel repelente que evita que aves se posen o aniden en superficies. Ideal para techos, cornisas y estructuras."},
+
+{id:26, name:"Ecofly - Polvo para Moscas", category:"Químicos", price:0, img:"img/ecofly.jpeg", description:"Insecticida en polvo para el control efectivo de moscas. Fácil de aplicar y de acción rápida."},
+
+
+// ================= ACCESORIOS =================
+{id:27, name:"Pistola Aplicadora para Gel Insecticida", category:"Accesorios", price:0, img:"img/pistola.png", description:"Pistola aplicadora diseñada para colocar gel insecticida de forma precisa en grietas, rendijas y áreas de difícil acceso."},
+
+{id:28, name:"Lanza Inyectora Profesional", category:"Accesorios", price:0, img:"img/lanza.png", description:"Lanza profesional para la inyección de insecticidas líquidos en grietas, paredes, suelos y estructuras. Ideal para tratamientos contra termitas y plagas ocultas."}
+];
+  
+const productList = document.getElementById("product-list");
+
+products.forEach(p => {
+  const div = document.createElement("div");
+  div.className = "product-card";
+  div.innerHTML = `
+    <img src="${p.img}">
+    <h3>${p.name}</h3>
+    <p>${p.description.substring(0, 60)}...</p>
+    <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(p.name)}" class="btn-wapp">
+      Cotizar
+    </a>
+  `;
+  productList.appendChild(div);
+});
+</script>
 
 </body>
 </html>
