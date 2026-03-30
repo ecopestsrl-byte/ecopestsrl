@@ -1100,6 +1100,37 @@ window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
   
 }
 </script>
+<!-- ===== POPUP OFERTA ===== -->
+<div id="ofertaPopup" style="display:none; position:fixed; z-index:99999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+  
+  <div style="position:relative; max-width:500px; width:90%;">
+    
+    <!-- BOTÓN CERRAR -->
+    <span onclick="cerrarOferta()" 
+      style="position:absolute; top:-10px; right:-10px; background:#fff; border-radius:50%; padding:8px 12px; cursor:pointer; font-weight:bold;">
+      X
+    </span>
 
+    <!-- IMAGEN DE LA OFERTA -->
+    <img src="img/oferta.jpg" style="width:100%; border-radius:12px;">
+    
+  </div>
+</div>
+  <script>
+  // 🔥 ACTIVA O DESACTIVA AQUÍ
+  let activarOferta = false; // CAMBIA a true cuando tengas oferta
+
+  window.addEventListener("load", function() {
+    if (activarOferta) {
+      setTimeout(() => {
+        document.getElementById("ofertaPopup").style.display = "flex";
+      }, 2000); // aparece en 2 segundos
+    }
+  });
+
+  function cerrarOferta() {
+    document.getElementById("ofertaPopup").style.display = "none";
+  }
+</script>
 </body>
 </html>
