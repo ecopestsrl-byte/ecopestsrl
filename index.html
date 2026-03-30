@@ -503,17 +503,21 @@ footer a {
     color: #ffffff !important;
   }
 }
+.oferta-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* 📱 Ajuste para celular */
 @media (max-width: 768px) {
-  #ofertaPopup {
-    padding: 10px;
-  }
-
   #ofertaPopup div {
-    max-width: 280px !important;
+    max-width: 320px !important;
   }
 
-  #ofertaPopup img {
-    max-width: 240px;
+  .oferta-img {
+    max-width: 100%;
   }
 }
 </style>
@@ -1124,7 +1128,7 @@ window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
     </span>
 
     <!-- IMAGEN DE LA OFERTA -->
-    <img src="img/oferta.jpeg" style="width:100%; max-width:420px; height:auto; border-radius:12px; display:block; margin:auto;">
+    <img src="img/ofertas/oferta.jpeg" class="oferta-img">
     
   </div>
 </div>
