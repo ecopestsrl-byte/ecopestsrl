@@ -183,6 +183,55 @@
       margin-top:15px;
     }
 
+    /* FORMULARIO */
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    form input,
+    form textarea{
+      width:100%;
+      padding:16px;
+      border-radius:12px;
+      border:1px solid #dfe5dc;
+      font-size:1rem;
+      font-family:'Roboto',sans-serif;
+      transition:0.3s;
+    }
+
+    form input:focus,
+    form textarea:focus{
+      outline:none;
+      border-color:#2E7D32;
+      box-shadow:0 0 0 4px rgba(46,125,50,0.12);
+    }
+
+    form textarea{
+      resize:vertical;
+      margin-bottom:20px;
+    }
+
+    .send-btn{
+      background:#2E7D32;
+      color:#fff;
+      border:none;
+      padding:16px 30px;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .send-btn:hover{
+      background:#256428;
+      transform:translateY(-2px);
+    }
+
     /* BUTTON */
 
     .cta{
@@ -272,6 +321,10 @@
 
       iframe{
         height:250px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
       }
 
     }
@@ -388,6 +441,51 @@
 
     </div>
 
+    <!-- FORMULARIO -->
+
+    <div class="card">
+
+      <h2>Solicita Información</h2>
+
+      <form onsubmit="enviarWhatsApp(event)">
+
+        <div class="form-grid">
+
+          <input type="text"
+            id="nombre"
+            placeholder="Nombre completo"
+            required>
+
+          <input type="email"
+            id="correo"
+            placeholder="Correo electrónico"
+            required>
+
+          <input type="tel"
+            id="telefono"
+            placeholder="Teléfono"
+            required>
+
+          <input type="text"
+            id="empresa"
+            placeholder="Empresa (Opcional)">
+
+        </div>
+
+        <textarea
+          id="mensaje"
+          rows="6"
+          placeholder="Escribe tu mensaje..."
+          required></textarea>
+
+        <button type="submit" class="send-btn">
+          Enviar Consulta
+        </button>
+
+      </form>
+
+    </div>
+
     <!-- BOTÓN -->
 
     <div class="cta">
@@ -430,6 +528,36 @@
     </p>
 
   </footer>
+
+  <script>
+
+    function enviarWhatsApp(e){
+
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const empresa = document.getElementById("empresa").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      const texto =
+`Hola, quiero solicitar información.
+
+Nombre: ${nombre}
+Correo: ${correo}
+Teléfono: ${telefono}
+Empresa: ${empresa}
+Mensaje: ${mensaje}`;
+
+      const url =
+`https://api.whatsapp.com/send?phone=18097383196&text=${encodeURIComponent(texto)}`;
+
+      window.open(url, '_blank');
+
+    }
+
+  </script>
 
 </body>
 </html>
