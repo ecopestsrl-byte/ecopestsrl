@@ -1,0 +1,477 @@
+<!-- ================= CONTACTO PROFESIONAL ================= -->
+<section id="contacto-profesional">
+
+  <div class="contact-header">
+    <h2>Contáctanos</h2>
+    <p>
+      Estamos disponibles para ayudarte con equipos, productos y asesoría profesional 
+      en control de plagas en toda República Dominicana.
+    </p>
+  </div>
+
+  <div class="contact-wrapper">
+
+    <!-- INFORMACIÓN -->
+    <div class="contact-info-box">
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+
+        <div>
+          <h3>Teléfono / WhatsApp</h3>
+          <a href="https://wa.me/18097383196" target="_blank">
+            (809) 738-3196
+          </a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <div>
+          <h3>Correo Electrónico</h3>
+          <a href="mailto:ecopestsrl@gmail.com">
+            ecopestsrl@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div>
+          <h3>Sucursal Santo Domingo</h3>
+          <p>
+            C/11, No.15, Las Antillas,<br>
+            El Cacique, Santo Domingo D.N.
+          </p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div>
+          <h3>Sucursal Verón Punta Cana</h3>
+          <p>
+            Verón, Punta Cana,<br>
+            República Dominicana
+          </p>
+        </div>
+      </div>
+
+      <!-- REDES -->
+      <div class="contact-socials">
+
+        <a href="https://www.facebook.com/eco.pest.srl/" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.instagram.com/ecopestsrl/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://api.whatsapp.com/send/?phone=18097383196&text=Hola%2C+quiero+cotizar+el+producto" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="contact-form-box">
+
+      <h3>Solicita Información</h3>
+
+      <form onsubmit="enviarFormulario(event)">
+
+        <div class="form-grid">
+
+          <input 
+            type="text" 
+            id="nombre"
+            placeholder="Nombre completo"
+            required
+          >
+
+          <input 
+            type="email"
+            id="correo"
+            placeholder="Correo electrónico"
+            required
+          >
+
+        </div>
+
+        <div class="form-grid">
+
+          <input 
+            type="text"
+            id="telefono"
+            placeholder="Teléfono"
+          >
+
+          <input 
+            type="text"
+            id="empresa"
+            placeholder="Empresa (Opcional)"
+          >
+
+        </div>
+
+        <textarea 
+          id="mensaje"
+          rows="6"
+          placeholder="Escribe tu mensaje..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          <i class="fab fa-whatsapp"></i>
+          Enviar Consulta
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- MAPAS -->
+  <div class="maps-section">
+
+    <!-- MAPA SD -->
+    <div class="map-card">
+
+      <div class="map-header">
+        <h3>Santo Domingo</h3>
+
+        <a href="https://maps.app.goo.gl/eWxP78AMCi68UVGh9" target="_blank">
+          Ver ubicación
+        </a>
+      </div>
+
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.215092743958!2d-69.9339437!3d18.4430449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5630059e4b7ed%3A0xaa6e330e62f1d6d7!2sECOPEST%20S.R.L!5e0!3m2!1ses!2sdo!4v1716037280000!5m2!1ses!2sdo"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+    <!-- MAPA PUNTA CANA -->
+    <div class="map-card">
+
+      <div class="map-header">
+        <h3>Verón Punta Cana</h3>
+
+        <a href="https://www.google.com/maps/place/ECOPEST+S.R.L/@18.585711,-68.4094961,17z" target="_blank">
+          Ver ubicación
+        </a>
+      </div>
+
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.820262520847!2d-68.41207118462005!3d18.585711012931454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea89300524212bb%3A0x8eecb0d86110f6a3!2sECOPEST%20S.R.L!5e0!3m2!1ses!2sdo!4v1698955169403!5m2!1ses!2sdo"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= ESTILOS ================= -->
+<style>
+
+#contacto-profesional{
+  padding:90px 20px;
+  background:#f7f9f6;
+}
+
+/* HEADER */
+.contact-header{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 50px;
+}
+
+.contact-header h2{
+  color:var(--eco-green);
+  font-size:2.4rem;
+  margin-bottom:15px;
+  font-family:'Montserrat',sans-serif;
+}
+
+.contact-header p{
+  color:#555;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+/* GRID */
+.contact-wrapper{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+/* INFO */
+.contact-info-box{
+  background:#fff;
+  border-radius:18px;
+  padding:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.info-item{
+  display:flex;
+  gap:18px;
+  margin-bottom:28px;
+}
+
+.info-icon{
+  min-width:58px;
+  height:58px;
+  border-radius:14px;
+  background:rgba(46,125,50,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.info-icon i{
+  color:var(--eco-green);
+  font-size:22px;
+}
+
+.info-item h3{
+  margin:0 0 8px;
+  color:#0b3b23;
+  font-size:1rem;
+}
+
+.info-item a,
+.info-item p{
+  color:#555;
+  line-height:1.6;
+  font-size:0.96rem;
+}
+
+/* REDES */
+.contact-socials{
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+}
+
+.contact-socials a{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--eco-green);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+  font-size:18px;
+}
+
+.contact-socials a:hover{
+  background:#1b5e20;
+  transform:translateY(-3px);
+}
+
+/* FORMULARIO */
+.contact-form-box{
+  background:#fff;
+  border-radius:18px;
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.contact-form-box h3{
+  color:#0b3b23;
+  margin-bottom:25px;
+  font-size:1.5rem;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.contact-form-box input,
+.contact-form-box textarea{
+  width:100%;
+  border:1px solid #dfe8dc;
+  border-radius:12px;
+  padding:15px;
+  font-size:1rem;
+  outline:none;
+  transition:0.3s;
+  background:#fff;
+}
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus{
+  border-color:var(--eco-green);
+  box-shadow:0 0 0 4px rgba(46,125,50,0.1);
+}
+
+.contact-form-box textarea{
+  resize:none;
+  margin-bottom:18px;
+}
+
+.contact-form-box button{
+  width:100%;
+  background:linear-gradient(135deg,#2E7D32,#43A047);
+  color:#fff;
+  border:none;
+  padding:16px;
+  border-radius:14px;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact-form-box button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(46,125,50,0.2);
+}
+
+.contact-form-box button i{
+  margin-right:8px;
+}
+
+/* MAPAS */
+.maps-section{
+  max-width:1200px;
+  margin:40px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.map-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.map-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-bottom:1px solid #eee;
+}
+
+.map-header h3{
+  color:#0b3b23;
+  margin:0;
+}
+
+.map-header a{
+  color:var(--eco-green);
+  font-weight:700;
+  font-size:0.95rem;
+}
+
+.map-card iframe{
+  width:100%;
+  height:320px;
+  border:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .maps-section{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  #contacto-profesional{
+    padding:70px 15px;
+  }
+
+  .contact-header h2{
+    font-size:2rem;
+  }
+
+  .contact-form-box,
+  .contact-info-box{
+    padding:25px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .map-card iframe{
+    height:260px;
+  }
+
+}
+
+</style>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+function enviarFormulario(e){
+
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const correo = document.getElementById("correo").value;
+  const telefono = document.getElementById("telefono").value;
+  const empresa = document.getElementById("empresa").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  const texto = `Hola ECO PEST,%0A%0A` +
+                 `Nombre: ${nombre}%0A` +
+                 `Correo: ${correo}%0A` +
+                 `Teléfono: ${telefono}%0A` +
+                 `Empresa: ${empresa}%0A%0A` +
+                 `Mensaje:%0A${mensaje}`;
+
+  gtag('event','conversion',{
+    'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'
+  });
+
+  gtag('event','contact_form_submit');
+
+  window.open(
+    `https://wa.me/18097383196?text=${texto}`,
+    '_blank'
+  );
+
+}
+
+</script>
