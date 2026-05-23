@@ -392,6 +392,48 @@
   margin-top:3px;
 }
 
+  nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#2E7D32;
+  font-weight:700;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#1b5e20;
+}
+
+/* RESPONSIVE MENU */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  nav a{
+    font-size:0.95rem;
+  }
+
+  .logo-img{
+    width:75px;
+  }
+
+}
 </style>
 
   <!-- HERO -->
