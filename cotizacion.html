@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cotización | ECO PEST S.R.L</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Roboto',sans-serif;
+  background:#f5f7f4;
+  color:#222;
+}
+
+/* HEADER */
+
+header{
+  background:#ffffff;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+
+.logo-img{
+  width:90px;
+  height:auto;
+  object-fit:contain;
+}
+
+.logo-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.2rem;
+  font-weight:800;
+  color:#2E7D32;
+  line-height:1.2;
+}
+
+.logo-sub{
+  font-size:0.85rem;
+  color:#546b56;
+  margin-top:3px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#2E7D32;
+  font-weight:700;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#1b5e20;
+}
+
+/* HERO */
+
+.hero{
+
+  background:
+  linear-gradient(
+  rgba(0,0,0,0.45),
+  rgba(0,0,0,0.55)
+  ),
+  url('img/banner.png');
+
+  background-size:cover;
+  background-position:center;
+
+  min-height:350px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  color:#fff;
+
+  padding:40px 20px;
+
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:3.5rem;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.15rem;
+  line-height:1.8;
+}
+
+/* FORMULARIO */
+
+.container{
+  max-width:850px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.form-card{
+  background:#fff;
+  padding:40px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.form-card h2{
+  font-family:'Montserrat',sans-serif;
+  color:#2E7D32;
+  margin-bottom:30px;
+  text-align:center;
+  font-size:2rem;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group.full{
+  grid-column:1 / -1;
+}
+
+label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:700;
+  color:#2E7D32;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:16px;
+  border-radius:12px;
+  border:1px solid #dfe5dc;
+  font-size:1rem;
+  font-family:'Roboto',sans-serif;
+  transition:0.3s;
+  background:#fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:none;
+  border-color:#2E7D32;
+  box-shadow:0 0 0 4px rgba(46,125,50,0.12);
+}
+
+textarea{
+  resize:vertical;
+}
+
+/* BOTON */
+
+.submit-btn{
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  border:none;
+  padding:18px;
+  border-radius:14px;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:10px;
+}
+
+.submit-btn:hover{
+  background:#1ebe5d;
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+  background:#1f5f24;
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+
+footer p{
+  margin:10px 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:15px;
+    padding:15px 20px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-card{
+    padding:25px;
+  }
+
+  .logo-img{
+    width:75px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <a href="index.html" class="logo-link">
+
+    <img src="img/logo1.jpg" alt="Logo ECO PEST" class="logo-img">
+
+    <div>
+
+      <div class="logo-text">
+        ECO PEST S.R.L
+      </div>
+
+      <div class="logo-sub">
+        Productos y Equipos de Fumigación
+      </div>
+
+    </div>
+
+  </a>
+
+  <nav>
+
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="cotizacion.html">Cotización</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+
+  </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Solicitar Cotización</h1>
+
+    <p>
+      Completa el formulario y recibe información rápida
+      sobre nuestros productos y equipos profesionales.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FORMULARIO -->
+
+<div class="container">
+
+  <div class="form-card">
+
+    <h2>Formulario de Cotización</h2>
+
+    <form onsubmit="enviarWhatsApp(event)">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+
+          <label>Nombre Completo</label>
+
+          <input type="text"
+          id="nombre"
+          placeholder="Tu nombre"
+          required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Teléfono</label>
+
+          <input type="tel"
+          id="telefono"
+          placeholder="Tu teléfono"
+          required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Correo Electrónico</label>
+
+          <input type="email"
+          id="correo"
+          placeholder="Tu correo"
+          required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Empresa (Opcional)</label>
+
+          <input type="text"
+          id="empresa"
+          placeholder="Nombre de empresa">
+
+        </div>
+
+        <div class="form-group full">
+
+          <label>Producto que desea cotizar</label>
+
+          <select id="producto" required>
+
+            <option value="">Seleccione un producto</option>
+
+            <optgroup label="Control de Roedores">
+              <option>Estación de Cebo para Ratas</option>
+              <option>Trampa Metálica Multi-Catch</option>
+              <option>Trampa Plástica Multicaptura</option>
+              <option>Trampa Mecánica para Ratones</option>
+              <option>Cebo Rodenticida Azul</option>
+              <option>Cebo Rodenticida Rojo</option>
+              <option>Tablero Adhesivo para Ratones</option>
+              <option>Trampa Adhesiva para Roedores</option>
+            </optgroup>
+
+            <optgroup label="Equipos">
+              <option>Pulverizador Manual STIHL SG 71</option>
+              <option>Fumigadora de Espalda STIHL SR 420</option>
+              <option>Fumigadora de Espalda STIHL SR 200</option>
+              <option>Nebulizador ULV Eléctrico</option>
+              <option>Thermo Fogger</option>
+              <option>Fly Hunter Smart 30</option>
+              <option>Fly Hunter Uplight 30</option>
+              <option>Fumigadora Estacionaria</option>
+              <option>Aspersor Profesional de Acero Inoxidable E&P</option>
+            </optgroup>
+
+            <optgroup label="Equipos EPP">
+              <option>Guantes de Protección</option>
+              <option>Mascarilla con Carbón Activado</option>
+              <option>Mascarilla de Cara Completa</option>
+              <option>Respirador Climax 755 Reutilizable</option>
+              <option>Respirador Climax 756 Reutilizable</option>
+              <option>Mascarilla de Cara Completa con Filtros</option>
+            </optgroup>
+
+            <optgroup label="Químicos">
+              <option>Advion Cockroach Gel</option>
+              <option>Invict Cockroach Gel</option>
+              <option>Aceite Mineral</option>
+              <option>Repelente para Aves en Gel</option>
+              <option>Ecofly - Polvo para Moscas</option>
+              <option>Tierra de Diatomeas 100% Natural</option>
+            </optgroup>
+
+            <optgroup label="Accesorios">
+              <option>Pistola Aplicadora para Gel Insecticida</option>
+              <option>Lanza Inyectora Profesional</option>
+              <option>Pistola de Pulverización Manual Portátil de Alta Presión</option>
+            </optgroup>
+
+            <optgroup label="Control de Gatos">
+              <option>Jaula Trampa para Gatos y Conejos</option>
+            </optgroup>
+
+          </select>
+
+        </div>
+
+        <div class="form-group full">
+
+          <label>Mensaje</label>
+
+          <textarea
+          id="mensaje"
+          rows="6"
+          placeholder="Escribe detalles de tu solicitud..."
+          required></textarea>
+
+        </div>
+
+      </div>
+
+      <button type="submit" class="submit-btn">
+
+        <i class="fa-brands fa-whatsapp"></i>
+        Enviar Cotización
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p><strong>ECO PEST S.R.L</strong></p>
+
+  <p>
+    Productos y equipos de fumigación en República Dominicana
+  </p>
+
+  <p>
+    Tel: (809) 738-3196 |
+    Email: ecopestsrl@gmail.com
+  </p>
+
+  <p>
+    © 2026 ECO PEST S.R.L - Todos los derechos reservados
+  </p>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+function enviarWhatsApp(e){
+
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const correo = document.getElementById("correo").value;
+  const empresa = document.getElementById("empresa").value;
+  const producto = document.getElementById("producto").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  const texto = `Hola, quiero solicitar una cotización.
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Correo: ${correo}
+Empresa: ${empresa}
+Producto: ${producto}
+
+Mensaje:
+${mensaje}`;
+
+  const url =
+`https://wa.me/18097383196?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
