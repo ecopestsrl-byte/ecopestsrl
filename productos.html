@@ -315,19 +315,19 @@
 
 <body>
 
- <!-- HEADER -->
+<!-- HEADER -->
 <header>
 
-  <a href="/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+  <a href="index.html" class="logo-link">
 
-    <img src="img/logo1.jpg" alt="Logo ECO PEST">
+    <img src="img/logo1.jpg" alt="Logo ECO PEST" class="logo-img">
 
     <div>
-      <div style="font-family:'Montserrat',sans-serif;color:var(--eco-green);font-weight:700;font-size:1.05rem">
+      <div class="logo-text">
         ECO PEST S.R.L
       </div>
 
-      <div style="font-size:0.85rem;color:#546b56">
+      <div class="logo-sub">
         Productos y Equipos de Fumigación
       </div>
     </div>
@@ -343,6 +343,36 @@
   </nav>
 
 </header>
+
+<style>
+
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+
+.logo-img{
+  width:65px;
+  height:65px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.logo-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.2rem;
+  font-weight:800;
+  color:#2E7D32;
+}
+
+.logo-sub{
+  font-size:0.85rem;
+  color:#546b56;
+}
+
+</style>
 
   <!-- HERO -->
 
