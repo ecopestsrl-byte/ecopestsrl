@@ -209,14 +209,15 @@ header nav ul li a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;               /* ⬜ TEXTO BLANCO */
+  color: #fff;
   text-align: center;
   overflow: hidden;
 
-  background-image: url("img/banner2.png"); /* ⬜ IMAGEN */
-  background-size: cover;
+  background-image: url("img/banner2.png");
+  background-size: contain; /* CAMBIAR */
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #000; /* opcional */
 }
 /* ===== CAPA OSCURA PARA LEER EL TEXTO ===== */
 .banner::after{
