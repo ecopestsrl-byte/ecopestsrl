@@ -1101,9 +1101,52 @@ function openModal(product) {
   modalName.textContent = product.name;
   modalDesc.textContent = product.description;
 
-  modalImg.src = product.img;
-  modalImg.style.display = "block";
+  // ===== GALERÍA =====
+  let galleryHTML = "";
 
+  if (product.images && product.images.length > 0) {
+
+    galleryHTML += `
+      <div class="gallery-main">
+        <img id="mainGalleryImg" src="${product.images[0]}" alt="${product.name}">
+      </div>
+
+      <div class="gallery-thumbs">
+    `;
+
+    product.images.forEach(img => {
+      galleryHTML += `
+        <img src="${img}" class="thumb-img"
+        onclick="document.getElementById('mainGalleryImg').src='${img}'">
+      `;
+    });
+
+    galleryHTML += `</div>`;
+
+    modalImg.style.display = "none";
+
+    const oldGallery = document.getElementById("dynamicGallery");
+    if (oldGallery) oldGallery.remove();
+
+    const galleryContainer = document.createElement("div");
+    galleryContainer.id = "dynamicGallery";
+    galleryContainer.innerHTML = galleryHTML;
+
+    modal.querySelector(".modal-content").insertBefore(
+      galleryContainer,
+      modalName
+    );
+
+  } else {
+
+    const oldGallery = document.getElementById("dynamicGallery");
+    if (oldGallery) oldGallery.remove();
+
+    modalImg.src = product.img;
+    modalImg.style.display = "block";
+  }
+
+  // ===== VIDEO =====
   if (product.video) {
     modalVideo.style.display = "block";
     modalVideo.src = product.video;
@@ -1111,7 +1154,6 @@ function openModal(product) {
     modalVideo.style.display = "none";
   }
 }
-
 closeModal.onclick = () => (modal.style.display = "none");
 window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
@@ -1180,6 +1222,38 @@ gtag('event','whatsapp_click');
   transition: 0.3s;
 }
 .close:hover { color: var(--eco-green); }
+  /* ===== GALERÍA ===== */
+
+.gallery-main img{
+  width:100%;
+  height:260px;
+  object-fit:contain;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+
+.gallery-thumbs{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.thumb-img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  border:2px solid #eee;
+  transition:0.2s;
+}
+
+.thumb-img:hover{
+  border-color:#2E7D32;
+  transform:scale(1.05);
+}
   
 </style>
 
