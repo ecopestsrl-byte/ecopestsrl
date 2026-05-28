@@ -586,16 +586,150 @@ footer a {
 </p>
 
     <div class="banner-buttons">
-      <a class="btn-primary-cta" href="#productos">
-        <i class="fa fa-box-open"></i> Ver Catálogo
-      </a>
+      <a class="btn-primary-cta" href="javascript:void(0)" onclick="abrirCatalogoModal()">
+  <i class="fa fa-box-open"></i> Ver Catálogo
+</a>
       <a class="btn-outline-cta" href="#cotizacion">
         <i class="fa fa-comments"></i> Solicitar Cotización
       </a>
     </div>
   </div>
 </section>
+<!-- ===== MODAL CATÁLOGO ===== -->
+<div id="catalogoModal" class="catalogo-modal">
 
+  <div class="catalogo-content">
+
+    <span class="catalogo-close" onclick="cerrarCatalogoModal()">
+      &times;
+    </span>
+
+    <h2>¿Qué deseas ver?</h2>
+
+    <p>Selecciona una categoría del catálogo</p>
+
+    <div class="catalogo-opciones">
+
+      <!-- STIHL -->
+      <a href="stihl.html" class="catalogo-card">
+
+        <img src="img/stihl.png" alt="STIHL">
+
+        <h3>Equipos STIHL</h3>
+
+        <p>
+          Ver equipos profesionales STIHL
+        </p>
+
+      </a>
+
+      <!-- PRODUCTOS -->
+      <a href="#productos"
+         class="catalogo-card"
+         onclick="cerrarCatalogoModal()">
+
+        <i class="fa-solid fa-box-open"></i>
+
+        <h3>Productos y Equipos</h3>
+
+        <p>
+          Ver productos generales
+        </p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+
+/* ===== MODAL CATÁLOGO ===== */
+
+.catalogo-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.catalogo-content{
+  background:#fff;
+  width:100%;
+  max-width:850px;
+  border-radius:20px;
+  padding:40px 25px;
+  position:relative;
+  text-align:center;
+}
+
+.catalogo-content h2{
+  color:var(--eco-green);
+  margin-bottom:10px;
+}
+
+.catalogo-close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:34px;
+  cursor:pointer;
+}
+
+.catalogo-opciones{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.catalogo-card{
+  flex:1 1 300px;
+  max-width:340px;
+  background:#f8f8f8;
+  border-radius:18px;
+  padding:30px 20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.catalogo-card:hover{
+  transform:translateY(-6px);
+  background:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.catalogo-card img{
+  width:140px;
+  margin-bottom:15px;
+}
+
+.catalogo-card i{
+  font-size:60px;
+  color:var(--eco-green);
+  margin-bottom:15px;
+}
+
+.catalogo-card h3{
+  color:#222;
+}
+
+.catalogo-card p{
+  color:#666;
+}
+
+</style>
+  
 <!-- PRODUCTOS -->
 <section id="productos">
   <h2 class="section-title">Nuestros Productos</h2>
@@ -1488,6 +1622,28 @@ window.open(`https://wa.me/18097383196?text=${texto}`,'_blank');
   function cerrarOferta() {
     document.getElementById("ofertaPopup").style.display = "none";
   }
+</script>
+  
+  <script>
+
+function abrirCatalogoModal(){
+  document.getElementById("catalogoModal").style.display = "flex";
+}
+
+function cerrarCatalogoModal(){
+  document.getElementById("catalogoModal").style.display = "none";
+}
+
+window.addEventListener("click", function(e){
+
+  const modal = document.getElementById("catalogoModal");
+
+  if(e.target === modal){
+    cerrarCatalogoModal();
+  }
+
+});
+
 </script>
 </body>
 </html>
