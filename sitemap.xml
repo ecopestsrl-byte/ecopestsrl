@@ -1,35 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.ecopestsrl.com/</loc>
-    <lastmod>2026-05-19</lastmod>
-    <priority>1.00</priority>
-  </url>
+<url>
+<loc>https://www.ecopestsrl.com/</loc>
+</url>
 
-  <url>
-    <loc>https://www.ecopestsrl.com/productos</loc>
-    <lastmod>2026-05-19</lastmod>
-    <priority>0.90</priority>
-  </url>
+<url>
+<loc>https://www.ecopestsrl.com/productos</loc>
+</url>
 
-  <url>
-    <loc>https://www.ecopestsrl.com/nosotros</loc>
-    <lastmod>2026-05-19</lastmod>
-    <priority>0.80</priority>
-  </url>
+<url>
+<loc>https://www.ecopestsrl.com/contacto</loc>
+</url>
 
-  <url>
-    <loc>https://www.ecopestsrl.com/contacto</loc>
-    <lastmod>2026-05-19</lastmod>
-    <priority>0.80</priority>
-  </url>
+<url>
+<loc>https://www.ecopestsrl.com/nosotros</loc>
+</url>
 
-  <url>
-    <loc>https://www.ecopestsrl.com/catalogo-ecopest.pdf</loc>
-    <lastmod>2026-05-19</lastmod>
-    <priority>0.70</priority>
-  </url>
+<url>
+<loc>https://www.ecopestsrl.com/stihl.html</loc>
+</url>
 
 </urlset>
