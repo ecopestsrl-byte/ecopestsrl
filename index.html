@@ -297,175 +297,42 @@ section{padding:72px 20px}
 
 /* Productos */
 .products-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-    gap:28px;
-    max-width:1350px;
-    margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  max-width:1200px;
+  margin:0 auto;
 }
-
 .product-card{
-
-    background:#fff;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-    transition:.35s;
-
-    display:flex;
-
-    flex-direction:column;
-
-    position:relative;
-
-    border:1px solid #eee;
-
+  background:#fff;border-radius:var(--card-radius);
+  padding:18px;border:1px solid #eef6ec;
+  box-shadow:0 8px 22px rgba(15,60,20,0.03);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  transition:transform .18s,box-shadow .18s;
 }
-
-.product-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 25px 50px rgba(0,0,0,.18);
-
-}
-
-.product-card img{
-
-    width:100%;
-
-    height:240px;
-
-    object-fit:contain;
-
-    background:#fafafa;
-
-    padding:25px;
-
-    transition:.4s;
-
-}
-
-.product-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.product-info{
-
-    padding:22px;
-
-}
-
-.product-category{
-
-    display:inline-block;
-
-    background:#E8F5E9;
-
-    color:#2E7D32;
-
-    padding:6px 14px;
-
-    border-radius:25px;
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    margin-bottom:14px;
-
-}
-
-.product-card h4{
-
-    font-size:22px;
-
-    margin:8px 0;
-
-    color:#222;
-
-}
-
-.product-card p{
-
-    color:#666;
-
-    line-height:1.6;
-
-    min-height:70px;
-
-}
-
-.product-buttons{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-    margin-top:20px;
-
-}
-
-.btn-details{
-
-    background:#fff;
-
-    color:#2E7D32;
-
-    border:2px solid #2E7D32;
-
-    border-radius:40px;
-
-    padding:12px;
-
-    text-align:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-weight:bold;
-
-}
-
-.btn-details:hover{
-
-    background:#2E7D32;
-
-    color:#fff;
-
-}
-
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,60,20,0.06)}
+.product-card img{width:170px;height:170px;object-fit:contain;margin-bottom:12px}
+.product-card h4{margin:6px 0;color:#0c4f2b;font-size:1.05rem}
+.product-card p{color:var(--muted);font-size:0.95rem;min-height:56px;margin:0 0 12px}
 .btn-wapp{
-
-    background:#25D366;
-
-    color:#fff;
-
-    border:none;
-
-    border-radius:40px;
-
-    padding:14px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#ffffff,#f2fbf4);
+  border:2px solid rgba(37,211,102,0.25);
+  color:var(--eco-green);
+  font-weight:700;
+  text-decoration:none;
+  width:100%;
+  transition:all .2s;
 }
-
 .btn-wapp:hover{
-
-    background:#1da851;
-
+  background:var(--eco-green);
+  color:#fff;
+  transform:translateY(-2px);
 }
 
 /* Cotizador */
@@ -1677,68 +1544,29 @@ function openModal(product) {
 closeModal.onclick = () => (modal.style.display = "none");
 window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-
 // ====== RENDER DE PRODUCTOS ======
-
 const productList = document.getElementById("product-list");
-
 productList.innerHTML = "";
 
 products.forEach(p => {
-
-    const div = document.createElement("div");
-
-    div.className = "product-card";
-
-    div.onclick = () => openModal(p);
-
-    div.innerHTML = `
-
-        <img src="${p.img}" alt="${p.name}">
-
-        <div class="product-info">
-
-            <span class="product-category">
-                ${p.category}
-            </span>
-
-            <h4>${p.name}</h4>
-
-            <p>${p.description.substring(0,110)}...</p>
-
-            <div class="product-buttons">
-
-                <button class="btn-details">
-                    <i class="fa-solid fa-eye"></i>
-                    Ver detalles
-                </button>
-
-                <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
-
-                class="btn-wapp"
-
-                onclick="
-                event.stopPropagation();
-                gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});
-                gtag('event','whatsapp_click');
-                ">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Cotizar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    `;
-
-    productList.appendChild(div);
-
+  const div = document.createElement("div");
+  div.className = "product-card";
+  div.onclick = () => openModal(p);
+  div.innerHTML = `
+    <img src="${p.img}" alt="${p.name}">
+    <h4>${p.name}</h4>
+    <p>${p.description.substring(0, 60)}...</p>
+    <a href="https://wa.me/18097383196?text=Hola,%20quiero%20cotizar%20el%20producto%20${encodeURIComponent(p.name)}"
+   class="btn-wapp"
+   onclick="
+event.stopPropagation();
+gtag('event','conversion',{'send_to':'AW-17875399255/p5EYCOD7xOYbENfk08tC'});
+gtag('event','whatsapp_click');
+">
+       <i class="fa-brands fa-whatsapp"></i> Cotizar
+    </a>`;
+  productList.appendChild(div);
 });
-
 </script>
 
 <!-- ESTILOS DEL MODAL -->
