@@ -220,30 +220,35 @@ header nav ul li a:hover{
   transform:translateY(-2px);
 }
 
-/* ===== BANNER CON IMAGEN FULL ===== */
+/* ===== HERO CON VIDEO ===== */
 .banner{
   position: relative;
-  height: 80vh; /* ← CAMBIAR */
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   text-align: center;
   overflow: hidden;
-
-  background-image: url("img/banner2.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #000;
+  background: #000;
 }
-/* ===== CAPA OSCURA PARA LEER EL TEXTO ===== */
+
+/* VIDEO */
+.hero-video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
 .banner::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* ⬜ OSCURECE LA IMAGEN */
-  z-index: 1;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:1;
 }
 
 #particles-js{
@@ -252,16 +257,12 @@ header nav ul li a:hover{
   left:0;
   width:100%;
   height:100%;
-  z-index:1;
+  z-index:2;
 }
+
 .banner-inner{
   position:relative;
-  z-index:2;
-  padding:20px;
-  max-width:1100px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  z-index:3;
 }
 .banner h1{
   font-family:'Montserrat',sans-serif;
@@ -589,30 +590,40 @@ footer a {
   
 <!-- BANNER -->
 <section class="banner" id="inicio" aria-label="Banner principal">
+
+  <!-- VIDEO DE FONDO -->
+  <video class="hero-video" autoplay muted loop playsinline>
+      <source src="video/ecopest.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+  </video>
+
   <div id="particles-js"></div>
 
   <div class="banner-inner">
-   <h1>
-Venta de Productos para Control de Plagas y Equipos de Fumigación en República Dominicana
-</h1>
+    <h1>
+      Venta de Productos para Control de Plagas y Equipos de Fumigación en República Dominicana
+    </h1>
+
     <h2>Equipos y productos para control de plagas profesional</h2>
 
-   <p>
-  Pulverizadores, termonebulizadores, cebos, trampas y EPP.
-</p>
+    <p>
+      Pulverizadores, termonebulizadores, cebos, trampas y EPP.
+    </p>
 
-<p style="margin-top:10px;font-weight:600;color:#fff">
-  🚚 Envíos a toda República Dominicana | 📦 Entrega rápida | 🛠️ Asesoría gratis
-</p>
+    <p style="margin-top:10px;font-weight:600;color:#fff">
+      🚚 Envíos a toda República Dominicana | 📦 Entrega rápida | 🛠️ Asesoría gratis
+    </p>
 
     <div class="banner-buttons">
       <a class="btn-primary-cta" href="javascript:void(0)" onclick="abrirCatalogoModal()">
-  <i class="fa fa-box-open"></i> Ver Catálogo
-</a>
+        <i class="fa fa-box-open"></i> Ver Catálogo
+      </a>
+
       <a class="btn-outline-cta" href="cotizacion">
         <i class="fa fa-comments"></i> Solicitar Cotización
       </a>
     </div>
+
   </div>
 </section>
   
