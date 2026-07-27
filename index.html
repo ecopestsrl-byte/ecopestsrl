@@ -261,14 +261,40 @@ header nav ul li a:hover{
 }
 
 .banner-inner{
-  position:relative;
-  z-index:3;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 .banner h1{
-  font-family:'Montserrat',sans-serif;
-  color:#ffffff !important; /* ⬜ BLANCO FORZADO */
-  font-size:48px;
-  margin:0 0 10px
+    font-size: clamp(38px, 4vw, 64px);
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.banner h2{
+    font-size: clamp(22px, 2vw, 30px);
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.banner p{
+    font-size: clamp(18px, 1.3vw, 22px);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
 }
   
 .banner p{color:#ffffff;font-size:20px;margin:8px 0 18px}
