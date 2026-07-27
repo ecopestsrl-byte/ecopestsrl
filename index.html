@@ -696,10 +696,9 @@ footer a {
 <section class="banner" id="inicio" aria-label="Banner principal">
 
   <!-- VIDEO DE FONDO -->
-  <video class="hero-video" autoplay muted loop playsinline>
-      <source src="video/ecopest.mp4" type="video/mp4">
-      Tu navegador no soporta video HTML5.
-  </video>
+ <video class="hero-video" id="heroVideo" autoplay muted playsinline>
+    <source src="video/ecopest.mp4" type="video/mp4">
+</video>
 
   <div id="particles-js"></div>
 
@@ -1820,6 +1819,32 @@ document.querySelectorAll("#menu a").forEach(link=>{
         document.getElementById("menu").classList.remove("active");
     });
 });
+</script>
+  
+  <script>
+
+const videos = [
+    "video/ecopest.mp4",
+    "video/fumigacion.mp4"
+];
+
+let videoIndex = 0;
+
+const heroVideo = document.getElementById("heroVideo");
+
+heroVideo.addEventListener("ended", function(){
+
+    videoIndex++;
+
+    if(videoIndex >= videos.length){
+        videoIndex = 0;
+    }
+
+    heroVideo.src = videos[videoIndex];
+    heroVideo.play();
+
+});
+
 </script>
 </body>
 </html>
