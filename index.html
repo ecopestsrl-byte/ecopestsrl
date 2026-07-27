@@ -222,25 +222,26 @@ header nav ul li a:hover{
 
 /* ===== HERO CON VIDEO ===== */
 .banner{
-  position: relative;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
-  background: #000;
+    position:relative;
+    width:100%;
+    height:80vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
 }
 
 /* VIDEO */
 .hero-video{
     position:absolute;
-    inset:0;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
-    object-fit:contain;
-    background:#000;
+    object-fit:cover;
+    object-position:center center;
+    z-index:0;
 }
 .banner::after{
   content:"";
@@ -502,17 +503,13 @@ footer a {
   }
 }
 /* ===== BANNER MÓVIL AJUSTADO ===== */
-@media (max-width: 768px) {
+@media (max-width:768px){
   .banner{
-    height: 70vh;
-    min-height: 520px;
-
-    padding: 40px 15px;
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+      height:70vh;
+      min-height:520px;
+      padding:40px 15px;
   }
+}
 
   .banner h1{
     font-size: 24px;
