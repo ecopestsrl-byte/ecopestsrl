@@ -696,7 +696,15 @@ footer a {
 <section class="banner" id="inicio" aria-label="Banner principal">
 
   <!-- VIDEO DE FONDO -->
- <video class="hero-video" id="heroVideo" autoplay muted playsinline>
+<video
+    class="hero-video"
+    id="heroVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto">
     <source src="video/ecopest.mp4" type="video/mp4">
 </video>
 
@@ -1821,8 +1829,7 @@ document.querySelectorAll("#menu a").forEach(link=>{
 });
 </script>
   
-  <script>
-
+<script>
 const videos = [
     "video/ecopest.mp4",
     "video/fumigacion.mp4"
@@ -1832,19 +1839,21 @@ let videoIndex = 0;
 
 const heroVideo = document.getElementById("heroVideo");
 
-heroVideo.addEventListener("ended", function(){
+// Reproducir el primer video
+heroVideo.muted = true;
+heroVideo.play().catch(() => {});
 
-    videoIndex++;
+// Cuando termina, cambiar al siguiente
+heroVideo.addEventListener("ended", function () {
 
-    if(videoIndex >= videos.length){
-        videoIndex = 0;
-    }
+    videoIndex = (videoIndex + 1) % videos.length;
 
     heroVideo.src = videos[videoIndex];
-    heroVideo.play();
+    heroVideo.load();   // IMPORTANTE para móviles
+
+    heroVideo.play().catch(() => {});
 
 });
-
 </script>
 </body>
 </html>
