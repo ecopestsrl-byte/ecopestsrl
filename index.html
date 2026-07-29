@@ -704,7 +704,8 @@ footer a {
     loop
     playsinline
     webkit-playsinline
-    preload="auto">
+    preload="auto"
+>
     <source src="video/ecopest.mp4" type="video/mp4">
 </video>
 
@@ -1830,28 +1831,38 @@ document.querySelectorAll("#menu a").forEach(link=>{
 </script>
   
 <script>
-const videos = [
-    "video/ecopest.mp4",
-    "video/fumigacion.mp4"
-];
+document.addEventListener("DOMContentLoaded", function () {
 
-let videoIndex = 0;
+    const videos = [
+        "video/ecopest.mp4",
+        "video/fumigacion.mp4"
+    ];
 
-const heroVideo = document.getElementById("heroVideo");
+    let videoIndex = 0;
 
-// Reproducir el primer video
-heroVideo.muted = true;
-heroVideo.play().catch(() => {});
+    const heroVideo = document.getElementById("heroVideo");
 
-// Cuando termina, cambiar al siguiente
-heroVideo.addEventListener("ended", function () {
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
 
-    videoIndex = (videoIndex + 1) % videos.length;
+    function reproducirVideo() {
+        heroVideo.play().catch(function(e){
+            console.log("No pudo reproducirse:", e);
+        });
+    }
 
-    heroVideo.src = videos[videoIndex];
-    heroVideo.load();   // IMPORTANTE para móviles
+    reproducirVideo();
 
-    heroVideo.play().catch(() => {});
+    heroVideo.addEventListener("ended", function () {
+
+        videoIndex = (videoIndex + 1) % videos.length;
+
+        heroVideo.src = videos[videoIndex];
+        heroVideo.load();
+
+        reproducirVideo();
+
+    });
 
 });
 </script>
